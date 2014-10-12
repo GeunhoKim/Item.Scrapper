@@ -15,6 +15,9 @@
 		3C2A49ED19D7111400D58C0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49EC19D7111400D58C0B /* Images.xcassets */; };
 		3C2A49F019D7111400D58C0B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49EE19D7111400D58C0B /* LaunchScreen.xib */; };
 		3C2A49FC19D7111400D58C0B /* Item_ScrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49FB19D7111400D58C0B /* Item_ScrapperTests.swift */; };
+		3CF8526019EA701900096320 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8525F19EA701900096320 /* ShareViewController.swift */; };
+		3CF8526219EA701900096320 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8526119EA701900096320 /* MainInterface.storyboard */; };
+		3CF8526519EA701900096320 /* Scrapper.Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3CF8525B19EA701800096320 /* Scrapper.Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,7 +28,35 @@
 			remoteGlobalIDString = 3C2A49DA19D7111400D58C0B;
 			remoteInfo = Item.Scrapper;
 		};
+		3CF8526319EA701900096320 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C2A49D319D7111400D58C0B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CF8525A19EA701800096320;
+			remoteInfo = Scrapper.Share;
+		};
+		3CF8526619EA701900096320 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C2A49D319D7111400D58C0B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CF8525A19EA701800096320;
+			remoteInfo = Scrapper.Share;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3CF8526B19EA701900096320 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3CF8526519EA701900096320 /* Scrapper.Share.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3C2A49DB19D7111400D58C0B /* Item.Scrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Item.Scrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +71,10 @@
 		3C2A49F519D7111400D58C0B /* Item.ScrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Item.ScrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2A49FA19D7111400D58C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C2A49FB19D7111400D58C0B /* Item_ScrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item_ScrapperTests.swift; sourceTree = "<group>"; };
+		3CF8525B19EA701800096320 /* Scrapper.Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Scrapper.Share.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CF8525E19EA701900096320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CF8525F19EA701900096320 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		3CF8526119EA701900096320 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +92,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3CF8525819EA701800096320 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -65,6 +107,7 @@
 			children = (
 				3C2A49DD19D7111400D58C0B /* Item.Scrapper */,
 				3C2A49F819D7111400D58C0B /* Item.ScrapperTests */,
+				3CF8525C19EA701900096320 /* Scrapper.Share */,
 				3C2A49DC19D7111400D58C0B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +117,7 @@
 			children = (
 				3C2A49DB19D7111400D58C0B /* Item.Scrapper.app */,
 				3C2A49F519D7111400D58C0B /* Item.ScrapperTests.xctest */,
+				3CF8525B19EA701800096320 /* Scrapper.Share.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +162,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3CF8525C19EA701900096320 /* Scrapper.Share */ = {
+			isa = PBXGroup;
+			children = (
+				3CF8525F19EA701900096320 /* ShareViewController.swift */,
+				3CF8526119EA701900096320 /* MainInterface.storyboard */,
+				3CF8525D19EA701900096320 /* Supporting Files */,
+			);
+			path = Scrapper.Share;
+			sourceTree = "<group>";
+		};
+		3CF8525D19EA701900096320 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3CF8525E19EA701900096320 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,10 +190,13 @@
 				3C2A49D719D7111400D58C0B /* Sources */,
 				3C2A49D819D7111400D58C0B /* Frameworks */,
 				3C2A49D919D7111400D58C0B /* Resources */,
+				3CF8526B19EA701900096320 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3CF8526419EA701900096320 /* PBXTargetDependency */,
+				3CF8526719EA701900096320 /* PBXTargetDependency */,
 			);
 			name = Item.Scrapper;
 			productName = Item.Scrapper;
@@ -156,6 +221,23 @@
 			productReference = 3C2A49F519D7111400D58C0B /* Item.ScrapperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		3CF8525A19EA701800096320 /* Scrapper.Share */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CF8526A19EA701900096320 /* Build configuration list for PBXNativeTarget "Scrapper.Share" */;
+			buildPhases = (
+				3CF8525719EA701800096320 /* Sources */,
+				3CF8525819EA701800096320 /* Frameworks */,
+				3CF8525919EA701800096320 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Scrapper.Share;
+			productName = Scrapper.Share;
+			productReference = 3CF8525B19EA701800096320 /* Scrapper.Share.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -171,6 +253,9 @@
 					3C2A49F419D7111400D58C0B = {
 						CreatedOnToolsVersion = 6.0.1;
 						TestTargetID = 3C2A49DA19D7111400D58C0B;
+					};
+					3CF8525A19EA701800096320 = {
+						CreatedOnToolsVersion = 6.0.1;
 					};
 				};
 			};
@@ -189,6 +274,7 @@
 			targets = (
 				3C2A49DA19D7111400D58C0B /* Item.Scrapper */,
 				3C2A49F419D7111400D58C0B /* Item.ScrapperTests */,
+				3CF8525A19EA701800096320 /* Scrapper.Share */,
 			);
 		};
 /* End PBXProject section */
@@ -208,6 +294,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CF8525919EA701800096320 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CF8526219EA701900096320 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +327,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3CF8525719EA701800096320 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CF8526019EA701900096320 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -240,6 +342,16 @@
 			isa = PBXTargetDependency;
 			target = 3C2A49DA19D7111400D58C0B /* Item.Scrapper */;
 			targetProxy = 3C2A49F619D7111400D58C0B /* PBXContainerItemProxy */;
+		};
+		3CF8526419EA701900096320 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3CF8525A19EA701800096320 /* Scrapper.Share */;
+			targetProxy = 3CF8526319EA701900096320 /* PBXContainerItemProxy */;
+		};
+		3CF8526719EA701900096320 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3CF8525A19EA701800096320 /* Scrapper.Share */;
+			targetProxy = 3CF8526619EA701900096320 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -396,6 +508,30 @@
 			};
 			name = Release;
 		};
+		3CF8526819EA701900096320 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Scrapper.Share/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3CF8526919EA701900096320 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Scrapper.Share/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -415,12 +551,22 @@
 				3C2A4A0119D7111400D58C0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C2A4A0219D7111400D58C0B /* Build configuration list for PBXNativeTarget "Item.ScrapperTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3C2A4A0319D7111400D58C0B /* Debug */,
 				3C2A4A0419D7111400D58C0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3CF8526A19EA701900096320 /* Build configuration list for PBXNativeTarget "Scrapper.Share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CF8526819EA701900096320 /* Debug */,
+				3CF8526919EA701900096320 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
