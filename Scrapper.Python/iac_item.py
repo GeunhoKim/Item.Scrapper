@@ -15,5 +15,5 @@ class AuctionViewItemPageSpider(CrawlSpider):
     item['title'] = hxs.select("//span[@class='product-info_name']/text()").extract()[0].encode('utf-8')
     item['imageUrl'] = hxs.select("//li[@class='content-slider_item active']/a/img/@src").extract()[0].encode('utf-8')
     item['formatPrice'] = hxs.select("//strong[@class='product-info_offer_price']/text()").extract()[0].encode('utf-8')
-    item['price'] = hxs.select("//input[@id='dsPrice']/@value").extract()[0].encode('utf-8')
+    item['price'] = int(hxs.select("//input[@id='dsPrice']/@value").extract()[0].encode('utf-8'))
     return item

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C102A3B19FB92E800445A74 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8526E19EAB7B400096320 /* SystemConfiguration.framework */; };
+		3C102A3C19FB92F100445A74 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8527019EAB7BC00096320 /* MobileCoreServices.framework */; };
+		3C102A3D19FB92FC00445A74 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8527219EAB7CA00096320 /* CoreGraphics.framework */; };
+		3C102A3E19FB930700445A74 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF852C819EAB98E00096320 /* libz.dylib */; };
+		3C102A5519FB935800445A74 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8526C19EAB7A500096320 /* CFNetwork.framework */; };
 		3C2A49E119D7111400D58C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E019D7111400D58C0B /* AppDelegate.swift */; };
 		3C2A49E419D7111400D58C0B /* Item_Scrapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* Item_Scrapper.xcdatamodeld */; };
 		3C2A49E619D7111400D58C0B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E519D7111400D58C0B /* MasterViewController.swift */; };
@@ -15,7 +20,7 @@
 		3C2A49ED19D7111400D58C0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49EC19D7111400D58C0B /* Images.xcassets */; };
 		3C2A49F019D7111400D58C0B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49EE19D7111400D58C0B /* LaunchScreen.xib */; };
 		3C2A49FC19D7111400D58C0B /* Item_ScrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49FB19D7111400D58C0B /* Item_ScrapperTests.swift */; };
-		3CF1BEA419F40FCA00E5CACA /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1BEA319F40FCA00E5CACA /* ShareViewController.m */; };
+		3C435C2319FB9A8D00530182 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1BEA319F40FCA00E5CACA /* ShareViewController.m */; };
 		3CF1BEA619F40FCA00E5CACA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF1BEA519F40FCA00E5CACA /* MainInterface.storyboard */; };
 		3CF1BEA919F40FCA00E5CACA /* Scrapper.Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3CF1BE9E19F40FCA00E5CACA /* Scrapper.Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3CF8527519EAB80A00096320 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8527219EAB7CA00096320 /* CoreGraphics.framework */; };
@@ -145,6 +150,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C102A3E19FB930700445A74 /* libz.dylib in Frameworks */,
+				3C102A5519FB935800445A74 /* CFNetwork.framework in Frameworks */,
+				3C102A3D19FB92FC00445A74 /* CoreGraphics.framework in Frameworks */,
+				3C102A3C19FB92F100445A74 /* MobileCoreServices.framework in Frameworks */,
+				3C102A3B19FB92E800445A74 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CF1BEA419F40FCA00E5CACA /* ShareViewController.m in Sources */,
+				3C435C2319FB9A8D00530182 /* ShareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +688,7 @@
 				3CF1BEAE19F40FCA00E5CACA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

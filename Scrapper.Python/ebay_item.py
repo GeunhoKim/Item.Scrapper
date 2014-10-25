@@ -16,5 +16,5 @@ class EbayViewItemPageSpider(CrawlSpider):
     item['title'] = hxs.select("//h1[@class='itm-ttl']/text()").extract()[0].encode('utf-8')
     item['imageUrl'] = hxs.select("//img[@class='imgStyle']/@src").extract()[0].encode('utf-8')
     item['formatPrice'] = hxs.select("//div[@id='binPriceRowId']/text()").extract()[0].encode('utf-8')
-    item['price'] = re.search(r"[0-9\,\.]+\)", item['formatPrice']).group().replace(",", "").replace(")", "")
+    item['price'] = float(re.search(r"[0-9\,\.]+\)", item['formatPrice']).group().replace(",", "").replace(")", ""))
     return item
