@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <Social/Social.h>
+#import <CoreData/CoreData.h>
 
 #import "ASIHTTPRequest.h"
+#import "ItemEntity.h"
 
 #define SCRAPPER_HOST @"http://localhost"
 
 @interface ShareViewController : SLComposeServiceViewController
 <ASIHTTPRequestDelegate>
-
 
 @end
 
