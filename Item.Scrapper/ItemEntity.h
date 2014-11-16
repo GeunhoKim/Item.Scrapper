@@ -12,10 +12,11 @@
 
 @interface ItemEntity : NSManagedObject
 
-@property (nonatomic, retain) NSString * formatPrice;
-@property (nonatomic, retain) NSString * imageUrl;
-@property (nonatomic, retain) NSNumber * price;
-@property (nonatomic, retain) NSDate * timestamp;
-@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString *linkUrl;
+@property (nonatomic, retain) NSString *formatPrice;
+@property (nonatomic, retain) NSString *imageUrl;
+@property (nonatomic, retain) NSNumber *price;
+@property (nonatomic, retain) NSDate *timestamp;
+@property (nonatomic, retain) NSString *title;
 
 @end

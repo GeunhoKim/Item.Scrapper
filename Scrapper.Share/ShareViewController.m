@@ -7,22 +7,15 @@
 //
 
 #import "ShareViewController.h"
+#import "ItemEntity.h"
 
 @interface ShareViewController ()
 
-@end
-
-@implementation ScrapperItem
-
-+ (ScrapperItem *)item {
-    ScrapperItem *item = [[ScrapperItem alloc] init];
-    
-    item.scrapDate = [NSDate date];
-    
-    return item;
-}
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
 
 @end
+
 
 @implementation ShareViewController
 
@@ -37,16 +30,20 @@
     
     [provider loadItemForTypeIdentifier:@"public.url" options:nil completionHandler:^(NSURL *url, NSError *error) {
         NSString *urlString = url.absoluteString;
-        ScrapperItem *item = [self requestScrapperWithUrlString:urlString];
+        ItemEntity *item = [self requestScrapperWithUrlString:urlString];
+        [self insertItem:item inManagedObjectContext:self.managedObjectContext];
+        
         [self.extensionContext completeRequestReturningItems:@[item] completionHandler:nil];
     }];
 }
 
 - (NSArray *)configurationItems {
+    [self setupManagedObjectContext];
+    
     return @[];
 }
 
-- (ScrapperItem *)requestScrapperWithUrlString:(NSString *)urlString {
+- (ItemEntity *)requestScrapperWithUrlString:(NSString *)urlString {
     NSString *requestString = [NSString stringWithFormat:SCRAPPER_HOST@"/~geunho/run_scrapper.py?startUrl=%@", urlString];
     NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
 
@@ -56,7 +53,8 @@
                                           returningResponse:&response
                                                       error:&error];
     if (!error) {
-        ScrapperItem *item = [self parseResponseData:data];
+        ItemEntity *item = [self parseResponseData:data];
+        item.linkUrl = urlString;
         return item;
     } else {
         NSLog(@"error occured: %@", error.description);
@@ -65,12 +63,13 @@
     }
 }
 
-- (ScrapperItem *)parseResponseData:(NSData *)responseData {
+- (ItemEntity *)parseResponseData:(NSData *)responseData {
     NSError* error;
     NSDictionary* json = [NSJSONSerialization JSONObjectWithData:responseData
                                                          options:kNilOptions
                                                            error:&error];
-    ScrapperItem *item = [ScrapperItem item];
+    
+    ItemEntity *item = [NSEntityDescription insertNewObjectForEntityForName:@"ItemEntity" inManagedObjectContext:self.context];
     NSString *imageUrl = [json objectForKey:@"imageUrl"];
     item.imageUrl = imageUrl;
     NSString *title = [json objectForKey:@"title"];
@@ -79,8 +78,53 @@
     item.price = price;
     NSString *formatPrice = [json objectForKey:@"formatPrice"];
     item.formatPrice = formatPrice;
+    item.timestamp = [NSDate date];
     
     return item;
 }
+
+- (void)insertItem:(ItemEntity *)item inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+    NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:@"ItemEntity"
+                                                                   inManagedObjectContext:managedObjectContext];
+    [managedObject setValue:item.imageUrl forKey:@"imageUrl"];
+    [managedObject setValue:item.linkUrl forKey:@"linkUrl"];
+    [managedObject setValue:item.title forKey:@"title"];
+    [managedObject setValue:item.price forKey:@"price"];
+    [managedObject setValue:item.formatPrice forKey:@"formatPrice"];
+    [managedObject setValue:item.timestamp forKey:@"timestamp"];
+    
+    NSError *error;
+    if ([managedObjectContext save:&error]) {
+        NSLog(@"Contact Saved");
+    }
+    else {
+        NSLog(@"Contact Not Saved.");
+    }
+}
+
+- (void)setupManagedObjectContext {
+    NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.com.ebay.kr.gkhim"];
+    NSURL *storeURL = [directory  URLByAppendingPathComponent:@"Item_Scrapper.sqlite"];
+    
+    self.managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Item_Scrapper" withExtension:@"momd"];
+    self.managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    
+    self.managedObjectContext.persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
+    
+    NSError* error;
+    [self.managedObjectContext.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                                       configuration:nil
+                                                                                 URL:storeURL
+                                                                             options:nil
+                                                                               error:&error];
+    if (error) {
+        NSLog(@"error: %@", error);
+    }
+    
+    self.managedObjectContext.undoManager = [[NSUndoManager alloc] init];
+}
+
+
 
 @end

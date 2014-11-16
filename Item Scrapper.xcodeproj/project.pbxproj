@@ -12,22 +12,23 @@
 		3C102A3D19FB92FC00445A74 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8527219EAB7CA00096320 /* CoreGraphics.framework */; };
 		3C102A3E19FB930700445A74 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF852C819EAB98E00096320 /* libz.dylib */; };
 		3C102A5519FB935800445A74 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8526C19EAB7A500096320 /* CFNetwork.framework */; };
+		3C1EB20E1A18943800A7EEB7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49EE19D7111400D58C0B /* LaunchScreen.xib */; };
+		3C1EB20F1A18943C00A7EEB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49E919D7111400D58C0B /* Main.storyboard */; };
+		3C29E80E1A1881280075D4A8 /* Item_Scrapper.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* Item_Scrapper.xcdatamodeld */; };
 		3C2A49E119D7111400D58C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E019D7111400D58C0B /* AppDelegate.swift */; };
 		3C2A49E419D7111400D58C0B /* Item_Scrapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* Item_Scrapper.xcdatamodeld */; };
 		3C2A49E619D7111400D58C0B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E519D7111400D58C0B /* MasterViewController.swift */; };
 		3C2A49E819D7111400D58C0B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E719D7111400D58C0B /* DetailViewController.swift */; };
-		3C2A49EB19D7111400D58C0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49E919D7111400D58C0B /* Main.storyboard */; };
 		3C2A49ED19D7111400D58C0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49EC19D7111400D58C0B /* Images.xcassets */; };
-		3C2A49F019D7111400D58C0B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49EE19D7111400D58C0B /* LaunchScreen.xib */; };
 		3C2A49FC19D7111400D58C0B /* Item_ScrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49FB19D7111400D58C0B /* Item_ScrapperTests.swift */; };
 		3C435C2319FB9A8D00530182 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1BEA319F40FCA00E5CACA /* ShareViewController.m */; };
 		3C435C2419FCE3A500530182 /* Item_Scrapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* Item_Scrapper.xcdatamodeld */; };
 		3C435C2719FCE75300530182 /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C435C2619FCE75300530182 /* ItemEntity.m */; };
 		3C435C2819FCE75300530182 /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C435C2619FCE75300530182 /* ItemEntity.m */; };
-		3CA566401A1100BD004CCEA5 /* EBay_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CA5663F1A1100BD004CCEA5 /* EBay_logo.png */; };
-		3CA566411A1100BD004CCEA5 /* EBay_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CA5663F1A1100BD004CCEA5 /* EBay_logo.png */; };
+		3C59FE761A124F0F00E52887 /* EBay_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C59FE751A124F0F00E52887 /* EBay_logo.png */; };
+		3C59FE771A12566300E52887 /* Item_Scrapper.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* Item_Scrapper.xcdatamodeld */; };
+		3CBF14641A189FFC00A840D8 /* Scrapper.Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3CF1BE9E19F40FCA00E5CACA /* Scrapper.Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3CF1BEA619F40FCA00E5CACA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF1BEA519F40FCA00E5CACA /* MainInterface.storyboard */; };
-		3CF1BEA919F40FCA00E5CACA /* Scrapper.Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3CF1BE9E19F40FCA00E5CACA /* Scrapper.Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3CF8527519EAB80A00096320 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8527219EAB7CA00096320 /* CoreGraphics.framework */; };
 		3CF8527619EAB80A00096320 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8527019EAB7BC00096320 /* MobileCoreServices.framework */; };
 		3CF8527719EAB80A00096320 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8526E19EAB7B400096320 /* SystemConfiguration.framework */; };
@@ -52,14 +53,7 @@
 			remoteGlobalIDString = 3C2A49DA19D7111400D58C0B;
 			remoteInfo = Item.Scrapper;
 		};
-		3CF1BEA719F40FCA00E5CACA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C2A49D319D7111400D58C0B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3CF1BE9D19F40FCA00E5CACA;
-			remoteInfo = Scrapper.Share;
-		};
-		3CF1BEAA19F40FCA00E5CACA /* PBXContainerItemProxy */ = {
+		3CBF14651A189FFC00A840D8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3C2A49D319D7111400D58C0B /* Project object */;
 			proxyType = 1;
@@ -69,13 +63,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3CF8526B19EA701900096320 /* Embed App Extensions */ = {
+		3CBF14671A189FFC00A840D8 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				3CF1BEA919F40FCA00E5CACA /* Scrapper.Share.appex in Embed App Extensions */,
+				3CBF14641A189FFC00A840D8 /* Scrapper.Share.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3C0745DF1A174B4200BCA6D6 /* Item.Scrapper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Item.Scrapper.entitlements; sourceTree = "<group>"; };
 		3C2A49DB19D7111400D58C0B /* Item.Scrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Item.Scrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2A49DF19D7111400D58C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C2A49E019D7111400D58C0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,15 +85,15 @@
 		3C2A49E519D7111400D58C0B /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		3C2A49E719D7111400D58C0B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3C2A49EA19D7111400D58C0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3C2A49EC19D7111400D58C0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3C2A49EC19D7111400D58C0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Item.Scrapper/Images.xcassets; sourceTree = "<group>"; };
 		3C2A49EF19D7111400D58C0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3C2A49F519D7111400D58C0B /* Item.ScrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Item.ScrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2A49FA19D7111400D58C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C2A49FB19D7111400D58C0B /* Item_ScrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item_ScrapperTests.swift; sourceTree = "<group>"; };
 		3C435C2519FCE75300530182 /* ItemEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemEntity.h; sourceTree = "<group>"; };
 		3C435C2619FCE75300530182 /* ItemEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemEntity.m; sourceTree = "<group>"; };
+		3C59FE751A124F0F00E52887 /* EBay_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EBay_logo.png; sourceTree = "<group>"; };
 		3CA5663B1A10D65C004CCEA5 /* Scrapper.Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Scrapper.Share.entitlements; sourceTree = "<group>"; };
-		3CA5663F1A1100BD004CCEA5 /* EBay_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EBay_logo.png; sourceTree = "<group>"; };
 		3CF1BE9E19F40FCA00E5CACA /* Scrapper.Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Scrapper.Share.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF1BEA119F40FCA00E5CACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CF1BEA219F40FCA00E5CACA /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
@@ -174,10 +169,10 @@
 			isa = PBXGroup;
 			children = (
 				3CA5663C1A110089004CCEA5 /* Resource */,
-				3CF1BE9F19F40FCA00E5CACA /* Scrapper.Share */,
-				3CF8527419EAB7E100096320 /* Frameworks */,
 				3C2A49DD19D7111400D58C0B /* Item.Scrapper */,
+				3CF1BE9F19F40FCA00E5CACA /* Scrapper.Share */,
 				3C2A49F819D7111400D58C0B /* Item.ScrapperTests */,
+				3CF8527419EAB7E100096320 /* Frameworks */,
 				3C2A49DC19D7111400D58C0B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -195,13 +190,11 @@
 		3C2A49DD19D7111400D58C0B /* Item.Scrapper */ = {
 			isa = PBXGroup;
 			children = (
+				3C0745DF1A174B4200BCA6D6 /* Item.Scrapper.entitlements */,
 				3C2A49E019D7111400D58C0B /* AppDelegate.swift */,
 				3C2A49E519D7111400D58C0B /* MasterViewController.swift */,
 				3C2A49E719D7111400D58C0B /* DetailViewController.swift */,
 				3C2A49E919D7111400D58C0B /* Main.storyboard */,
-				3C2A49EC19D7111400D58C0B /* Images.xcassets */,
-				3C2A49EE19D7111400D58C0B /* LaunchScreen.xib */,
-				3C2A49E219D7111400D58C0B /* Item_Scrapper.xcdatamodeld */,
 				3C435C2519FCE75300530182 /* ItemEntity.h */,
 				3C435C2619FCE75300530182 /* ItemEntity.m */,
 				3C2A49DE19D7111400D58C0B /* Supporting Files */,
@@ -237,6 +230,9 @@
 		3CA5663C1A110089004CCEA5 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3C2A49EC19D7111400D58C0B /* Images.xcassets */,
+				3C2A49E219D7111400D58C0B /* Item_Scrapper.xcdatamodeld */,
+				3C2A49EE19D7111400D58C0B /* LaunchScreen.xib */,
 				3CA5663E1A1100AB004CCEA5 /* Images */,
 			);
 			name = Resource;
@@ -245,7 +241,7 @@
 		3CA5663E1A1100AB004CCEA5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3CA5663F1A1100BD004CCEA5 /* EBay_logo.png */,
+				3C59FE751A124F0F00E52887 /* EBay_logo.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -324,13 +320,12 @@
 				3C2A49D719D7111400D58C0B /* Sources */,
 				3C2A49D819D7111400D58C0B /* Frameworks */,
 				3C2A49D919D7111400D58C0B /* Resources */,
-				3CF8526B19EA701900096320 /* Embed App Extensions */,
+				3CBF14671A189FFC00A840D8 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3CF1BEA819F40FCA00E5CACA /* PBXTargetDependency */,
-				3CF1BEAB19F40FCA00E5CACA /* PBXTargetDependency */,
+				3CBF14661A189FFC00A840D8 /* PBXTargetDependency */,
 			);
 			name = Item.Scrapper;
 			productName = Item.Scrapper;
@@ -384,6 +379,14 @@
 					3C2A49DA19D7111400D58C0B = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = W69CTWG937;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					3C2A49F419D7111400D58C0B = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -400,7 +403,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3C2A49D619D7111400D58C0B /* Build configuration list for PBXProject "Item.Scrapper" */;
+			buildConfigurationList = 3C2A49D619D7111400D58C0B /* Build configuration list for PBXProject "Item Scrapper" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -414,8 +417,8 @@
 			projectRoot = "";
 			targets = (
 				3C2A49DA19D7111400D58C0B /* Item.Scrapper */,
-				3C2A49F419D7111400D58C0B /* Item.ScrapperTests */,
 				3CF1BE9D19F40FCA00E5CACA /* Scrapper.Share */,
+				3C2A49F419D7111400D58C0B /* Item.ScrapperTests */,
 			);
 		};
 /* End PBXProject section */
@@ -425,9 +428,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C2A49EB19D7111400D58C0B /* Main.storyboard in Resources */,
-				3CA566401A1100BD004CCEA5 /* EBay_logo.png in Resources */,
-				3C2A49F019D7111400D58C0B /* LaunchScreen.xib in Resources */,
+				3C1EB20F1A18943C00A7EEB7 /* Main.storyboard in Resources */,
+				3C1EB20E1A18943800A7EEB7 /* LaunchScreen.xib in Resources */,
+				3C29E80E1A1881280075D4A8 /* Item_Scrapper.xcdatamodeld in Resources */,
+				3C59FE761A124F0F00E52887 /* EBay_logo.png in Resources */,
 				3C2A49ED19D7111400D58C0B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,8 +447,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C59FE771A12566300E52887 /* Item_Scrapper.xcdatamodeld in Resources */,
 				3CF1BEA619F40FCA00E5CACA /* MainInterface.storyboard in Resources */,
-				3CA566411A1100BD004CCEA5 /* EBay_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,15 +502,10 @@
 			target = 3C2A49DA19D7111400D58C0B /* Item.Scrapper */;
 			targetProxy = 3C2A49F619D7111400D58C0B /* PBXContainerItemProxy */;
 		};
-		3CF1BEA819F40FCA00E5CACA /* PBXTargetDependency */ = {
+		3CBF14661A189FFC00A840D8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3CF1BE9D19F40FCA00E5CACA /* Scrapper.Share */;
-			targetProxy = 3CF1BEA719F40FCA00E5CACA /* PBXContainerItemProxy */;
-		};
-		3CF1BEAB19F40FCA00E5CACA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3CF1BE9D19F40FCA00E5CACA /* Scrapper.Share */;
-			targetProxy = 3CF1BEAA19F40FCA00E5CACA /* PBXContainerItemProxy */;
+			targetProxy = 3CBF14651A189FFC00A840D8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -525,6 +524,7 @@
 				3C2A49EF19D7111400D58C0B /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = Item.Scrapper;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -547,7 +547,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khim Geunho (8B38U7N93F)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -567,6 +567,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "5b35b2b6-97a1-4d5c-950f-66ba3542443c";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -590,7 +591,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khim Geunho (8B38U7N93F)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -603,6 +604,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "5b35b2b6-97a1-4d5c-950f-66ba3542443c";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -614,12 +616,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Khim Geunho (8B38U7N93F)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = Item.Scrapper/Item.Scrapper.entitlements;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khim Geunho (8B38U7N93F)";
 				INFOPLIST_FILE = Item.Scrapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d101e972-0ede-4595-88c9-7d89e726abcc";
+				PROVISIONING_PROFILE = "5b35b2b6-97a1-4d5c-950f-66ba3542443c";
 				SWIFT_OBJC_BRIDGING_HEADER = "Item.Scrapper-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -630,12 +633,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Khim Geunho (8B38U7N93F)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = Item.Scrapper/Item.Scrapper.entitlements;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khim Geunho (8B38U7N93F)";
 				INFOPLIST_FILE = Item.Scrapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d101e972-0ede-4595-88c9-7d89e726abcc";
+				PROVISIONING_PROFILE = "5b35b2b6-97a1-4d5c-950f-66ba3542443c";
 				SWIFT_OBJC_BRIDGING_HEADER = "Item.Scrapper-Bridging-Header.h";
 			};
 			name = Release;
@@ -678,8 +682,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Scrapper.Share/Scrapper.Share.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khim Geunho (8B38U7N93F)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -687,7 +691,7 @@
 				INFOPLIST_FILE = Scrapper.Share/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "5b35b2b6-97a1-4d5c-950f-66ba3542443c";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -696,12 +700,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Scrapper.Share/Scrapper.Share.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khim Geunho (8B38U7N93F)";
 				INFOPLIST_FILE = Scrapper.Share/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "5b35b2b6-97a1-4d5c-950f-66ba3542443c";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -709,7 +713,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3C2A49D619D7111400D58C0B /* Build configuration list for PBXProject "Item.Scrapper" */ = {
+		3C2A49D619D7111400D58C0B /* Build configuration list for PBXProject "Item Scrapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3C2A49FD19D7111400D58C0B /* Debug */,
@@ -754,7 +758,8 @@
 				3C2A49E319D7111400D58C0B /* Item_Scrapper.xcdatamodel */,
 			);
 			currentVersion = 3C2A49E319D7111400D58C0B /* Item_Scrapper.xcdatamodel */;
-			path = Item_Scrapper.xcdatamodeld;
+			name = Item_Scrapper.xcdatamodeld;
+			path = Item.Scrapper/Item_Scrapper.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

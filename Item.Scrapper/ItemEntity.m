@@ -11,6 +11,7 @@
 
 @implementation ItemEntity
 
+@dynamic linkUrl;
 @dynamic formatPrice;
 @dynamic imageUrl;
 @dynamic price;

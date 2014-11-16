@@ -18,17 +18,6 @@
 @interface ShareViewController : SLComposeServiceViewController
 <ASIHTTPRequestDelegate>
 
-@end
-
-
-@interface ScrapperItem : NSObject
-
-@property (retain, nonatomic) NSString *title;
-@property (retain, nonatomic) NSString *imageUrl;
-@property (retain, nonatomic) NSString *formatPrice;
-@property (retain, nonatomic) NSNumber *price;
-@property (retain, nonatomic) NSDate *scrapDate;
-
-+ (ScrapperItem *)item;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *context;
 
 @end
