@@ -15,7 +15,7 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="Event" positionX="261" positionY="189" width="128" height="58"/>
         <element name="ItemEntity" positionX="61" positionY="215" width="128" height="135"/>
     </elements>
 </model>

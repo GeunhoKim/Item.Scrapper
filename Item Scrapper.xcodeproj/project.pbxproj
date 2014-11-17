@@ -14,19 +14,19 @@
 		3C102A5519FB935800445A74 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8526C19EAB7A500096320 /* CFNetwork.framework */; };
 		3C1EB20E1A18943800A7EEB7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49EE19D7111400D58C0B /* LaunchScreen.xib */; };
 		3C1EB20F1A18943C00A7EEB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49E919D7111400D58C0B /* Main.storyboard */; };
-		3C29E80E1A1881280075D4A8 /* Item_Scrapper.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* Item_Scrapper.xcdatamodeld */; };
+		3C29E80E1A1881280075D4A8 /* ItemScrapper.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* ItemScrapper.xcdatamodeld */; };
 		3C2A49E119D7111400D58C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E019D7111400D58C0B /* AppDelegate.swift */; };
-		3C2A49E419D7111400D58C0B /* Item_Scrapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* Item_Scrapper.xcdatamodeld */; };
+		3C2A49E419D7111400D58C0B /* ItemScrapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* ItemScrapper.xcdatamodeld */; };
 		3C2A49E619D7111400D58C0B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E519D7111400D58C0B /* MasterViewController.swift */; };
 		3C2A49E819D7111400D58C0B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E719D7111400D58C0B /* DetailViewController.swift */; };
 		3C2A49ED19D7111400D58C0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49EC19D7111400D58C0B /* Images.xcassets */; };
 		3C2A49FC19D7111400D58C0B /* Item_ScrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49FB19D7111400D58C0B /* Item_ScrapperTests.swift */; };
 		3C435C2319FB9A8D00530182 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1BEA319F40FCA00E5CACA /* ShareViewController.m */; };
-		3C435C2419FCE3A500530182 /* Item_Scrapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* Item_Scrapper.xcdatamodeld */; };
+		3C435C2419FCE3A500530182 /* ItemScrapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* ItemScrapper.xcdatamodeld */; };
 		3C435C2719FCE75300530182 /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C435C2619FCE75300530182 /* ItemEntity.m */; };
 		3C435C2819FCE75300530182 /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C435C2619FCE75300530182 /* ItemEntity.m */; };
 		3C59FE761A124F0F00E52887 /* EBay_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C59FE751A124F0F00E52887 /* EBay_logo.png */; };
-		3C59FE771A12566300E52887 /* Item_Scrapper.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* Item_Scrapper.xcdatamodeld */; };
+		3C59FE771A12566300E52887 /* ItemScrapper.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* ItemScrapper.xcdatamodeld */; };
 		3CBF14641A189FFC00A840D8 /* Scrapper.Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3CF1BE9E19F40FCA00E5CACA /* Scrapper.Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3CF1BEA619F40FCA00E5CACA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF1BEA519F40FCA00E5CACA /* MainInterface.storyboard */; };
 		3CF8527519EAB80A00096320 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8527219EAB7CA00096320 /* CoreGraphics.framework */; };
@@ -81,7 +81,7 @@
 		3C2A49DB19D7111400D58C0B /* Item.Scrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Item.Scrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2A49DF19D7111400D58C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C2A49E019D7111400D58C0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3C2A49E319D7111400D58C0B /* Item_Scrapper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Item_Scrapper.xcdatamodel; sourceTree = "<group>"; };
+		3C2A49E319D7111400D58C0B /* ItemScrapper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ItemScrapper.xcdatamodel; sourceTree = "<group>"; };
 		3C2A49E519D7111400D58C0B /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		3C2A49E719D7111400D58C0B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3C2A49EA19D7111400D58C0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				3C2A49EC19D7111400D58C0B /* Images.xcassets */,
-				3C2A49E219D7111400D58C0B /* Item_Scrapper.xcdatamodeld */,
+				3C2A49E219D7111400D58C0B /* ItemScrapper.xcdatamodeld */,
 				3C2A49EE19D7111400D58C0B /* LaunchScreen.xib */,
 				3CA5663E1A1100AB004CCEA5 /* Images */,
 			);
@@ -390,6 +390,7 @@
 					};
 					3C2A49F419D7111400D58C0B = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = W69CTWG937;
 						TestTargetID = 3C2A49DA19D7111400D58C0B;
 					};
 					3CF1BE9D19F40FCA00E5CACA = {
@@ -430,7 +431,7 @@
 			files = (
 				3C1EB20F1A18943C00A7EEB7 /* Main.storyboard in Resources */,
 				3C1EB20E1A18943800A7EEB7 /* LaunchScreen.xib in Resources */,
-				3C29E80E1A1881280075D4A8 /* Item_Scrapper.xcdatamodeld in Resources */,
+				3C29E80E1A1881280075D4A8 /* ItemScrapper.xcdatamodeld in Resources */,
 				3C59FE761A124F0F00E52887 /* EBay_logo.png in Resources */,
 				3C2A49ED19D7111400D58C0B /* Images.xcassets in Resources */,
 			);
@@ -447,7 +448,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C59FE771A12566300E52887 /* Item_Scrapper.xcdatamodeld in Resources */,
+				3C59FE771A12566300E52887 /* ItemScrapper.xcdatamodeld in Resources */,
 				3CF1BEA619F40FCA00E5CACA /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,7 +462,7 @@
 			files = (
 				3CF852C619EAB90900096320 /* Reachability.m in Sources */,
 				3CF852B619EAB88000096320 /* ASIDataCompressor.m in Sources */,
-				3C2A49E419D7111400D58C0B /* Item_Scrapper.xcdatamodeld in Sources */,
+				3C2A49E419D7111400D58C0B /* ItemScrapper.xcdatamodeld in Sources */,
 				3C2A49E119D7111400D58C0B /* AppDelegate.swift in Sources */,
 				3CF852B419EAB88000096320 /* ASIAuthenticationDialog.m in Sources */,
 				3C435C2719FCE75300530182 /* ItemEntity.m in Sources */,
@@ -489,7 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C435C2819FCE75300530182 /* ItemEntity.m in Sources */,
-				3C435C2419FCE3A500530182 /* Item_Scrapper.xcdatamodeld in Sources */,
+				3C435C2419FCE3A500530182 /* ItemScrapper.xcdatamodeld in Sources */,
 				3C435C2319FB9A8D00530182 /* ShareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,7 +568,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "5b35b2b6-97a1-4d5c-950f-66ba3542443c";
+				PROVISIONING_PROFILE = "48cc48ae-bd7e-4d39-a8b5-27e33043d725";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -604,7 +605,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "5b35b2b6-97a1-4d5c-950f-66ba3542443c";
+				PROVISIONING_PROFILE = "48cc48ae-bd7e-4d39-a8b5-27e33043d725";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -622,7 +623,7 @@
 				INFOPLIST_FILE = Item.Scrapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5b35b2b6-97a1-4d5c-950f-66ba3542443c";
+				PROVISIONING_PROFILE = "48cc48ae-bd7e-4d39-a8b5-27e33043d725";
 				SWIFT_OBJC_BRIDGING_HEADER = "Item.Scrapper-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -639,7 +640,7 @@
 				INFOPLIST_FILE = Item.Scrapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5b35b2b6-97a1-4d5c-950f-66ba3542443c";
+				PROVISIONING_PROFILE = "48cc48ae-bd7e-4d39-a8b5-27e33043d725";
 				SWIFT_OBJC_BRIDGING_HEADER = "Item.Scrapper-Bridging-Header.h";
 			};
 			name = Release;
@@ -648,6 +649,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -659,6 +662,7 @@
 				INFOPLIST_FILE = Item.ScrapperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Item.Scrapper.app/Item.Scrapper";
 			};
 			name = Debug;
@@ -667,6 +671,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -674,6 +680,7 @@
 				INFOPLIST_FILE = Item.ScrapperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Item.Scrapper.app/Item.Scrapper";
 			};
 			name = Release;
@@ -682,8 +689,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Scrapper.Share/Scrapper.Share.entitlements;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khim Geunho (8B38U7N93F)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -691,7 +698,7 @@
 				INFOPLIST_FILE = Scrapper.Share/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5b35b2b6-97a1-4d5c-950f-66ba3542443c";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -700,12 +707,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Scrapper.Share/Scrapper.Share.entitlements;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khim Geunho (8B38U7N93F)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Scrapper.Share/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5b35b2b6-97a1-4d5c-950f-66ba3542443c";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -752,14 +759,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		3C2A49E219D7111400D58C0B /* Item_Scrapper.xcdatamodeld */ = {
+		3C2A49E219D7111400D58C0B /* ItemScrapper.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3C2A49E319D7111400D58C0B /* Item_Scrapper.xcdatamodel */,
+				3C2A49E319D7111400D58C0B /* ItemScrapper.xcdatamodel */,
 			);
-			currentVersion = 3C2A49E319D7111400D58C0B /* Item_Scrapper.xcdatamodel */;
-			name = Item_Scrapper.xcdatamodeld;
-			path = Item.Scrapper/Item_Scrapper.xcdatamodeld;
+			currentVersion = 3C2A49E319D7111400D58C0B /* ItemScrapper.xcdatamodel */;
+			name = ItemScrapper.xcdatamodeld;
+			path = Item.Scrapper/ItemScrapper.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
