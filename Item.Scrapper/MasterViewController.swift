@@ -100,7 +100,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
         
         var linkUrl = object.valueForKey("linkUrl")!.description
-        var url: NSURL = NSURL(string: linkUrl)!
+        var url: NSURL = NSURL(string: linkUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
         UIApplication.sharedApplication().openURL(url)
     }
     
@@ -123,11 +123,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     func configureCell(cell: ItemViewCell, atIndexPath indexPath: NSIndexPath) {
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-        
+                
         var imageUrl: String = object.valueForKey("imageUrl")!.description
         var url: NSURL = NSURL(string: imageUrl)!
         
-//        cell.mainImageView
+        cell.mainImageView.sd_setImageWithURL(url, placeholderImage: nil)
         cell.titleLabel.text = object.valueForKey("title")!.description
         cell.priceLabel.text = object.valueForKey("formatPrice")!.description
         cell.linkUrl = object.valueForKey("linkUrl")!.description

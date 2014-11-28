@@ -3,6 +3,7 @@
 
 import cgi, cgitb
 import json
+import re
 cgitb.enable()
 
 from scrapy.xlib.pydispatch import dispatcher
@@ -17,9 +18,15 @@ arguments = cgi.FieldStorage()
 startUrl = arguments["startUrl"].value
 
 if "ebay.com" in startUrl:
-  spider = EbayViewItemPageSpider(startUrl = startUrl)
+  itemno = re.search(r"[0-9]+",startUrl).group()
+  ebayUrl = "http://m.ebay.com/itm/" + itemno
+  spider = EbayViewItemPageSpider(startUrl = ebayUrl)
+
 if "auction.co.kr" in startUrl:
-  spider = AuctionViewItemPageSpider(startUrl = startUrl)
+  itemno = re.search(r"[a-z,A-Z][0-9]+",startUrl).group()
+  auctionUrl = "http://mobile.auction.co.kr/Item/ViewItem.aspx?itemno=" + itemno  
+  spider = AuctionViewItemPageSpider(startUrl = auctionUrl)
+
 if "gmarket.co.kr" in startUrl:
   spider = GmarketViewItemPageSpider(startUrl = startUrl)
 
