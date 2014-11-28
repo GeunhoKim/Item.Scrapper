@@ -38,7 +38,6 @@
 		3C2A49E119D7111400D58C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E019D7111400D58C0B /* AppDelegate.swift */; };
 		3C2A49E419D7111400D58C0B /* ItemScrapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* ItemScrapper.xcdatamodeld */; };
 		3C2A49E619D7111400D58C0B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E519D7111400D58C0B /* MasterViewController.swift */; };
-		3C2A49E819D7111400D58C0B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E719D7111400D58C0B /* DetailViewController.swift */; };
 		3C2A49ED19D7111400D58C0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49EC19D7111400D58C0B /* Images.xcassets */; };
 		3C2A49FC19D7111400D58C0B /* Item_ScrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49FB19D7111400D58C0B /* Item_ScrapperTests.swift */; };
 		3C435C2319FB9A8D00530182 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1BEA319F40FCA00E5CACA /* ShareViewController.m */; };
@@ -140,7 +139,6 @@
 		3C2A49E019D7111400D58C0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C2A49E319D7111400D58C0B /* ItemScrapper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ItemScrapper.xcdatamodel; sourceTree = "<group>"; };
 		3C2A49E519D7111400D58C0B /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		3C2A49E719D7111400D58C0B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3C2A49EA19D7111400D58C0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C2A49EC19D7111400D58C0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Item.Scrapper/Images.xcassets; sourceTree = "<group>"; };
 		3C2A49EF19D7111400D58C0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -294,7 +292,6 @@
 				3C2A49E519D7111400D58C0B /* MasterViewController.swift */,
 				3C06BE431A1CD78D00D1CC0C /* ItemViewCell.swift */,
 				3C06BE831A20DA7100D1CC0C /* ItemViewCell.xib */,
-				3C2A49E719D7111400D58C0B /* DetailViewController.swift */,
 				3C2A49E919D7111400D58C0B /* Main.storyboard */,
 				3C435C2519FCE75300530182 /* ItemEntity.h */,
 				3C435C2619FCE75300530182 /* ItemEntity.m */,
@@ -594,7 +591,6 @@
 				3C2A49E119D7111400D58C0B /* AppDelegate.swift in Sources */,
 				3C2A49E619D7111400D58C0B /* MasterViewController.swift in Sources */,
 				3C06BE451A1CD78D00D1CC0C /* ItemViewCell.swift in Sources */,
-				3C2A49E819D7111400D58C0B /* DetailViewController.swift in Sources */,
 				3C2A49E419D7111400D58C0B /* ItemScrapper.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

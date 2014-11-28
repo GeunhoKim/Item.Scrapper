@@ -11,7 +11,6 @@ import CoreData
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
     
     
@@ -19,7 +18,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         super.awakeFromNib()
         
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-            self.clearsSelectionOnViewWillAppear = false
+//            self.clearsSelectionOnViewWillAppear = false
             self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
         }
     }
@@ -35,11 +34,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "reload:")
         self.navigationItem.rightBarButtonItem = addButton
-
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
-        }
         
         var nib = UINib(nibName: "ItemViewCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "ItemViewCell")
@@ -93,7 +87,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 90
+        var height: CGFloat = UIDevice.currentDevice().userInterfaceIdiom == .Pad ? 120 : 90
+        
+        return height
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
