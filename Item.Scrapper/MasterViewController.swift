@@ -18,7 +18,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         super.awakeFromNib()
         
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-//            self.clearsSelectionOnViewWillAppear = false
+            self.clearsSelectionOnViewWillAppear = false
             self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
         }
     }
@@ -52,20 +52,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         _fetchedResultsController = nil
         _fetchedResultsController = self.fetchedResultsController
     }
-    
-    // MARK: - Segues
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "showDetail" {
-//            if let indexPath = self.tableView.indexPathForSelectedRow() {
-//                let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-//                let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
-//                controller.detailItem = object
-//                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-//                controller.navigationItem.leftItemsSupplementBackButton = true
-//            }
-//        }
-//    }
     
     // MARK: - Table View Delegate/DataSource
     

@@ -47,6 +47,7 @@
 		3C59FE761A124F0F00E52887 /* EBay_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C59FE751A124F0F00E52887 /* EBay_logo.png */; };
 		3C59FE771A12566300E52887 /* ItemScrapper.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* ItemScrapper.xcdatamodeld */; };
 		3CBF14641A189FFC00A840D8 /* Scrapper.Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3CF1BE9E19F40FCA00E5CACA /* Scrapper.Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3CC7DAA11A2DC6A900243057 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC7DAA01A2DC6A900243057 /* MenuViewController.m */; };
 		3CF1BEA619F40FCA00E5CACA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF1BEA519F40FCA00E5CACA /* MainInterface.storyboard */; };
 		3CF8527519EAB80A00096320 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8527219EAB7CA00096320 /* CoreGraphics.framework */; };
 		3CF8527619EAB80A00096320 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8527019EAB7BC00096320 /* MobileCoreServices.framework */; };
@@ -62,6 +63,7 @@
 		3CF852C219EAB88000096320 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF852B219EAB88000096320 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3CF852C619EAB90900096320 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF852C519EAB90900096320 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3CF852C919EAB98E00096320 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF852C819EAB98E00096320 /* libz.dylib */; };
+		6E615D59AB27D4CA8AD50CFB /* libPods-Item.Scrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7A357AA86E441FCEF2FF5C /* libPods-Item.Scrapper.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +151,8 @@
 		3C435C2619FCE75300530182 /* ItemEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemEntity.m; sourceTree = "<group>"; };
 		3C59FE751A124F0F00E52887 /* EBay_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EBay_logo.png; sourceTree = "<group>"; };
 		3CA5663B1A10D65C004CCEA5 /* Scrapper.Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Scrapper.Share.entitlements; sourceTree = "<group>"; };
+		3CC7DA9F1A2DC6A900243057 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		3CC7DAA01A2DC6A900243057 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		3CF1BE9E19F40FCA00E5CACA /* Scrapper.Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Scrapper.Share.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF1BEA119F40FCA00E5CACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CF1BEA219F40FCA00E5CACA /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
@@ -183,6 +187,9 @@
 		3CF852C419EAB90900096320 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		3CF852C519EAB90900096320 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		3CF852C819EAB98E00096320 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		4B7A357AA86E441FCEF2FF5C /* libPods-Item.Scrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Item.Scrapper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B34FA344A508623395CC01A /* Pods-Item.Scrapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Item.Scrapper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Item.Scrapper/Pods-Item.Scrapper.debug.xcconfig"; sourceTree = "<group>"; };
+		FE61F934390C2E6008300565 /* Pods-Item.Scrapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Item.Scrapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Item.Scrapper/Pods-Item.Scrapper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +202,7 @@
 				3CF8527619EAB80A00096320 /* MobileCoreServices.framework in Frameworks */,
 				3CF8527719EAB80A00096320 /* SystemConfiguration.framework in Frameworks */,
 				3CF8527819EAB80A00096320 /* CFNetwork.framework in Frameworks */,
+				6E615D59AB27D4CA8AD50CFB /* libPods-Item.Scrapper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +229,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2469BB0872AF16D4C3F48585 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B34FA344A508623395CC01A /* Pods-Item.Scrapper.debug.xcconfig */,
+				FE61F934390C2E6008300565 /* Pods-Item.Scrapper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3C06BE471A1CDB7F00D1CC0C /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +287,7 @@
 				3C2A49F819D7111400D58C0B /* Item.ScrapperTests */,
 				3CF8527419EAB7E100096320 /* Frameworks */,
 				3C2A49DC19D7111400D58C0B /* Products */,
+				2469BB0872AF16D4C3F48585 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -287,14 +305,14 @@
 			isa = PBXGroup;
 			children = (
 				3C06BED91A20F15200D1CC0C /* Item.Scrapper-Bridging-Header.h */,
-				3C0745DF1A174B4200BCA6D6 /* Item.Scrapper.entitlements */,
 				3C2A49E019D7111400D58C0B /* AppDelegate.swift */,
 				3C2A49E519D7111400D58C0B /* MasterViewController.swift */,
 				3C06BE431A1CD78D00D1CC0C /* ItemViewCell.swift */,
 				3C06BE831A20DA7100D1CC0C /* ItemViewCell.xib */,
-				3C2A49E919D7111400D58C0B /* Main.storyboard */,
 				3C435C2519FCE75300530182 /* ItemEntity.h */,
 				3C435C2619FCE75300530182 /* ItemEntity.m */,
+				3CC7DA9F1A2DC6A900243057 /* MenuViewController.h */,
+				3CC7DAA01A2DC6A900243057 /* MenuViewController.m */,
 				3C2A49DE19D7111400D58C0B /* Supporting Files */,
 			);
 			path = Item.Scrapper;
@@ -303,6 +321,8 @@
 		3C2A49DE19D7111400D58C0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C0745DF1A174B4200BCA6D6 /* Item.Scrapper.entitlements */,
+				3C2A49E919D7111400D58C0B /* Main.storyboard */,
 				3C2A49DF19D7111400D58C0B /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -375,6 +395,7 @@
 				3CF8527019EAB7BC00096320 /* MobileCoreServices.framework */,
 				3CF8526E19EAB7B400096320 /* SystemConfiguration.framework */,
 				3CF8526C19EAB7A500096320 /* CFNetwork.framework */,
+				4B7A357AA86E441FCEF2FF5C /* libPods-Item.Scrapper.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -417,10 +438,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C2A49FF19D7111400D58C0B /* Build configuration list for PBXNativeTarget "Item.Scrapper" */;
 			buildPhases = (
+				6DF1123A72FA22E42F2D63D6 /* Check Pods Manifest.lock */,
 				3C2A49D719D7111400D58C0B /* Sources */,
 				3C2A49D819D7111400D58C0B /* Frameworks */,
 				3C2A49D919D7111400D58C0B /* Resources */,
 				3CBF14671A189FFC00A840D8 /* Embed App Extensions */,
+				3E57648FEE6BA8B5331469A4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -556,6 +579,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3E57648FEE6BA8B5331469A4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Item.Scrapper/Pods-Item.Scrapper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DF1123A72FA22E42F2D63D6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3C2A49D719D7111400D58C0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -564,6 +620,7 @@
 				3C06BEDB1A20F23800D1CC0C /* MKAnnotationView+WebCache.m in Sources */,
 				3C06BEDD1A20F23800D1CC0C /* NSData+ImageContentType.m in Sources */,
 				3C06BEDF1A20F23800D1CC0C /* SDImageCache.m in Sources */,
+				3CC7DAA11A2DC6A900243057 /* MenuViewController.m in Sources */,
 				3C06BEE11A20F23800D1CC0C /* SDWebImageCompat.m in Sources */,
 				3C06BEE31A20F23800D1CC0C /* SDWebImageDecoder.m in Sources */,
 				3C06BEE51A20F23800D1CC0C /* SDWebImageDownloader.m in Sources */,
@@ -734,6 +791,7 @@
 		};
 		3C2A4A0019D7111400D58C0B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B34FA344A508623395CC01A /* Pods-Item.Scrapper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -751,6 +809,7 @@
 		};
 		3C2A4A0119D7111400D58C0B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE61F934390C2E6008300565 /* Pods-Item.Scrapper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
