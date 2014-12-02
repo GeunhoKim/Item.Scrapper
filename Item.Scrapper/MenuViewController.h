@@ -10,7 +10,6 @@
 #import "MSDynamicsDrawerViewController.h"
 
 @interface MenuViewController : UITableViewController
-<UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 

@@ -9,10 +9,18 @@
 import UIKit
 import CoreData
 
-class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+
+class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
+    
+    let itemViewCellIdentifier = "ItemViewCell"
     
     var managedObjectContext: NSManagedObjectContext? = nil
+    var _fetchedResultsController: NSFetchedResultsController? = nil
     
+    var fetchedItems = [ItemEntity]()
+    var filteredItems = [ItemEntity]()
+    
+    // MARK: - UIViewController life cyle
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +33,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     override func viewWillAppear(animated: Bool) {
         self.refetch()
+        self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -35,8 +44,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         let addButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "reload:")
         self.navigationItem.rightBarButtonItem = addButton
         
-        var nib = UINib(nibName: "ItemViewCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "ItemViewCell")
+        var nib = UINib(nibName: itemViewCellIdentifier, bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: itemViewCellIdentifier)
+        searchDisplayController?.searchResultsTableView.registerNib(nib, forCellReuseIdentifier: itemViewCellIdentifier)
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,7 +65,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         _fetchedResultsController = self.fetchedResultsController
     }
     
-    // MARK: - Table View Delegate/DataSource
+    // MARK: - UITableViewController Delegate/DataSource
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         var numberOfSections = self.fetchedResultsController.sections?.count ?? 0
@@ -61,14 +73,26 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = self.fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
-        return sectionInfo.numberOfObjects
+        
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            return self.filteredItems.count
+        } else {
+            return self.fetchedItems.count
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ItemViewCell", forIndexPath: indexPath) as ItemViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(itemViewCellIdentifier, forIndexPath: indexPath) as ItemViewCell
+
+        var item: ItemEntity
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            item = filteredItems[indexPath.row]
+        } else {
+            item = fetchedItems[indexPath.row]
+        }
         
-        self.configureCell(cell, atIndexPath: indexPath)
+        self.configureCell(cell, toItem: item)
+        
         return cell
     }
     
@@ -79,15 +103,20 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
         
-        var linkUrl = object.valueForKey("linkUrl")!.description
+        var item: ItemEntity
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            item = filteredItems[indexPath.row]
+        } else {
+            item = fetchedItems[indexPath.row]
+        }
+        
+        var linkUrl = item.linkUrl
         var url: NSURL = NSURL(string: linkUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
         UIApplication.sharedApplication().openURL(url)
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
     
@@ -103,16 +132,33 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
     
-    func configureCell(cell: ItemViewCell, atIndexPath indexPath: NSIndexPath) {
-        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-                
-        var imageUrl: String = object.valueForKey("imageUrl")!.description
+    func configureCell(cell: ItemViewCell, toItem item: ItemEntity) {
+        var imageUrl: String = item.imageUrl
         var url: NSURL = NSURL(string: imageUrl)!
         
         cell.mainImageView.sd_setImageWithURL(url, placeholderImage: nil)
-        cell.titleLabel.text = object.valueForKey("title")!.description
-        cell.priceLabel.text = object.valueForKey("formatPrice")!.description
-        cell.linkUrl = object.valueForKey("linkUrl")!.description
+        cell.titleLabel.text = item.title
+        cell.priceLabel.text = item.formatPrice
+        cell.linkUrl = item.linkUrl
+    }
+    
+    // MARK: - UISearchDisplayController delegate
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
+        self.filterContentForSearchText(searchString)
+        return true
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+        return true
+    }
+    
+    func filterContentForSearchText(searchText: String) {
+        filteredItems = fetchedItems.filter({(item: ItemEntity) -> Bool in
+            let stringMatch = item.title.rangeOfString(searchText)
+            return stringMatch != nil
+        })
     }
     
     // MARK: - Fetched results controller
@@ -127,8 +173,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         let entity = NSEntityDescription.entityForName("ItemEntity", inManagedObjectContext: self.managedObjectContext!)
         fetchRequest.entity = entity
         
-        // Set the batch size to a suitable number.
-        fetchRequest.fetchBatchSize = 20
+        fetchRequest.fetchBatchSize = 100
         
         // Edit the sort key as appropriate.
         let sortDescriptor = NSSortDescriptor(key: "timestamp", ascending: false)
@@ -136,8 +181,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        // Edit the section name key path and cache name if appropriate.
-        // nil for section name key path means "no sections".
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         _fetchedResultsController = fetchedResultsController
@@ -147,9 +190,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             println("Unresolved error \(error), \(error?.description)")
         }
         
+        self.fetchedItems = _fetchedResultsController?.fetchedObjects as [ItemEntity]
+        
         return _fetchedResultsController!
     }
-    var _fetchedResultsController: NSFetchedResultsController? = nil
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         self.tableView.beginUpdates()
@@ -172,6 +216,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
         case .Delete:
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+            // TODO: update cell title label
 //        case .Update:
 //            self.configureCell(tableView.cellForRowAtIndexPath(indexPath!)!, atIndexPath: indexPath!)
         case .Move:

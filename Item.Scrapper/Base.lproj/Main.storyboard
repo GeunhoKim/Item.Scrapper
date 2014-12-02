@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RMx-3f-FxP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UfF-b8-5OS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--Master-->
         <scene sceneID="pY4-Hu-kfo">
             <objects>
-                <navigationController title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Nav" title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -27,6 +27,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="dZn-we-u9n">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="7bK-jq-Zjz" id="kyp-4v-xsy"/>
+                            </connections>
+                        </searchBar>
                         <sections/>
                         <connections>
                             <outlet property="dataSource" destination="7bK-jq-Zjz" id="Gho-Na-rnu"/>
@@ -34,8 +42,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Scrapped Items" id="Zdf-7t-Un8"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="UPg-hk-C90" id="Iaq-hv-mCE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="UPg-hk-C90">
+                    <connections>
+                        <outlet property="delegate" destination="7bK-jq-Zjz" id="5dU-TS-2G5"/>
+                        <outlet property="searchBar" destination="dZn-we-u9n" id="t92-Va-asb"/>
+                        <outlet property="searchContentsController" destination="7bK-jq-Zjz" id="LFQ-34-UIh"/>
+                        <outlet property="searchResultsDataSource" destination="7bK-jq-Zjz" id="j4c-Mv-DZo"/>
+                        <outlet property="searchResultsDelegate" destination="7bK-jq-Zjz" id="7uS-mf-x8E"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="709" y="-630"/>
         </scene>
@@ -55,7 +75,24 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzJ-Wn-RsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-38" y="123"/>
+            <point key="canvasLocation" x="-38" y="79"/>
+        </scene>
+        <!--Dynamics Drawer View Controller-->
+        <scene sceneID="Ikm-2O-GGQ">
+            <objects>
+                <viewController id="UfF-b8-5OS" customClass="MSDynamicsDrawerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9dl-Ap-j8T"/>
+                        <viewControllerLayoutGuide type="bottom" id="k6d-GL-lq9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tKz-2B-WnV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yB5-aD-oJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-731" y="-249"/>
         </scene>
     </scenes>
 </document>

@@ -10,17 +10,25 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MSDynamicsDrawerViewControllerDelegate {
     
     var window: UIWindow?
-    
+    var drawerViewController: MSDynamicsDrawerViewController?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        let navigationController = self.window!.rootViewController as UINavigationController
+        
+        let navigationController = self.window!.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("Nav") as UINavigationController
         let controller = navigationController.topViewController as MasterViewController
         
         controller.managedObjectContext = self.managedObjectContext
+        
+        self.drawerViewController = self.window!.rootViewController as? MSDynamicsDrawerViewController
+        self.drawerViewController?.delegate = self
+        
+        var menuViewController: MenuViewController = self.window!.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("Menu") as MenuViewController
+        menuViewController.dynamicsDrawerViewController = self.drawerViewController
+        self.drawerViewController?.setDrawerViewController(menuViewController, forDirection: MSDynamicsDrawerDirection.Left)
+        self.drawerViewController?.setPaneViewController(navigationController, animated: false, completion: nil)
         
         return true
     }
