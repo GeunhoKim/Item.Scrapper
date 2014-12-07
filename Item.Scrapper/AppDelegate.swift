@@ -18,15 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MSDynamicsDrawerViewContr
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         let navigationController = self.window!.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("Nav") as UINavigationController
-        let controller = navigationController.topViewController as MasterViewController
+        let masterViewController = navigationController.topViewController as MasterViewController
         
-        controller.managedObjectContext = self.managedObjectContext
+        masterViewController.managedObjectContext = self.managedObjectContext
         
         self.drawerViewController = self.window!.rootViewController as? MSDynamicsDrawerViewController
         self.drawerViewController?.delegate = self
+        self.drawerViewController?.paneDragRequiresScreenEdgePan = true;
+        self.drawerViewController?.screenEdgePanCancelsConflictingGestures = true;
+        self.drawerViewController?.addStylersFromArray([MSDynamicsDrawerFadeStyler.styler(), MSDynamicsDrawerScaleStyler.styler(), MSDynamicsDrawerShadowStyler.styler()], forDirection: MSDynamicsDrawerDirection.Left)
+        self.drawerViewController?.view.backgroundColor = UIColor.whiteColor()
         
         var menuViewController: MenuViewController = self.window!.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("Menu") as MenuViewController
         menuViewController.dynamicsDrawerViewController = self.drawerViewController
+        masterViewController.dynamicsDrawerViewController = self.drawerViewController
+        
         self.drawerViewController?.setDrawerViewController(menuViewController, forDirection: MSDynamicsDrawerDirection.Left)
         self.drawerViewController?.setPaneViewController(navigationController, animated: false, completion: nil)
         

@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Scrapper.Share</string>
+	<string>Scrapper</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -27,12 +27,12 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>NSExtensionActivationRule</key>
-            <string>TRUEPREDICATE</string>
-        </dict>
-        <key>NSExtensionMainStoryboard</key>
-        <string>MainInterface</string>
-        <key>NSExtensionPointIdentifier</key>
-        <string>com.apple.share-services</string>
+			<string>TRUEPREDICATE</string>
+		</dict>
+		<key>NSExtensionMainStoryboard</key>
+		<string>MainInterface</string>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.share-services</string>
 	</dict>
 </dict>
 </plist>

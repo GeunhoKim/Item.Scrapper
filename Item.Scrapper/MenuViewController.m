@@ -7,6 +7,11 @@
 //
 
 #import "MenuViewController.h"
+#import "MenuHeaderView.h"
+#import "MenuSummarizationCell.h"
+
+#define MENU_VIEW_HEADER_IDENTIFIER @"MenuHeaderView"
+#define MENU_VIEW_SUMMARIZATION_CELL_IDENTIFIER @"MenuSummarizationCell"
 
 typedef NS_ENUM(NSUInteger, MenuViewControllerSectionType) {
     MenuViewControllerSectionTypeSummarization,
@@ -21,7 +26,10 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerSectionType) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Drawer cell"];
+    
+    [self.tableView setBackgroundColor:[UIColor whiteColor]];
+    
+    [self.tableView registerClass:[MenuHeaderView class] forHeaderFooterViewReuseIdentifier:MENU_VIEW_HEADER_IDENTIFIER];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,17 +43,32 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerSectionType) {
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Drawer cell" forIndexPath:indexPath];
+    MenuSummarizationCell *cell = [tableView dequeueReusableCellWithIdentifier:MENU_VIEW_SUMMARIZATION_CELL_IDENTIFIER];
     // Configure the cell...
     if(!cell) {
-        cell = [UITableViewCell new];
+        cell = [MenuSummarizationCell cell];
     }
     
     return cell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80.0f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UITableViewHeaderFooterView *headerView = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:MENU_VIEW_HEADER_IDENTIFIER];
+    headerView.textLabel.text = @"Summarization";
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 50.0f;
+}
+
 
 @end

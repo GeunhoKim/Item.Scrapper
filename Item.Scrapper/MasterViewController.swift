@@ -14,6 +14,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     let itemViewCellIdentifier = "ItemViewCell"
     
+    weak var dynamicsDrawerViewController: MSDynamicsDrawerViewController?
     var managedObjectContext: NSManagedObjectContext? = nil
     var _fetchedResultsController: NSFetchedResultsController? = nil
     
@@ -39,10 +40,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        let leftButton = UIBarButtonItem(image: UIImage(named: "drawer_icon"), style: .Bordered, target: self, action: "openDrawer")
+        leftButton.image = UIImage(named: "drawer_icon")
+        self.navigationItem.leftBarButtonItem = leftButton
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "reload:")
-        self.navigationItem.rightBarButtonItem = addButton
+        let rightButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "reload:")
+        self.navigationItem.rightBarButtonItem = rightButton
         
         var nib = UINib(nibName: itemViewCellIdentifier, bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: itemViewCellIdentifier)
@@ -53,6 +56,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func openDrawer() {
+        self.dynamicsDrawerViewController?.setPaneState(.Open, animated: true, allowUserInterruption: true, completion: nil)
     }
     
     func reload(sender: AnyObject) {
@@ -132,13 +139,23 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
     
+    func formatPriceFromNumber(number: NSNumber) -> String {
+        var formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        formatter.locale = NSLocale.currentLocale()
+
+        var formatPrice:String = formatter.stringFromNumber(number)!
+        
+        return formatPrice
+    }
+    
     func configureCell(cell: ItemViewCell, toItem item: ItemEntity) {
         var imageUrl: String = item.imageUrl
         var url: NSURL = NSURL(string: imageUrl)!
         
         cell.mainImageView.sd_setImageWithURL(url, placeholderImage: nil)
         cell.titleLabel.text = item.title
-        cell.priceLabel.text = item.formatPrice
+        cell.priceLabel.text = formatPriceFromNumber(item.price)
         cell.linkUrl = item.linkUrl
     }
     
@@ -156,7 +173,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     func filterContentForSearchText(searchText: String) {
         filteredItems = fetchedItems.filter({(item: ItemEntity) -> Bool in
-            let stringMatch = item.title.rangeOfString(searchText)
+            let stringMatch = item.title.lowercaseString.rangeOfString(searchText.lowercaseString)
             return stringMatch != nil
         })
     }
@@ -216,7 +233,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
         case .Delete:
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
-            // TODO: update cell title label
+            // TODO: update cell title and price label
 //        case .Update:
 //            self.configureCell(tableView.cellForRowAtIndexPath(indexPath!)!, atIndexPath: indexPath!)
         case .Move:

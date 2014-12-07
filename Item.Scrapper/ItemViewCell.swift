@@ -28,9 +28,6 @@ class ItemViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-//        var url: NSURL = NSURL(string: linkUrl)!
-//        UIApplication.sharedApplication().openURL(url)
     }
     
 }
