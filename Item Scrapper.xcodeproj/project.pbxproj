@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C0600951A41D77600B7B492 /* ScrapperShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0600941A41D77600B7B492 /* ScrapperShareViewController.m */; };
+		3C0600971A41DD8E00B7B492 /* ScrapperShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0600961A41DD8E00B7B492 /* ScrapperShareViewController.xib */; };
 		3C06BE451A1CD78D00D1CC0C /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C06BE431A1CD78D00D1CC0C /* ItemViewCell.swift */; };
 		3C06BE7A1A1CDBA500D1CC0C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C06BE791A1CDBA500D1CC0C /* ImageIO.framework */; };
 		3C06BE841A20DA7100D1CC0C /* ItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C06BE831A20DA7100D1CC0C /* ItemViewCell.xib */; };
@@ -46,9 +48,7 @@
 		3C435C2819FCE75300530182 /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C435C2619FCE75300530182 /* ItemEntity.m */; };
 		3C59FE761A124F0F00E52887 /* EBay_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C59FE751A124F0F00E52887 /* EBay_logo.png */; };
 		3C59FE771A12566300E52887 /* ItemScrapper.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* ItemScrapper.xcdatamodeld */; };
-		3C84D8B71A32F753007D2860 /* total_item_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C84D8B41A32F753007D2860 /* total_item_icon@3x.png */; };
-		3C84D8B81A32F753007D2860 /* total_item_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C84D8B51A32F753007D2860 /* total_item_icon.png */; };
-		3C84D8B91A32F753007D2860 /* total_item_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C84D8B61A32F753007D2860 /* total_item_icon@2x.png */; };
+		3C97D45B1A4078DC00B7E8D5 /* SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C97D45A1A4078DC00B7E8D5 /* SharedInstance.m */; };
 		3CBF14641A189FFC00A840D8 /* Scrapper.Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3CF1BE9E19F40FCA00E5CACA /* Scrapper.Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3CC7DAA11A2DC6A900243057 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC7DAA01A2DC6A900243057 /* MenuViewController.m */; };
 		3CC7DAAF1A30702D00243057 /* MenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC7DAAE1A30702D00243057 /* MenuHeaderView.m */; };
@@ -104,6 +104,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3C0600931A41D77600B7B492 /* ScrapperShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrapperShareViewController.h; sourceTree = "<group>"; };
+		3C0600941A41D77600B7B492 /* ScrapperShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrapperShareViewController.m; sourceTree = "<group>"; };
+		3C0600961A41DD8E00B7B492 /* ScrapperShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrapperShareViewController.xib; sourceTree = "<group>"; };
 		3C06BE431A1CD78D00D1CC0C /* ItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCell.swift; sourceTree = "<group>"; };
 		3C06BE481A1CDB7F00D1CC0C /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		3C06BE491A1CDB7F00D1CC0C /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
@@ -156,9 +159,8 @@
 		3C435C2519FCE75300530182 /* ItemEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemEntity.h; sourceTree = "<group>"; };
 		3C435C2619FCE75300530182 /* ItemEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemEntity.m; sourceTree = "<group>"; };
 		3C59FE751A124F0F00E52887 /* EBay_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EBay_logo.png; sourceTree = "<group>"; };
-		3C84D8B41A32F753007D2860 /* total_item_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "total_item_icon@3x.png"; sourceTree = "<group>"; };
-		3C84D8B51A32F753007D2860 /* total_item_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = total_item_icon.png; sourceTree = "<group>"; };
-		3C84D8B61A32F753007D2860 /* total_item_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "total_item_icon@2x.png"; sourceTree = "<group>"; };
+		3C97D4591A4078DC00B7E8D5 /* SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedInstance.h; sourceTree = "<group>"; };
+		3C97D45A1A4078DC00B7E8D5 /* SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedInstance.m; sourceTree = "<group>"; };
 		3CA5663B1A10D65C004CCEA5 /* Scrapper.Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Scrapper.Share.entitlements; sourceTree = "<group>"; };
 		3CC7DA9F1A2DC6A900243057 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		3CC7DAA01A2DC6A900243057 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
@@ -320,6 +322,8 @@
 			children = (
 				3CC7DAA71A306AB200243057 /* MenuViewController */,
 				3C06BED91A20F15200D1CC0C /* Item.Scrapper-Bridging-Header.h */,
+				3C97D4591A4078DC00B7E8D5 /* SharedInstance.h */,
+				3C97D45A1A4078DC00B7E8D5 /* SharedInstance.m */,
 				3C2A49E019D7111400D58C0B /* AppDelegate.swift */,
 				3C2A49E519D7111400D58C0B /* MasterViewController.swift */,
 				3C06BE431A1CD78D00D1CC0C /* ItemViewCell.swift */,
@@ -372,9 +376,6 @@
 		3CA5663E1A1100AB004CCEA5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3C84D8B51A32F753007D2860 /* total_item_icon.png */,
-				3C84D8B61A32F753007D2860 /* total_item_icon@2x.png */,
-				3C84D8B41A32F753007D2860 /* total_item_icon@3x.png */,
 				3C59FE751A124F0F00E52887 /* EBay_logo.png */,
 			);
 			name = Images;
@@ -398,6 +399,9 @@
 			isa = PBXGroup;
 			children = (
 				3CA5663B1A10D65C004CCEA5 /* Scrapper.Share.entitlements */,
+				3C0600931A41D77600B7B492 /* ScrapperShareViewController.h */,
+				3C0600941A41D77600B7B492 /* ScrapperShareViewController.m */,
+				3C0600961A41DD8E00B7B492 /* ScrapperShareViewController.xib */,
 				3CF1BEA219F40FCA00E5CACA /* ShareViewController.h */,
 				3CF1BEA319F40FCA00E5CACA /* ShareViewController.m */,
 				3CF1BEA519F40FCA00E5CACA /* MainInterface.storyboard */,
@@ -587,9 +591,6 @@
 				3C06BE841A20DA7100D1CC0C /* ItemViewCell.xib in Resources */,
 				3CC7DAB41A307B8F00243057 /* MenuSummarizationCell.xib in Resources */,
 				3C59FE761A124F0F00E52887 /* EBay_logo.png in Resources */,
-				3C84D8B71A32F753007D2860 /* total_item_icon@3x.png in Resources */,
-				3C84D8B91A32F753007D2860 /* total_item_icon@2x.png in Resources */,
-				3C84D8B81A32F753007D2860 /* total_item_icon.png in Resources */,
 				3C2A49ED19D7111400D58C0B /* Images.xcassets in Resources */,
 				3C29E80E1A1881280075D4A8 /* ItemScrapper.xcdatamodeld in Resources */,
 			);
@@ -606,6 +607,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C0600971A41DD8E00B7B492 /* ScrapperShareViewController.xib in Resources */,
 				3C59FE771A12566300E52887 /* ItemScrapper.xcdatamodeld in Resources */,
 				3CF1BEA619F40FCA00E5CACA /* MainInterface.storyboard in Resources */,
 			);
@@ -680,6 +682,7 @@
 				3CF852C219EAB88000096320 /* ASINetworkQueue.m in Sources */,
 				3CF852BE19EAB88000096320 /* ASIHTTPRequest.m in Sources */,
 				3CC7DAB31A307B8F00243057 /* MenuSummarizationCell.m in Sources */,
+				3C97D45B1A4078DC00B7E8D5 /* SharedInstance.m in Sources */,
 				3CF852BA19EAB88000096320 /* ASIDownloadCache.m in Sources */,
 				3C2A49E119D7111400D58C0B /* AppDelegate.swift in Sources */,
 				3C2A49E619D7111400D58C0B /* MasterViewController.swift in Sources */,
@@ -702,6 +705,7 @@
 			files = (
 				3C435C2819FCE75300530182 /* ItemEntity.m in Sources */,
 				3C435C2419FCE3A500530182 /* ItemScrapper.xcdatamodeld in Sources */,
+				3C0600951A41D77600B7B492 /* ScrapperShareViewController.m in Sources */,
 				3C435C2319FB9A8D00530182 /* ShareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

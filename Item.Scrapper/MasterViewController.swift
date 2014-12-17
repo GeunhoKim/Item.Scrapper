@@ -40,8 +40,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let leftButton = UIBarButtonItem(image: UIImage(named: "drawer_icon"), style: .Bordered, target: self, action: "openDrawer")
-        leftButton.image = UIImage(named: "drawer_icon")
+        let leftButton = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "openDrawer")
         self.navigationItem.leftBarButtonItem = leftButton
         
         let rightButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "reload:")
@@ -82,9 +81,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if tableView == self.searchDisplayController!.searchResultsTableView {
-            return self.filteredItems.count
+            return filteredItems.count
         } else {
-            return self.fetchedItems.count
+            return fetchedItems.count
         }
     }
     
@@ -207,7 +206,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             println("Unresolved error \(error), \(error?.description)")
         }
         
-        self.fetchedItems = _fetchedResultsController?.fetchedObjects as [ItemEntity]
+        fetchedItems = _fetchedResultsController?.fetchedObjects as [ItemEntity]
+        SharedInstance.singleton().fetchedItems = fetchedItems
         
         return _fetchedResultsController!
     }

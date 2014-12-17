@@ -10,9 +10,8 @@
 
 @interface MenuSummarizationCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *numberLabel;
-
+@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 
 + (MenuSummarizationCell *)cell;
 
