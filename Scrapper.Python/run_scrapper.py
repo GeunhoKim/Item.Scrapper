@@ -28,7 +28,9 @@ if "auction.co.kr" in startUrl:
   spider = AuctionViewItemPageSpider(startUrl = auctionUrl)
 
 if "gmarket.co.kr" in startUrl:
-  spider = GmarketViewItemPageSpider(startUrl = startUrl)
+  itemno = re.search(r"goodsCode=[0-9]+",startUrl).group().replace("goodsCode=", "")
+  gmarketUrl = "http://mitem.gmarket.co.kr/Item?goodsCode=" + itemno
+  spider = GmarketViewItemPageSpider(startUrl = gmarketUrl)
 
 resultQueue = Queue()
 crawler = CrawlerWorker(spider, resultQueue)

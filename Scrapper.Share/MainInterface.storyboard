@@ -60,6 +60,10 @@
                             <constraint firstAttribute="centerY" secondItem="tgH-2O-oEe" secondAttribute="centerY" id="8yV-0n-uSQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="qNI-m9-s1E" id="vPc-Q0-cqL"/>
+                        <outlet property="descriptionLabel" destination="USV-Hw-HqP" id="4cX-E9-iey"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4b-DW-u01" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

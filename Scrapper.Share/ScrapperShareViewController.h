@@ -18,6 +18,8 @@
 
 @interface ScrapperShareViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 
 @end

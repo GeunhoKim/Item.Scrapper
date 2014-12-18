@@ -71,6 +71,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         _fetchedResultsController = self.fetchedResultsController
     }
     
+    func isAppInstalled(scheme: String) -> Bool {
+        return UIApplication.sharedApplication().canOpenURL(NSURL(string: scheme)!)
+    }
+    
     // MARK: - UITableViewController Delegate/DataSource
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -118,6 +122,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
         
         var linkUrl = item.linkUrl
+        // TODO: Scrap 단계에서 itemId와 domain을 분리, 저장
+        if linkUrl.hasPrefix("http://mitem") && isAppInstalled("gmarket:") {
+            var itemId = linkUrl.componentsSeparatedByString("goodsCode=")[1]
+            linkUrl = "gmarket://item?itemid=" + itemId;
+        }
+        
         var url: NSURL = NSURL(string: linkUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
         UIApplication.sharedApplication().openURL(url)
     }

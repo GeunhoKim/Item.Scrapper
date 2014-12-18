@@ -30,12 +30,14 @@ class EbayViewItemPageSpider(CrawlSpider):
     formatPrice = hxs.select("//span[@id='curBid']/text()").extract() if len(formatPrice) < 1 else formatPrice
     formatPrice = hxs.select("//div[@id='bidPrice']/text()").extract() if len(formatPrice) < 1 else formatPrice
     formatPrice = hxs.select("//div[@id='binPrice']/text()").extract() if len(formatPrice) < 1 else formatPrice
-    formatPrice = formatPrice[0].encode('utf-8') #if formatPrice else "0.0"
+    formatPrice = formatPrice[0].encode('utf-8')
     re.compile(r"[0-9\,\.]+\)")
     formatPrice = re.search(r"[0-9\,\.]+\)", formatPrice).group().replace(")", "") if re.search(r"[0-9\,\.]+\)", formatPrice) else formatPrice
+    re.compile(r"\$[0-9\,\.]+")
     formatPrice = re.search(r"\$[0-9\,\.]+", formatPrice).group() if re.search(r"\$[0-9\,\.]+", formatPrice) else "0"
     item['formatPrice'] = formatPrice
 
+    re.compile(r"\$")
     price = float(formatPrice.replace(",", "").replace("$", ""))
     price = price * 1000 if re.match(r"\$", formatPrice) else price
     

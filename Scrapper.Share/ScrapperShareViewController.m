@@ -91,8 +91,10 @@
                                                           }];
     [alert addAction:defaultAction];
     
-    [self presentViewController:alert animated:YES completion:nil];
-    [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
+    [self presentViewController:alert animated:YES completion:^{
+        [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
+    }];
+    
 }
 
 - (void)parseResponseDataAndInsert:(NSData *)responseData url:(NSString *)urlString {
@@ -122,6 +124,8 @@
         
         if ([self.managedObjectContext save:&error]) {
             NSLog(@"Item Saved");
+            self.descriptionLabel.text = @"Item saved.";
+            self.activityIndicator.hidden = YES;
         }
         else {
             NSLog(@"Item Not Saved.");
