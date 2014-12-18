@@ -20,17 +20,17 @@ startUrl = arguments["startUrl"].value
 if "ebay.com" in startUrl:
   itemno = re.search(r"[0-9]+",startUrl).group()
   ebayUrl = "http://m.ebay.com/itm/" + itemno
-  spider = EbayViewItemPageSpider(startUrl = ebayUrl)
+  spider = EbayViewItemPageSpider(startUrl = ebayUrl, itemno = itemno)
 
 if "auction.co.kr" in startUrl:
   itemno = re.search(r"[a-z,A-Z][0-9]+",startUrl).group()
   auctionUrl = "http://mobile.auction.co.kr/Item/ViewItem.aspx?itemno=" + itemno  
-  spider = AuctionViewItemPageSpider(startUrl = auctionUrl)
+  spider = AuctionViewItemPageSpider(startUrl = auctionUrl, itemno = itemno)
 
 if "gmarket.co.kr" in startUrl:
   itemno = re.search(r"goodscode=[0-9]+",startUrl.lower()).group().replace("goodscode=", "")
   gmarketUrl = "http://mitem.gmarket.co.kr/Item?goodsCode=" + itemno
-  spider = GmarketViewItemPageSpider(startUrl = gmarketUrl)
+  spider = GmarketViewItemPageSpider(startUrl = gmarketUrl, itemno = itemno)
 
 resultQueue = Queue()
 crawler = CrawlerWorker(spider, resultQueue)
