@@ -37,9 +37,7 @@ class EbayViewItemPageSpider(CrawlSpider):
     item['formatPrice'] = formatPrice
 
     price = float(formatPrice.replace(",", "").replace("$", ""))
-
-    if formatPrice in "$": 
-      price = price * 1000
+    price = price * 1000 if re.match(r"\$", formatPrice) else price
     
     item['price'] = price
     return item
