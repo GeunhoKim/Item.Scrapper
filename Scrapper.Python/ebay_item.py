@@ -16,8 +16,8 @@ class EbayViewItemPageSpider(CrawlSpider):
     hxs = HtmlXPathSelector(response)
     item = ViewItemPage()
 
-    item['itemno'] = self.itemno
-    
+    item['itemno'] = itemno
+
     title = hxs.select("//h1[@class='itm-ttl']/text()").extract()
     title = hxs.select("//div[@id='itemHeader']/text()").extract() if len(title) < 1 else title
     title = title[0].encode('utf-8') if title else "empty title"

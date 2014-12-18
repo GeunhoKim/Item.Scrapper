@@ -14,7 +14,7 @@ class GmarketViewItemPageSpider(CrawlSpider):
   def parse(self, response):
     hxs = HtmlXPathSelector(response)
     item = ViewItemPage()
-    item['itemno'] = self.itemno
+    item['itemno'] = itemno
     item['title'] = hxs.select("//div[@class='prod_tit']/h3/span/text()").extract()[0].encode('utf-8')
     item['imageUrl'] = hxs.select("//img[@id='GoodsImage']/@src").extract()[0].encode('utf-8')
     item['formatPrice'] = hxs.select("//span[@class='pri1']/text()").extract()[0].encode('utf-8')
