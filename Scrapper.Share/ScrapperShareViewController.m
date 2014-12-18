@@ -62,7 +62,7 @@
 
 - (void)requestScrapperWithUrlString:(NSString *)urlString {
     NSString *formatUrl = [urlString stringByReplacingOccurrencesOfString:@"&" withString:@""];
-    NSString *requestString = [NSString stringWithFormat:SCRAPPER_HOST@"/~geunho/run_scrapper.py?startUrl=%@", formatUrl];
+    NSString *requestString = [NSString stringWithFormat:SCRAPPER_HOST@"/script/scrapper/run_scrapper.py?startUrl=%@", formatUrl];
     requestString = [requestString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
     
@@ -92,6 +92,7 @@
     [alert addAction:defaultAction];
     
     [self presentViewController:alert animated:YES completion:nil];
+    [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
 }
 
 - (void)parseResponseDataAndInsert:(NSData *)responseData url:(NSString *)urlString {

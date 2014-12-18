@@ -29,6 +29,7 @@ class EbayViewItemPageSpider(CrawlSpider):
     formatPrice = hxs.select("//div[@id='binPriceRowId']/text()").extract()
     formatPrice = hxs.select("//span[@id='curBid']/text()").extract() if len(formatPrice) < 1 else formatPrice
     formatPrice = hxs.select("//div[@id='bidPrice']/text()").extract() if len(formatPrice) < 1 else formatPrice
+    formatPrice = hxs.select("//div[@id='binPrice']/text()").extract() if len(formatPrice) < 1 else formatPrice
     formatPrice = formatPrice[0].encode('utf-8') #if formatPrice else "0.0"
     re.compile(r"[0-9\,\.]+\)")
     formatPrice = re.search(r"[0-9\,\.]+\)", formatPrice).group().replace(")", "") if re.search(r"[0-9\,\.]+\)", formatPrice) else formatPrice

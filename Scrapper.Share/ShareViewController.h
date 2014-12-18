@@ -10,11 +10,7 @@
 #import <Social/Social.h>
 #import <CoreData/CoreData.h>
 
-#import "ASIHTTPRequest.h"
-#import "ItemEntity.h"
-
-#define SCRAPPER_HOST @"http://172.20.10.5"
-//#define SCRAPPER_HOST @"http://localhost"
+#import "ScrapperShareViewController.h"
 
 @interface ShareViewController : SLComposeServiceViewController
 
