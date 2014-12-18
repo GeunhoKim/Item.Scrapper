@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280165DE1A432DF200381792 /* auction-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 280165DB1A432DF200381792 /* auction-icon.png */; };
+		280165DF1A432DF200381792 /* auction-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 280165DC1A432DF200381792 /* auction-icon@2x.png */; };
+		280165E01A432DF200381792 /* auction-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 280165DD1A432DF200381792 /* auction-icon@3x.png */; };
+		280165E41A432E0000381792 /* ebay-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 280165E11A432E0000381792 /* ebay-icon.png */; };
+		280165E51A432E0000381792 /* ebay-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 280165E21A432E0000381792 /* ebay-icon@2x.png */; };
+		280165E61A432E0000381792 /* ebay-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 280165E31A432E0000381792 /* ebay-icon@3x.png */; };
+		280165EA1A432E0E00381792 /* gmarket-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 280165E71A432E0E00381792 /* gmarket-icon.png */; };
+		280165EB1A432E0E00381792 /* gmarket-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 280165E81A432E0E00381792 /* gmarket-icon@2x.png */; };
+		280165EC1A432E0E00381792 /* gmarket-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 280165E91A432E0E00381792 /* gmarket-icon@3x.png */; };
 		3C0600951A41D77600B7B492 /* ScrapperShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0600941A41D77600B7B492 /* ScrapperShareViewController.m */; };
 		3C0600971A41DD8E00B7B492 /* ScrapperShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0600961A41DD8E00B7B492 /* ScrapperShareViewController.xib */; };
 		3C06BE451A1CD78D00D1CC0C /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C06BE431A1CD78D00D1CC0C /* ItemViewCell.swift */; };
@@ -104,6 +113,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		280165DB1A432DF200381792 /* auction-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "auction-icon.png"; sourceTree = "<group>"; };
+		280165DC1A432DF200381792 /* auction-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "auction-icon@2x.png"; sourceTree = "<group>"; };
+		280165DD1A432DF200381792 /* auction-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "auction-icon@3x.png"; sourceTree = "<group>"; };
+		280165E11A432E0000381792 /* ebay-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ebay-icon.png"; sourceTree = "<group>"; };
+		280165E21A432E0000381792 /* ebay-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ebay-icon@2x.png"; sourceTree = "<group>"; };
+		280165E31A432E0000381792 /* ebay-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ebay-icon@3x.png"; sourceTree = "<group>"; };
+		280165E71A432E0E00381792 /* gmarket-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gmarket-icon.png"; sourceTree = "<group>"; };
+		280165E81A432E0E00381792 /* gmarket-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gmarket-icon@2x.png"; sourceTree = "<group>"; };
+		280165E91A432E0E00381792 /* gmarket-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gmarket-icon@3x.png"; sourceTree = "<group>"; };
 		3C0600931A41D77600B7B492 /* ScrapperShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrapperShareViewController.h; sourceTree = "<group>"; };
 		3C0600941A41D77600B7B492 /* ScrapperShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrapperShareViewController.m; sourceTree = "<group>"; };
 		3C0600961A41DD8E00B7B492 /* ScrapperShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrapperShareViewController.xib; sourceTree = "<group>"; };
@@ -377,6 +395,15 @@
 			isa = PBXGroup;
 			children = (
 				3C59FE751A124F0F00E52887 /* EBay_logo.png */,
+				280165DB1A432DF200381792 /* auction-icon.png */,
+				280165DC1A432DF200381792 /* auction-icon@2x.png */,
+				280165DD1A432DF200381792 /* auction-icon@3x.png */,
+				280165E11A432E0000381792 /* ebay-icon.png */,
+				280165E21A432E0000381792 /* ebay-icon@2x.png */,
+				280165E31A432E0000381792 /* ebay-icon@3x.png */,
+				280165E71A432E0E00381792 /* gmarket-icon.png */,
+				280165E81A432E0E00381792 /* gmarket-icon@2x.png */,
+				280165E91A432E0E00381792 /* gmarket-icon@3x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -398,13 +425,11 @@
 		3CF1BE9F19F40FCA00E5CACA /* Scrapper.Share */ = {
 			isa = PBXGroup;
 			children = (
-				3CA5663B1A10D65C004CCEA5 /* Scrapper.Share.entitlements */,
 				3C0600931A41D77600B7B492 /* ScrapperShareViewController.h */,
 				3C0600941A41D77600B7B492 /* ScrapperShareViewController.m */,
 				3C0600961A41DD8E00B7B492 /* ScrapperShareViewController.xib */,
 				3CF1BEA219F40FCA00E5CACA /* ShareViewController.h */,
 				3CF1BEA319F40FCA00E5CACA /* ShareViewController.m */,
-				3CF1BEA519F40FCA00E5CACA /* MainInterface.storyboard */,
 				3CF1BEA019F40FCA00E5CACA /* Supporting Files */,
 			);
 			path = Scrapper.Share;
@@ -413,6 +438,8 @@
 		3CF1BEA019F40FCA00E5CACA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3CA5663B1A10D65C004CCEA5 /* Scrapper.Share.entitlements */,
+				3CF1BEA519F40FCA00E5CACA /* MainInterface.storyboard */,
 				3CF1BEA119F40FCA00E5CACA /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -586,12 +613,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				280165E41A432E0000381792 /* ebay-icon.png in Resources */,
 				3C1EB20F1A18943C00A7EEB7 /* Main.storyboard in Resources */,
+				280165EC1A432E0E00381792 /* gmarket-icon@3x.png in Resources */,
 				3C1EB20E1A18943800A7EEB7 /* LaunchScreen.xib in Resources */,
+				280165DF1A432DF200381792 /* auction-icon@2x.png in Resources */,
 				3C06BE841A20DA7100D1CC0C /* ItemViewCell.xib in Resources */,
 				3CC7DAB41A307B8F00243057 /* MenuSummarizationCell.xib in Resources */,
+				280165DE1A432DF200381792 /* auction-icon.png in Resources */,
+				280165E61A432E0000381792 /* ebay-icon@3x.png in Resources */,
+				280165EA1A432E0E00381792 /* gmarket-icon.png in Resources */,
 				3C59FE761A124F0F00E52887 /* EBay_logo.png in Resources */,
+				280165E51A432E0000381792 /* ebay-icon@2x.png in Resources */,
+				280165EB1A432E0E00381792 /* gmarket-icon@2x.png in Resources */,
 				3C2A49ED19D7111400D58C0B /* Images.xcassets in Resources */,
+				280165E01A432DF200381792 /* auction-icon@3x.png in Resources */,
 				3C29E80E1A1881280075D4A8 /* ItemScrapper.xcdatamodeld in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

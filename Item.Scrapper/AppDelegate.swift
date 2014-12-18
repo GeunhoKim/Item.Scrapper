@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MSDynamicsDrawerViewContr
         var menuViewController: MenuViewController = self.window!.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("Menu") as MenuViewController
         menuViewController.dynamicsDrawerViewController = self.drawerViewController
         masterViewController.dynamicsDrawerViewController = self.drawerViewController
+        masterViewController.menuViewController = menuViewController;
         
         self.drawerViewController?.setDrawerViewController(menuViewController, forDirection: MSDynamicsDrawerDirection.Left)
         self.drawerViewController?.setPaneViewController(navigationController, animated: false, completion: nil)

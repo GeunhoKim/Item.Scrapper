@@ -9,9 +9,11 @@
 import UIKit
 
 class ItemViewCell: UITableViewCell {
+    @IBOutlet weak var domainIcon: UIImageView!
     @IBOutlet var mainImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
+    
     var linkUrl: String!
     
     required init(coder aDecoder: NSCoder) {

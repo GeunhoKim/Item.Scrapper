@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggn-Cs-Hep">
-                        <rect key="frame" x="180.5" y="8" width="199.5" height="30.5"/>
+                        <rect key="frame" x="180" y="8" width="200" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="412" id="bvd-9b-BOh"/>
                         </constraints>
@@ -39,7 +39,7 @@ item title</string>
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="item price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJ1-QF-hbA">
-                        <rect key="frame" x="180" y="120" width="200" height="20.5"/>
+                        <rect key="frame" x="180" y="120" width="200" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="220" id="bO3-Go-Cj6"/>
                             <constraint firstAttribute="height" constant="20.5" id="lnb-Ga-0Xy"/>
@@ -54,7 +54,7 @@ item title</string>
                         </variation>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bTk-l4-n55">
-                        <rect key="frame" x="8" y="8" width="164.5" height="133.5"/>
+                        <rect key="frame" x="8" y="8" width="164" height="133"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="bTk-l4-n55" secondAttribute="height" multiplier="90:73" id="Ekv-pm-ROi"/>
                             <constraint firstAttribute="width" secondItem="bTk-l4-n55" secondAttribute="height" multiplier="90:73" id="NXI-Tf-1La"/>
@@ -67,10 +67,19 @@ item title</string>
                             </mask>
                         </variation>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Led-yU-e3p" userLabel="Domain Icon">
+                        <rect key="frame" x="0.0" y="0.0" width="58" height="58"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="58" id="9Pg-p2-RKL"/>
+                            <constraint firstAttribute="width" constant="58" id="dkn-43-9ko"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="VJ1-QF-hbA" firstAttribute="leading" secondItem="bTk-l4-n55" secondAttribute="trailing" constant="8" id="1Ig-Qk-1DU"/>
                     <constraint firstItem="bTk-l4-n55" firstAttribute="top" secondItem="DD3-gC-274" secondAttribute="topMargin" id="34Y-DZ-jt5"/>
+                    <constraint firstItem="Led-yU-e3p" firstAttribute="leading" secondItem="DD3-gC-274" secondAttribute="leading" id="68k-Mg-HFL"/>
+                    <constraint firstItem="Led-yU-e3p" firstAttribute="top" secondItem="DD3-gC-274" secondAttribute="top" id="Gff-c9-1c5"/>
                     <constraint firstItem="ggn-Cs-Hep" firstAttribute="leading" secondItem="bTk-l4-n55" secondAttribute="trailing" constant="8" id="Kjh-g2-POr"/>
                     <constraint firstItem="bTk-l4-n55" firstAttribute="leading" secondItem="DD3-gC-274" secondAttribute="leadingMargin" id="WgQ-Hw-WfH"/>
                     <constraint firstAttribute="bottomMargin" secondItem="bTk-l4-n55" secondAttribute="bottom" id="XHF-TY-iJR"/>
@@ -85,7 +94,7 @@ item title</string>
                 <outlet property="priceLabel" destination="VJ1-QF-hbA" id="KkL-rw-uk1"/>
                 <outlet property="titleLabel" destination="ggn-Cs-Hep" id="w0A-et-3NM"/>
             </connections>
-            <point key="canvasLocation" x="54" y="307.5"/>
+            <point key="canvasLocation" x="54" y="307"/>
         </tableViewCell>
     </objects>
 </document>

@@ -8,18 +8,21 @@
 
 import UIKit
 import CoreData
-
+import Foundation
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
     
     let itemViewCellIdentifier = "ItemViewCell"
     
     weak var dynamicsDrawerViewController: MSDynamicsDrawerViewController?
+    weak var menuViewController: MenuViewController?
+    
     var managedObjectContext: NSManagedObjectContext? = nil
     var _fetchedResultsController: NSFetchedResultsController? = nil
     
-    var fetchedItems = [ItemEntity]()
     var filteredItems = [ItemEntity]()
+    
+    var domainIcons: NSDictionary = NSDictionary()
     
     // MARK: - UIViewController life cyle
     
@@ -50,7 +53,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         tableView.registerNib(nib, forCellReuseIdentifier: itemViewCellIdentifier)
         searchDisplayController?.searchResultsTableView.registerNib(nib, forCellReuseIdentifier: itemViewCellIdentifier)
         
-        
+        domainIcons.setValue(UIImage(named: "auction-icon.png"), forKey: "auction")
+        domainIcons.setValue(UIImage(named: "gmarket-icon.png"), forKey: "gmarket")
+        domainIcons.setValue(UIImage(named: "ebay-icon.png"), forKey: "ebay")
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,6 +74,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     func refetch() {
         _fetchedResultsController = nil
         _fetchedResultsController = self.fetchedResultsController
+        
+        self.menuViewController?.updateSummarization()
     }
     
     func isAppInstalled(scheme: String) -> Bool {
@@ -87,7 +94,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         if tableView == self.searchDisplayController!.searchResultsTableView {
             return filteredItems.count
         } else {
-            return fetchedItems.count
+            return SharedInstance.singleton().fetchedItems.count
         }
     }
     
@@ -98,7 +105,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         if tableView == self.searchDisplayController!.searchResultsTableView {
             item = filteredItems[indexPath.row]
         } else {
-            item = fetchedItems[indexPath.row]
+            item = SharedInstance.singleton().fetchedItems[indexPath.row] as ItemEntity
         }
         
         self.configureCell(cell, toItem: item)
@@ -118,14 +125,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         if tableView == self.searchDisplayController!.searchResultsTableView {
             item = filteredItems[indexPath.row]
         } else {
-            item = fetchedItems[indexPath.row]
+            item = SharedInstance.singleton().fetchedItems[indexPath.row] as ItemEntity
         }
         
         var linkUrl = item.linkUrl
-        // TODO: Scrap 단계에서 itemId와 domain을 분리, 저장
         if linkUrl.hasPrefix("http://mitem") && isAppInstalled("gmarket:") {
-            var itemId = linkUrl.componentsSeparatedByString("goodsCode=")[1]
-            linkUrl = "gmarket://item?itemid=" + itemId;
+            linkUrl = "gmarket://item?itemid=" + item.itemno;
         }
         
         var url: NSURL = NSURL(string: linkUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
@@ -138,6 +143,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
+            SharedInstance.singleton().fetchedItems.removeAtIndex(indexPath.row)
             let context = self.fetchedResultsController.managedObjectContext
             context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject)
             
@@ -166,6 +172,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         cell.titleLabel.text = item.title
         cell.priceLabel.text = formatPriceFromNumber(item.price)
         cell.linkUrl = item.linkUrl
+        
+        if item.linkUrl.rangeOfString("auction") != nil {
+            
+        }
     }
     
     // MARK: - UISearchDisplayController delegate
@@ -181,7 +191,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
     
     func filterContentForSearchText(searchText: String) {
-        filteredItems = fetchedItems.filter({(item: ItemEntity) -> Bool in
+        filteredItems = (SharedInstance.singleton().fetchedItems as [ItemEntity]).filter({(item: ItemEntity) -> Bool in
             let stringMatch = item.title.lowercaseString.rangeOfString(searchText.lowercaseString)
             return stringMatch != nil
         })
@@ -216,14 +226,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             println("Unresolved error \(error), \(error?.description)")
         }
         
-        fetchedItems = _fetchedResultsController?.fetchedObjects as [ItemEntity]
-        SharedInstance.singleton().fetchedItems = fetchedItems
+        SharedInstance.singleton().fetchedItems = _fetchedResultsController?.fetchedObjects as [ItemEntity]
         
         return _fetchedResultsController!
     }
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         self.tableView.beginUpdates()
+        self.menuViewController?.updateSummarization()
     }
     
     func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {

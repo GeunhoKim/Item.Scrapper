@@ -112,6 +112,8 @@
                                                          inManagedObjectContext:self.managedObjectContext];
         
         item.linkUrl = urlString;
+        NSString *itemno = [json objectForKey:@"itemno"];
+        item.itemno = itemno;
         NSString *imageUrl = [json objectForKey:@"imageUrl"];
         item.imageUrl = imageUrl;
         NSString *title = [json objectForKey:@"title"];

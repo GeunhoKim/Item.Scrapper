@@ -31,14 +31,19 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerSectionType) {
     
     [self.tableView setBackgroundColor:[UIColor whiteColor]];
     
-    // TODO: 신규 아이템이 fetched 일때만 새롭게 계산해야 합니다.
+    [self.tableView registerClass:[MenuHeaderView class] forHeaderFooterViewReuseIdentifier:MENU_VIEW_HEADER_IDENTIFIER];
+    
+    [self updateSummarization];
+}
+
+- (void)updateSummarization {
     NSArray *items = [[SharedInstance singleton] fetchedItems];
     NSNumber *sum = [items valueForKeyPath: @"@sum.price"];
     NSNumber *average = [items valueForKeyPath: @"@avg.price"];
     [SharedInstance singleton].totalAmount = sum;
     [SharedInstance singleton].averageAmount = average;
     
-    [self.tableView registerClass:[MenuHeaderView class] forHeaderFooterViewReuseIdentifier:MENU_VIEW_HEADER_IDENTIFIER];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
