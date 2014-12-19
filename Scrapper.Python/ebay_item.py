@@ -38,13 +38,17 @@ class EbayViewItemPageSpider(CrawlSpider):
     formatPrice = formatPrice[0].encode('utf-8')
     re.compile(r"[0-9\,\.]+\)")
     formatPrice = re.search(r"[0-9\,\.]+\)", formatPrice).group().replace(")", "") if re.search(r"[0-9\,\.]+\)", formatPrice) else formatPrice
-    re.compile(r"\$[0-9\,\.]+")
-    formatPrice = re.search(r"\$[0-9\,\.]+", formatPrice).group() if re.search(r"\$[0-9\,\.]+", formatPrice) else "0"
-    item['formatPrice'] = formatPrice
 
-    re.compile(r"\$")
-    price = float(formatPrice.replace(",", "").replace("$", ""))
-    price = price * 1000 if re.match(r"\$", formatPrice) else price
-    
-    item['price'] = price
+    if len(formatPrice) > 0:
+      price = float(formatPrice.replace(",", ""))
+      item['price'] = price      
+    else:
+      re.compile(r"\$[0-9\,\.]+")
+      formatPrice = re.search(r"\$[0-9\,\.]+", formatPrice).group() 
+      item['formatPrice'] = formatPrice
+      re.compile(r"\$")
+      price = float(formatPrice.replace(",", "").replace("$", ""))
+      price = price * 1000 if re.match(r"\$", formatPrice) else price
+      item['price'] = price
+
     return item

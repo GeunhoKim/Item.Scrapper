@@ -870,12 +870,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Item.Scrapper/Item.Scrapper.entitlements;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khim Geunho (LXNBLGUG7J)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Item.Scrapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f2ddf1ef-db73-4710-a2f7-7631183c1bd8";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Item.Scrapper/Item.Scrapper-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -890,10 +891,11 @@
 				CODE_SIGN_ENTITLEMENTS = Item.Scrapper/Item.Scrapper.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: eBay Gmarket Co.,Ltd.";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Item.Scrapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "18eb990f-19c8-4823-a53d-15258cc123c4";
+				PROVISIONING_PROFILE = "68e31987-34ab-4300-810a-66cebefc0afa";
 				SWIFT_OBJC_BRIDGING_HEADER = "Item.Scrapper/Item.Scrapper-Bridging-Header.h";
 			};
 			name = Release;
@@ -927,7 +929,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f9426e87-c620-436a-ba22-45821211a9f4";
+				PROVISIONING_PROFILE = "c379693c-efc5-4254-b460-d8e0ec5f0d7c";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
