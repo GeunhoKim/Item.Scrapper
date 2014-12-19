@@ -20,6 +20,10 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerSectionType) {
     MenuViewControllerSectionTypeEbay,
     MenuViewControllerSectionTypeAuction,
     MenuViewControllerSectionTypeGmarket,
+    MenuViewControllerSectionTypeG9,
+    MenuViewControllerSectionType11st,
+    MenuViewControllerSectionTypeCoupang,
+    MenuViewControllerSectionTypeTmon,
     MenuViewControllerSectionTypeCount
 };
 
@@ -32,9 +36,11 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
 
 @interface MenuViewController ()
 
+@property (nonatomic, strong) NSArray *domainArray;
 @property (nonatomic, strong) NSMutableArray *sumArray;
 @property (nonatomic, strong) NSMutableArray *averageArray;
 @property (nonatomic, strong) NSMutableArray *countArray;
+
 @end
 
 @implementation MenuViewController
@@ -42,6 +48,7 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.domainArray = @[@"", @"ebay", @"auction", @"gmarket", @"g9", @"11st", @"coupang", @"tmon"];
     self.sumArray = [NSMutableArray array];
     self.averageArray = [NSMutableArray array];
     self.countArray = [NSMutableArray array];
@@ -54,19 +61,17 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
 }
 
 - (void)updateSummarization {
-    NSPredicate *ebayPredicate = [NSPredicate predicateWithFormat:@"kindOf = 'ebay'"];
-    NSPredicate *auctionPredicate = [NSPredicate predicateWithFormat:@"kindOf = 'auction'"];
-    NSPredicate *gmarketPredicate = [NSPredicate predicateWithFormat:@"kindOf = 'gmarket'"];
-    
+
     NSArray *allItems = [[SharedInstance singleton] fetchedItems];
-    NSArray *ebayItems = [allItems filteredArrayUsingPredicate:ebayPredicate];
-    NSArray *auctionItems = [allItems filteredArrayUsingPredicate:auctionPredicate];
-    NSArray *gmarketItems = [allItems filteredArrayUsingPredicate:gmarketPredicate];
     
     [self updateSummarizationType:MenuViewControllerSectionTypeAll items:allItems];
-    [self updateSummarizationType:MenuViewControllerSectionTypeEbay items:ebayItems];
-    [self updateSummarizationType:MenuViewControllerSectionTypeAuction items:auctionItems];
-    [self updateSummarizationType:MenuViewControllerSectionTypeGmarket items:gmarketItems];
+    [self updateSummarizationType:MenuViewControllerSectionTypeEbay items:allItems];
+    [self updateSummarizationType:MenuViewControllerSectionTypeAuction items:allItems];
+    [self updateSummarizationType:MenuViewControllerSectionTypeGmarket items:allItems];
+    [self updateSummarizationType:MenuViewControllerSectionTypeG9 items:allItems];
+    [self updateSummarizationType:MenuViewControllerSectionType11st items:allItems];
+    [self updateSummarizationType:MenuViewControllerSectionTypeCoupang items:allItems];
+    [self updateSummarizationType:MenuViewControllerSectionTypeTmon items:allItems];
 
     [self.tableView reloadData];
 }
@@ -76,13 +81,24 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
 }
 
 - (void)updateSummarizationType:(MenuViewControllerSectionType)type items:(NSArray *)items {
-    if (![self isEmpty:items]) {
-        NSNumber *sum = [items valueForKeyPath: @"@sum.price"];
-        NSNumber *average = [items valueForKeyPath: @"@avg.price"];
+    NSArray *filteredItems;
+    
+    if (type != MenuViewControllerSectionTypeAll) {
+        NSString *domain = [self.domainArray objectAtIndex:type];
+        NSString *predicateString = [NSString stringWithFormat:@"kindOf = '%@'", domain];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateString];
+        filteredItems = [items filteredArrayUsingPredicate:predicate];
+    } else {
+        filteredItems = items;
+    }
+    
+    if (![self isEmpty:filteredItems]) {
+        NSNumber *sum = [filteredItems valueForKeyPath: @"@sum.price"];
+        NSNumber *average = [filteredItems valueForKeyPath: @"@avg.price"];
     
         [self.sumArray setObject:sum atIndexedSubscript:type];
         [self.averageArray setObject:average atIndexedSubscript:type];
-        [self.countArray setObject:[NSNumber numberWithLong:items.count] atIndexedSubscript:type];
+        [self.countArray setObject:[NSNumber numberWithLong:filteredItems.count] atIndexedSubscript:type];
     } else {
         [self.sumArray setObject:@0 atIndexedSubscript:type];
         [self.averageArray setObject:@0 atIndexedSubscript:type];
@@ -191,6 +207,22 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
             text = @"{Gmarket : Summarization}";
             break;
             
+        case MenuViewControllerSectionTypeG9:
+            text = @"{G9 : Summarization}";
+            break;
+            
+        case MenuViewControllerSectionType11st:
+            text = @"{11st : Summarization}";
+            break;
+            
+        case MenuViewControllerSectionTypeCoupang:
+            text = @"{Coupang : Summarization}";
+            break;
+            
+        case MenuViewControllerSectionTypeTmon:
+            text = @"{Tmon : Summarization}";
+            break;
+            
         default:
             return nil;
     }
@@ -208,11 +240,11 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 12.0f)];
+    return [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 17.0f)];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 12.0f;
+    return 17.0f;
 }
 
 

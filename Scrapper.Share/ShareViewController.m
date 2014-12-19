@@ -33,6 +33,7 @@
 }
 
 - (void)didSelectCancel {
+    [self.delegate foundUrl:@""];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -48,7 +48,9 @@
 #pragma mark ShareViewController Delegate
 
 - (void)foundUrl:(NSString *)url {
-    [self requestScrapperWithUrlString:url];
+    if (url != nil && ![url isEqualToString:@""]) {
+        [self requestScrapperWithUrlString:url];
+    }
     [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
 }
 
