@@ -16,6 +16,20 @@
 		280165EA1A432E0E00381792 /* gmarket-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 280165E71A432E0E00381792 /* gmarket-icon.png */; };
 		280165EB1A432E0E00381792 /* gmarket-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 280165E81A432E0E00381792 /* gmarket-icon@2x.png */; };
 		280165EC1A432E0E00381792 /* gmarket-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 280165E91A432E0E00381792 /* gmarket-icon@3x.png */; };
+		28DC9BFB1A44844100A406D4 /* coupang-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9BF81A44844100A406D4 /* coupang-icon.png */; };
+		28DC9BFC1A44844100A406D4 /* coupang-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9BF91A44844100A406D4 /* coupang-icon@2x.png */; };
+		28DC9BFD1A44844100A406D4 /* coupang-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9BFA1A44844100A406D4 /* coupang-icon@3x.png */; };
+		28DC9C011A44850200A406D4 /* 11st-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9BFE1A44850200A406D4 /* 11st-icon.png */; };
+		28DC9C021A44850200A406D4 /* 11st-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9BFF1A44850200A406D4 /* 11st-icon@2x.png */; };
+		28DC9C031A44850200A406D4 /* 11st-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9C001A44850200A406D4 /* 11st-icon@3x.png */; };
+		28DC9C071A44852A00A406D4 /* g9-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9C041A44852A00A406D4 /* g9-icon.png */; };
+		28DC9C081A44852A00A406D4 /* g9-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9C051A44852A00A406D4 /* g9-icon@2x.png */; };
+		28DC9C091A44852A00A406D4 /* g9-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9C061A44852A00A406D4 /* g9-icon@3x.png */; };
+		28DC9C0D1A44855900A406D4 /* tmon-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9C0A1A44855900A406D4 /* tmon-icon.png */; };
+		28DC9C0E1A44855900A406D4 /* tmon-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9C0B1A44855900A406D4 /* tmon-icon@2x.png */; };
+		28DC9C0F1A44855900A406D4 /* tmon-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9C0C1A44855900A406D4 /* tmon-icon@3x.png */; };
+		28DC9C111A4488F000A406D4 /* ItemFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC9C101A4488F000A406D4 /* ItemFooterView.swift */; };
+		28DC9C131A44891500A406D4 /* ItemFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9C121A44891500A406D4 /* ItemFooterView.xib */; };
 		3C0600951A41D77600B7B492 /* ScrapperShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0600941A41D77600B7B492 /* ScrapperShareViewController.m */; };
 		3C0600971A41DD8E00B7B492 /* ScrapperShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0600961A41DD8E00B7B492 /* ScrapperShareViewController.xib */; };
 		3C06BE451A1CD78D00D1CC0C /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C06BE431A1CD78D00D1CC0C /* ItemViewCell.swift */; };
@@ -50,7 +64,6 @@
 		3C2A49E419D7111400D58C0B /* ItemScrapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* ItemScrapper.xcdatamodeld */; };
 		3C2A49E619D7111400D58C0B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E519D7111400D58C0B /* MasterViewController.swift */; };
 		3C2A49ED19D7111400D58C0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49EC19D7111400D58C0B /* Images.xcassets */; };
-		3C2A49FC19D7111400D58C0B /* Item_ScrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49FB19D7111400D58C0B /* Item_ScrapperTests.swift */; };
 		3C435C2319FB9A8D00530182 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1BEA319F40FCA00E5CACA /* ShareViewController.m */; };
 		3C435C2419FCE3A500530182 /* ItemScrapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* ItemScrapper.xcdatamodeld */; };
 		3C435C2719FCE75300530182 /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C435C2619FCE75300530182 /* ItemEntity.m */; };
@@ -82,13 +95,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3C2A49F619D7111400D58C0B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C2A49D319D7111400D58C0B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3C2A49DA19D7111400D58C0B;
-			remoteInfo = Item.Scrapper;
-		};
 		3CBF14651A189FFC00A840D8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3C2A49D319D7111400D58C0B /* Project object */;
@@ -122,6 +128,20 @@
 		280165E71A432E0E00381792 /* gmarket-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gmarket-icon.png"; sourceTree = "<group>"; };
 		280165E81A432E0E00381792 /* gmarket-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gmarket-icon@2x.png"; sourceTree = "<group>"; };
 		280165E91A432E0E00381792 /* gmarket-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gmarket-icon@3x.png"; sourceTree = "<group>"; };
+		28DC9BF81A44844100A406D4 /* coupang-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupang-icon.png"; sourceTree = "<group>"; };
+		28DC9BF91A44844100A406D4 /* coupang-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupang-icon@2x.png"; sourceTree = "<group>"; };
+		28DC9BFA1A44844100A406D4 /* coupang-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupang-icon@3x.png"; sourceTree = "<group>"; };
+		28DC9BFE1A44850200A406D4 /* 11st-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11st-icon.png"; sourceTree = "<group>"; };
+		28DC9BFF1A44850200A406D4 /* 11st-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11st-icon@2x.png"; sourceTree = "<group>"; };
+		28DC9C001A44850200A406D4 /* 11st-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11st-icon@3x.png"; sourceTree = "<group>"; };
+		28DC9C041A44852A00A406D4 /* g9-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "g9-icon.png"; sourceTree = "<group>"; };
+		28DC9C051A44852A00A406D4 /* g9-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "g9-icon@2x.png"; sourceTree = "<group>"; };
+		28DC9C061A44852A00A406D4 /* g9-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "g9-icon@3x.png"; sourceTree = "<group>"; };
+		28DC9C0A1A44855900A406D4 /* tmon-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmon-icon.png"; sourceTree = "<group>"; };
+		28DC9C0B1A44855900A406D4 /* tmon-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmon-icon@2x.png"; sourceTree = "<group>"; };
+		28DC9C0C1A44855900A406D4 /* tmon-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmon-icon@3x.png"; sourceTree = "<group>"; };
+		28DC9C101A4488F000A406D4 /* ItemFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemFooterView.swift; sourceTree = "<group>"; };
+		28DC9C121A44891500A406D4 /* ItemFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemFooterView.xib; sourceTree = "<group>"; };
 		3C0600931A41D77600B7B492 /* ScrapperShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrapperShareViewController.h; sourceTree = "<group>"; };
 		3C0600941A41D77600B7B492 /* ScrapperShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrapperShareViewController.m; sourceTree = "<group>"; };
 		3C0600961A41DD8E00B7B492 /* ScrapperShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrapperShareViewController.xib; sourceTree = "<group>"; };
@@ -171,7 +191,6 @@
 		3C2A49EA19D7111400D58C0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C2A49EC19D7111400D58C0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Item.Scrapper/Images.xcassets; sourceTree = "<group>"; };
 		3C2A49EF19D7111400D58C0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		3C2A49F519D7111400D58C0B /* Item.ScrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Item.ScrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2A49FA19D7111400D58C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C2A49FB19D7111400D58C0B /* Item_ScrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item_ScrapperTests.swift; sourceTree = "<group>"; };
 		3C435C2519FCE75300530182 /* ItemEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemEntity.h; sourceTree = "<group>"; };
@@ -237,13 +256,6 @@
 				3CF8527719EAB80A00096320 /* SystemConfiguration.framework in Frameworks */,
 				3CF8527819EAB80A00096320 /* CFNetwork.framework in Frameworks */,
 				6E615D59AB27D4CA8AD50CFB /* libPods-Item.Scrapper.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3C2A49F219D7111400D58C0B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +341,6 @@
 			isa = PBXGroup;
 			children = (
 				3C2A49DB19D7111400D58C0B /* Item.Scrapper.app */,
-				3C2A49F519D7111400D58C0B /* Item.ScrapperTests.xctest */,
 				3CF1BE9E19F40FCA00E5CACA /* Scrapper.Share.appex */,
 			);
 			name = Products;
@@ -346,6 +357,8 @@
 				3C2A49E519D7111400D58C0B /* MasterViewController.swift */,
 				3C06BE431A1CD78D00D1CC0C /* ItemViewCell.swift */,
 				3C06BE831A20DA7100D1CC0C /* ItemViewCell.xib */,
+				28DC9C101A4488F000A406D4 /* ItemFooterView.swift */,
+				28DC9C121A44891500A406D4 /* ItemFooterView.xib */,
 				3C435C2519FCE75300530182 /* ItemEntity.h */,
 				3C435C2619FCE75300530182 /* ItemEntity.m */,
 				3C2A49DE19D7111400D58C0B /* Supporting Files */,
@@ -394,6 +407,18 @@
 		3CA5663E1A1100AB004CCEA5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				28DC9C0A1A44855900A406D4 /* tmon-icon.png */,
+				28DC9C0B1A44855900A406D4 /* tmon-icon@2x.png */,
+				28DC9C0C1A44855900A406D4 /* tmon-icon@3x.png */,
+				28DC9C041A44852A00A406D4 /* g9-icon.png */,
+				28DC9C051A44852A00A406D4 /* g9-icon@2x.png */,
+				28DC9C061A44852A00A406D4 /* g9-icon@3x.png */,
+				28DC9BFE1A44850200A406D4 /* 11st-icon.png */,
+				28DC9BFF1A44850200A406D4 /* 11st-icon@2x.png */,
+				28DC9C001A44850200A406D4 /* 11st-icon@3x.png */,
+				28DC9BF81A44844100A406D4 /* coupang-icon.png */,
+				28DC9BF91A44844100A406D4 /* coupang-icon@2x.png */,
+				28DC9BFA1A44844100A406D4 /* coupang-icon@3x.png */,
 				3C59FE751A124F0F00E52887 /* EBay_logo.png */,
 				280165DB1A432DF200381792 /* auction-icon.png */,
 				280165DC1A432DF200381792 /* auction-icon@2x.png */,
@@ -516,24 +541,6 @@
 			productReference = 3C2A49DB19D7111400D58C0B /* Item.Scrapper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3C2A49F419D7111400D58C0B /* Item.ScrapperTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3C2A4A0219D7111400D58C0B /* Build configuration list for PBXNativeTarget "Item.ScrapperTests" */;
-			buildPhases = (
-				3C2A49F119D7111400D58C0B /* Sources */,
-				3C2A49F219D7111400D58C0B /* Frameworks */,
-				3C2A49F319D7111400D58C0B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3C2A49F719D7111400D58C0B /* PBXTargetDependency */,
-			);
-			name = Item.ScrapperTests;
-			productName = Item.ScrapperTests;
-			productReference = 3C2A49F519D7111400D58C0B /* Item.ScrapperTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		3CF1BE9D19F40FCA00E5CACA /* Scrapper.Share */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CF1BEAC19F40FCA00E5CACA /* Build configuration list for PBXNativeTarget "Scrapper.Share" */;
@@ -562,27 +569,25 @@
 				TargetAttributes = {
 					3C2A49DA19D7111400D58C0B = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = W69CTWG937;
+						DevelopmentTeam = YN6AZK6A27;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
-					3C2A49F419D7111400D58C0B = {
-						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = W69CTWG937;
-						TestTargetID = 3C2A49DA19D7111400D58C0B;
-					};
 					3CF1BE9D19F40FCA00E5CACA = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = W69CTWG937;
+						DevelopmentTeam = YN6AZK6A27;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
 							};
 						};
 					};
@@ -603,7 +608,6 @@
 			targets = (
 				3C2A49DA19D7111400D58C0B /* Item.Scrapper */,
 				3CF1BE9D19F40FCA00E5CACA /* Scrapper.Share */,
-				3C2A49F419D7111400D58C0B /* Item.ScrapperTests */,
 			);
 		};
 /* End PBXProject section */
@@ -614,28 +618,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				280165E41A432E0000381792 /* ebay-icon.png in Resources */,
+				28DC9C081A44852A00A406D4 /* g9-icon@2x.png in Resources */,
 				3C1EB20F1A18943C00A7EEB7 /* Main.storyboard in Resources */,
 				280165EC1A432E0E00381792 /* gmarket-icon@3x.png in Resources */,
+				28DC9C091A44852A00A406D4 /* g9-icon@3x.png in Resources */,
+				28DC9C021A44850200A406D4 /* 11st-icon@2x.png in Resources */,
+				28DC9C131A44891500A406D4 /* ItemFooterView.xib in Resources */,
+				28DC9BFC1A44844100A406D4 /* coupang-icon@2x.png in Resources */,
 				3C1EB20E1A18943800A7EEB7 /* LaunchScreen.xib in Resources */,
+				28DC9C071A44852A00A406D4 /* g9-icon.png in Resources */,
 				280165DF1A432DF200381792 /* auction-icon@2x.png in Resources */,
+				28DC9C0F1A44855900A406D4 /* tmon-icon@3x.png in Resources */,
+				28DC9BFB1A44844100A406D4 /* coupang-icon.png in Resources */,
 				3C06BE841A20DA7100D1CC0C /* ItemViewCell.xib in Resources */,
 				3CC7DAB41A307B8F00243057 /* MenuSummarizationCell.xib in Resources */,
 				280165DE1A432DF200381792 /* auction-icon.png in Resources */,
+				28DC9BFD1A44844100A406D4 /* coupang-icon@3x.png in Resources */,
 				280165E61A432E0000381792 /* ebay-icon@3x.png in Resources */,
 				280165EA1A432E0E00381792 /* gmarket-icon.png in Resources */,
 				3C59FE761A124F0F00E52887 /* EBay_logo.png in Resources */,
+				28DC9C0E1A44855900A406D4 /* tmon-icon@2x.png in Resources */,
+				28DC9C0D1A44855900A406D4 /* tmon-icon.png in Resources */,
 				280165E51A432E0000381792 /* ebay-icon@2x.png in Resources */,
 				280165EB1A432E0E00381792 /* gmarket-icon@2x.png in Resources */,
 				3C2A49ED19D7111400D58C0B /* Images.xcassets in Resources */,
 				280165E01A432DF200381792 /* auction-icon@3x.png in Resources */,
 				3C29E80E1A1881280075D4A8 /* ItemScrapper.xcdatamodeld in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3C2A49F319D7111400D58C0B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				28DC9C011A44850200A406D4 /* 11st-icon.png in Resources */,
+				28DC9C031A44850200A406D4 /* 11st-icon@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +711,7 @@
 				3C06BEEC1A20F23800D1CC0C /* SDWebImagePrefetcher.m in Sources */,
 				3C06BEEE1A20F23800D1CC0C /* UIButton+WebCache.m in Sources */,
 				3C06BEEF1A20F23800D1CC0C /* UIImage+GIF.h in Sources */,
+				28DC9C111A4488F000A406D4 /* ItemFooterView.swift in Sources */,
 				3C06BEF01A20F23800D1CC0C /* UIImage+GIF.m in Sources */,
 				3C06BEF21A20F23800D1CC0C /* UIImage+MultiFormat.m in Sources */,
 				3C06BEF41A20F23800D1CC0C /* UIImage+WebP.m in Sources */,
@@ -727,14 +738,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C2A49F119D7111400D58C0B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3C2A49FC19D7111400D58C0B /* Item_ScrapperTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3CF1BE9A19F40FCA00E5CACA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -749,11 +752,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3C2A49F719D7111400D58C0B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3C2A49DA19D7111400D58C0B /* Item.Scrapper */;
-			targetProxy = 3C2A49F619D7111400D58C0B /* PBXContainerItemProxy */;
-		};
 		3CBF14661A189FFC00A840D8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3CF1BE9D19F40FCA00E5CACA /* Scrapper.Share */;
@@ -873,11 +871,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Item.Scrapper/Item.Scrapper.entitlements;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khim Geunho (8B38U7N93F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khim Geunho (LXNBLGUG7J)";
 				INFOPLIST_FILE = Item.Scrapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0732485c-f58f-4b04-93bf-94e5c640053f";
+				PROVISIONING_PROFILE = "f2ddf1ef-db73-4710-a2f7-7631183c1bd8";
 				SWIFT_OBJC_BRIDGING_HEADER = "Item.Scrapper/Item.Scrapper-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -890,53 +888,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Item.Scrapper/Item.Scrapper.entitlements;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: eBay Gmarket Co.,Ltd.";
 				INFOPLIST_FILE = Item.Scrapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "48cc48ae-bd7e-4d39-a8b5-27e33043d725";
+				PROVISIONING_PROFILE = "18eb990f-19c8-4823-a53d-15258cc123c4";
 				SWIFT_OBJC_BRIDGING_HEADER = "Item.Scrapper/Item.Scrapper-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		3C2A4A0319D7111400D58C0B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Item.ScrapperTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Item.Scrapper.app/Item.Scrapper";
-			};
-			name = Debug;
-		};
-		3C2A4A0419D7111400D58C0B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Item.ScrapperTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Item.Scrapper.app/Item.Scrapper";
 			};
 			name = Release;
 		};
@@ -945,7 +903,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Scrapper.Share/Scrapper.Share.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khim Geunho (LXNBLGUG7J)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -954,7 +912,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "e5ae3479-c7a6-4ea1-bbb8-c5b12c0631a0";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -964,12 +922,12 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Scrapper.Share/Scrapper.Share.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: eBay Gmarket Co.,Ltd.";
 				INFOPLIST_FILE = Scrapper.Share/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f9426e87-c620-436a-ba22-45821211a9f4";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -991,15 +949,6 @@
 			buildConfigurations = (
 				3C2A4A0019D7111400D58C0B /* Debug */,
 				3C2A4A0119D7111400D58C0B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3C2A4A0219D7111400D58C0B /* Build configuration list for PBXNativeTarget "Item.ScrapperTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3C2A4A0319D7111400D58C0B /* Debug */,
-				3C2A4A0419D7111400D58C0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

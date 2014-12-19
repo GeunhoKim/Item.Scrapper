@@ -21,7 +21,7 @@ class CoupangViewItemPageSpider(CrawlSpider):
     item['kindOf'] = self.kindOf
     item['itemno'] = self.itemno
     item['title'] = title
-    item['imageUrl'] = hxs.select("//div[@class='mainImage']/img/@src").extract()[0].encode('utf-8')
+    item['imageUrl'] = hxs.select("//img[@id='mainImage']/@src").extract()[0].encode('utf-8')
     item['formatPrice'] = hxs.select("//span[@class='salePrc']/text()").extract()[0].encode('utf-8')
     item['price'] = int(item['formatPrice'].replace(",", ""))
     return item

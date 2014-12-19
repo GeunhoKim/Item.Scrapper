@@ -13,6 +13,7 @@ import Foundation
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
     
     let itemViewCellIdentifier = "ItemViewCell"
+    let itemFooterViewIdentifier = "ItemFooterView"
     
     weak var dynamicsDrawerViewController: MSDynamicsDrawerViewController?
     weak var menuViewController: MenuViewController?
@@ -53,9 +54,15 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         tableView.registerNib(nib, forCellReuseIdentifier: itemViewCellIdentifier)
         searchDisplayController?.searchResultsTableView.registerNib(nib, forCellReuseIdentifier: itemViewCellIdentifier)
         
+//        tableView.registerClass(ItemFooterView.self, forHeaderFooterViewReuseIdentifier: itemFooterViewIdentifier)
+        
         domainIcons["auction"] = UIImage(named: "auction-icon.png")
         domainIcons["gmarket"] = UIImage(named: "gmarket-icon.png")
         domainIcons["ebay"] = UIImage(named: "ebay-icon.png")
+        domainIcons["g9"] = UIImage(named: "g9-icon.png")
+        domainIcons["11st"] = UIImage(named: "11st-icon.png")
+        domainIcons["coupang"] = UIImage(named: "coupang-icon.png")
+        domainIcons["tmon"] = UIImage(named: "tmon-icon.png")
     }
     
     override func didReceiveMemoryWarning() {
@@ -118,6 +125,22 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         return height
     }
+    
+//    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let footerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(itemFooterViewIdentifier) as ItemFooterView
+//        
+//        if let price = SharedInstance.singleton().totalAmount?.stringValue {
+//            
+//        } else {
+//            return nil
+//        }
+//        
+//        return footerView
+//    }
+//    
+//    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 30
+//    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         

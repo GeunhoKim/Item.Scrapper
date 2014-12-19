@@ -95,6 +95,10 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
     if (![self isEmpty:filteredItems]) {
         NSNumber *sum = [filteredItems valueForKeyPath: @"@sum.price"];
         NSNumber *average = [filteredItems valueForKeyPath: @"@avg.price"];
+        
+        if (type == MenuViewControllerSectionTypeAll) {
+            [SharedInstance singleton].totalAmount = sum;
+        }
     
         [self.sumArray setObject:sum atIndexedSubscript:type];
         [self.averageArray setObject:average atIndexedSubscript:type];
