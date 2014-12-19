@@ -29,28 +29,22 @@
         [provider loadItemForTypeIdentifier:@"public.url" options:nil completionHandler:^(NSURL *url, NSError *error) {
             NSString *urlString = url.absoluteString;
             [self requestScrapperWithUrlString:urlString];
-            [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
         }];
     }
     else if([contentText containsString:@"http://"]) {
         NSString *urlString = [self getUrlStringFromContentText:contentText];
         [self requestScrapperWithUrlString:urlString];
-        [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
     }
     else {
         ShareViewController *viewController = [[ShareViewController alloc] init];
         [self presentViewController:viewController animated:YES completion:nil];
     }
+    
+    [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
 }
 
 - (void)viewDidLoad {
     [self setupManagedObjectContext];
-}
-
-- (NSArray *)configurationItems {
-    [self setupManagedObjectContext];
-    
-    return @[];
 }
 
 - (NSString *)getUrlStringFromContentText:(NSString *)contentText {
@@ -91,10 +85,7 @@
                                                           }];
     [alert addAction:defaultAction];
     
-    [self presentViewController:alert animated:YES completion:^{
-        [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
-    }];
-    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)parseResponseDataAndInsert:(NSData *)responseData url:(NSString *)urlString {

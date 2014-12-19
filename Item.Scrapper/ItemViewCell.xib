@@ -67,7 +67,7 @@ item title</string>
                             </mask>
                         </variation>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Led-yU-e3p" userLabel="Domain Icon">
+                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Led-yU-e3p" userLabel="Domain Icon">
                         <rect key="frame" x="0.0" y="0.0" width="58" height="58"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="58" id="9Pg-p2-RKL"/>

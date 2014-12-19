@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-
 @interface ItemEntity : NSManagedObject
 
+@property (nonatomic, retain) NSString *kindOf;
 @property (nonatomic, retain) NSString *itemno;
 @property (nonatomic, retain) NSString *linkUrl;
 @property (nonatomic, retain) NSString *formatPrice;

@@ -22,7 +22,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     var filteredItems = [ItemEntity]()
     
-    var domainIcons: NSDictionary = NSDictionary()
+    var domainIcons: NSMutableDictionary = NSMutableDictionary()
     
     // MARK: - UIViewController life cyle
     
@@ -53,9 +53,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         tableView.registerNib(nib, forCellReuseIdentifier: itemViewCellIdentifier)
         searchDisplayController?.searchResultsTableView.registerNib(nib, forCellReuseIdentifier: itemViewCellIdentifier)
         
-        domainIcons.setValue(UIImage(named: "auction-icon.png"), forKey: "auction")
-        domainIcons.setValue(UIImage(named: "gmarket-icon.png"), forKey: "gmarket")
-        domainIcons.setValue(UIImage(named: "ebay-icon.png"), forKey: "ebay")
+        domainIcons.setObject(UIImage(named: "auction-icon.png")!, forKey: "auction")
+        domainIcons.setObject(UIImage(named: "gmarket-icon.png")!, forKey: "gmarket")
+        domainIcons.setObject(UIImage(named: "ebay-icon.png")!, forKey: "ebay")
     }
     
     override func didReceiveMemoryWarning() {
@@ -169,13 +169,16 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         var url: NSURL = NSURL(string: imageUrl)!
         
         cell.mainImageView.sd_setImageWithURL(url, placeholderImage: nil)
+        cell.domainIcon.image = domainIcons.objectForKey(item.kindOf) as? UIImage
+        if cell.domainIcon.image != nil {
+            cell.domainIcon.hidden = false
+        } else {
+            cell.domainIcon.hidden = true
+        }
+        
         cell.titleLabel.text = item.title
         cell.priceLabel.text = formatPriceFromNumber(item.price)
         cell.linkUrl = item.linkUrl
-        
-        if item.linkUrl.rangeOfString("auction") != nil {
-            
-        }
     }
     
     // MARK: - UISearchDisplayController delegate

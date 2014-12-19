@@ -6,15 +6,17 @@ from scrapy.selector import HtmlXPathSelector
 class EbayViewItemPageSpider(CrawlSpider):
   name = 'EbayItemCrawler'
 
-  def __init__(self, startUrl='', itemno='', domain=None):
+  def __init__(self, startUrl='', itemno='', kindOf='', domain=None):
     self.allowed_domains = ['http://m.ebay.com']
     self.start_urls = [startUrl]
     self.itemno = itemno
+    self.kindOf = kindOf
    
   def parse(self, response):
     hxs = HtmlXPathSelector(response)
     item = ViewItemPage()
 
+    item['kindOf'] = self.kindOf
     item['itemno'] = self.itemno
 
     title = hxs.select("//h1[@class='itm-ttl']/text()").extract()
