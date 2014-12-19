@@ -43,7 +43,7 @@ if "coupang.com" in startUrl:
   itemno = re.search(r"[0-9]+",startUrl).group()
   spider = CoupangViewItemPageSpider(startUrl = startUrl.encode('utf-8'), itemno = itemno, kindOf="coupang")
 
-if "ticketmonster.com" in startUrl:
+if "ticketmonster.co.kr" in startUrl:
   itemno = re.search(r"[0-9]+",startUrl).group()
   spider = TmonViewItemPageSpider(startUrl = startUrl.encode('utf-8'), itemno = itemno, kindOf="tmon")
 
