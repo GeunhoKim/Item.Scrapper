@@ -15,6 +15,7 @@ class AuctionViewItemPageSpider(CrawlSpider):
   def parse(self, response):
     hxs = HtmlXPathSelector(response)
     item = ViewItemPage()
+    
     title = hxs.select("//span[@class='product-info_name']/text()").extract()[0].encode('utf-8')
     regex = re.compile(r'[\n\r\t]')
     title = regex.sub("", title)

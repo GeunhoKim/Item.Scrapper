@@ -9,6 +9,7 @@ cgitb.enable()
 from scrapy.xlib.pydispatch import dispatcher
 from multiprocessing.queues import Queue
 
+from coupang_item import CoupangViewItemPageSpider
 from g9_item import G9ViewItemPageSpider
 from gmkt_item import GmarketViewItemPageSpider
 from iac_item import AuctionViewItemPageSpider
@@ -36,6 +37,10 @@ if "gmarket.co.kr" in startUrl:
 if "g9.co.kr" in startUrl:
   itemno = re.search(r"[0-9]+",startUrl).group()
   spider = G9ViewItemPageSpider(startUrl = startUrl.encode('utf-8'), itemno = itemno, kindOf="g9")
+
+if "coupang.com" in startUrl:
+  itemno = re.search(r"[0-9]+",startUrl).group()
+  spider = CoupangViewItemPageSpider(startUrl = startUrl.encode('utf-8'), itemno = itemno, kindOf="coupang")
 
 resultQueue = Queue()
 crawler = CrawlerWorker(spider, resultQueue)
