@@ -3,11 +3,15 @@
 
 import cgi, cgitb
 import json
+import re
 cgitb.enable()
 
 from scrapy.xlib.pydispatch import dispatcher
 from multiprocessing.queues import Queue
 
+from tmon_item import TmonViewItemPageSpider
+from coupang_item import CoupangViewItemPageSpider
+from g9_item import G9ViewItemPageSpider
 from gmkt_item import GmarketViewItemPageSpider
 from iac_item import AuctionViewItemPageSpider
 from ebay_item import EbayViewItemPageSpider
@@ -17,11 +21,31 @@ arguments = cgi.FieldStorage()
 startUrl = arguments["startUrl"].value
 
 if "ebay.com" in startUrl:
-  spider = EbayViewItemPageSpider(startUrl = startUrl)
+  itemno = re.search(r"[0-9]+",startUrl).group()
+  ebayUrl = "http://m.ebay.com/itm/" + itemno
+  spider = EbayViewItemPageSpider(startUrl=ebayUrl, itemno=itemno, kindOf="ebay")
+
 if "auction.co.kr" in startUrl:
-  spider = AuctionViewItemPageSpider(startUrl = startUrl)
+  itemno = re.search(r"[a-z,A-Z][0-9]+",startUrl).group()
+  auctionUrl = "http://mobile.auction.co.kr/Item/ViewItem.aspx?itemno=" + itemno  
+  spider = AuctionViewItemPageSpider(startUrl = auctionUrl, itemno = itemno, kindOf="auction")
+
 if "gmarket.co.kr" in startUrl:
-  spider = GmarketViewItemPageSpider(startUrl = startUrl)
+  itemno = re.search(r"goodscode=[0-9]+",startUrl.lower()).group().replace("goodscode=", "")
+  gmarketUrl = "http://mitem.gmarket.co.kr/Item?goodsCode=" + itemno
+  spider = GmarketViewItemPageSpider(startUrl = gmarketUrl, itemno = itemno, kindOf="gmarket")
+
+if "g9.co.kr" in startUrl:
+  itemno = re.search(r"[0-9]+",startUrl).group()
+  spider = G9ViewItemPageSpider(startUrl = startUrl.encode('utf-8'), itemno = itemno, kindOf="g9")
+
+if "coupang.com" in startUrl:
+  itemno = re.search(r"[0-9]+",startUrl).group()
+  spider = CoupangViewItemPageSpider(startUrl = startUrl.encode('utf-8'), itemno = itemno, kindOf="coupang")
+
+if "ticketmonster.co.kr" in startUrl:
+  itemno = re.search(r"[0-9]+",startUrl).group()
+  spider = TmonViewItemPageSpider(startUrl = startUrl.encode('utf-8'), itemno = itemno, kindOf="tmon")
 
 resultQueue = Queue()
 crawler = CrawlerWorker(spider, resultQueue)
