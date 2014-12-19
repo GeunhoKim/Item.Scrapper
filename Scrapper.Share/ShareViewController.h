@@ -13,9 +13,11 @@
 #import "ScrapperShareViewController.h"
 
 @interface ShareViewController : SLComposeServiceViewController
-@property (assign, nonatomic) id delegate;
+
+@property (nonatomic, assign) id delegate;
 
 @end
+
 
 @protocol ShareViewControllerDelegate <NSObject>
 

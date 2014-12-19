@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -67,18 +68,28 @@ item title</string>
                             </mask>
                         </variation>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Led-yU-e3p" userLabel="Domain Icon">
-                        <rect key="frame" x="0.0" y="0.0" width="58" height="58"/>
+                    <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Led-yU-e3p" userLabel="Domain Icon">
+                        <rect key="frame" x="180" y="101" width="40" height="40"/>
                         <constraints>
+                            <constraint firstAttribute="width" secondItem="Led-yU-e3p" secondAttribute="height" multiplier="1:1" id="8T6-JB-q2I"/>
                             <constraint firstAttribute="height" constant="58" id="9Pg-p2-RKL"/>
                             <constraint firstAttribute="width" constant="58" id="dkn-43-9ko"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9Pg-p2-RKL"/>
+                                <exclude reference="dkn-43-9ko"/>
+                            </mask>
+                        </variation>
                     </imageView>
                 </subviews>
+                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="VJ1-QF-hbA" firstAttribute="leading" secondItem="bTk-l4-n55" secondAttribute="trailing" constant="8" id="1Ig-Qk-1DU"/>
                     <constraint firstItem="bTk-l4-n55" firstAttribute="top" secondItem="DD3-gC-274" secondAttribute="topMargin" id="34Y-DZ-jt5"/>
                     <constraint firstItem="Led-yU-e3p" firstAttribute="leading" secondItem="DD3-gC-274" secondAttribute="leading" id="68k-Mg-HFL"/>
+                    <constraint firstItem="Led-yU-e3p" firstAttribute="height" secondItem="bTk-l4-n55" secondAttribute="height" id="BAe-eQ-g5A"/>
+                    <constraint firstItem="Led-yU-e3p" firstAttribute="leading" secondItem="bTk-l4-n55" secondAttribute="trailing" constant="8" id="D45-dT-tfs"/>
                     <constraint firstItem="Led-yU-e3p" firstAttribute="top" secondItem="DD3-gC-274" secondAttribute="top" id="Gff-c9-1c5"/>
                     <constraint firstItem="ggn-Cs-Hep" firstAttribute="leading" secondItem="bTk-l4-n55" secondAttribute="trailing" constant="8" id="Kjh-g2-POr"/>
                     <constraint firstItem="bTk-l4-n55" firstAttribute="leading" secondItem="DD3-gC-274" secondAttribute="leadingMargin" id="WgQ-Hw-WfH"/>
@@ -87,10 +98,21 @@ item title</string>
                     <constraint firstAttribute="trailingMargin" secondItem="ggn-Cs-Hep" secondAttribute="trailing" id="ePP-HK-yrU"/>
                     <constraint firstItem="ggn-Cs-Hep" firstAttribute="top" secondItem="DD3-gC-274" secondAttribute="topMargin" id="jLi-xK-vr3"/>
                     <constraint firstAttribute="trailingMargin" secondItem="VJ1-QF-hbA" secondAttribute="trailing" id="kke-6N-qdb"/>
+                    <constraint firstItem="Led-yU-e3p" firstAttribute="width" secondItem="bTk-l4-n55" secondAttribute="width" multiplier="40:164" id="lk4-Up-qFB"/>
+                    <constraint firstAttribute="bottom" secondItem="Led-yU-e3p" secondAttribute="bottom" constant="8" id="qvc-oY-Eig"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="68k-Mg-HFL"/>
+                        <exclude reference="BAe-eQ-g5A"/>
+                        <exclude reference="Gff-c9-1c5"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="domainIcon" destination="Led-yU-e3p" id="9ZG-fI-8my"/>
                 <outlet property="mainImageView" destination="bTk-l4-n55" id="gTP-KP-eZp"/>
+                <outlet property="onDomainImageTouched" destination="Led-yU-e3p" id="lVk-et-Qvg"/>
                 <outlet property="priceLabel" destination="VJ1-QF-hbA" id="KkL-rw-uk1"/>
                 <outlet property="titleLabel" destination="ggn-Cs-Hep" id="w0A-et-3NM"/>
             </connections>

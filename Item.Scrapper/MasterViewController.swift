@@ -22,7 +22,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     var filteredItems = [ItemEntity]()
     
-    var domainIcons: NSMutableDictionary = NSMutableDictionary()
+    var domainIcons: [String: UIImage] = [String: UIImage]()
     
     // MARK: - UIViewController life cyle
     
@@ -53,9 +53,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         tableView.registerNib(nib, forCellReuseIdentifier: itemViewCellIdentifier)
         searchDisplayController?.searchResultsTableView.registerNib(nib, forCellReuseIdentifier: itemViewCellIdentifier)
         
-        domainIcons.setObject(UIImage(named: "auction-icon.png")!, forKey: "auction")
-        domainIcons.setObject(UIImage(named: "gmarket-icon.png")!, forKey: "gmarket")
-        domainIcons.setObject(UIImage(named: "ebay-icon.png")!, forKey: "ebay")
+        domainIcons["auction"] = UIImage(named: "auction-icon.png")
+        domainIcons["gmarket"] = UIImage(named: "gmarket-icon.png")
+        domainIcons["ebay"] = UIImage(named: "ebay-icon.png")
     }
     
     override func didReceiveMemoryWarning() {
@@ -130,7 +130,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         var linkUrl = item.linkUrl
         if linkUrl.hasPrefix("http://mitem") && isAppInstalled("gmarket:") {
-            linkUrl = "gmarket://item?itemid=" + item.itemno;
+            linkUrl = "gmarket://item?itemid=\(item.itemno)"
         }
         
         var url: NSURL = NSURL(string: linkUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
@@ -167,10 +167,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     func configureCell(cell: ItemViewCell, toItem item: ItemEntity) {
         var imageUrl: String = item.imageUrl
         var url: NSURL = NSURL(string: imageUrl)!
+        var domain: String = item.kindOf
         
         cell.mainImageView.sd_setImageWithURL(url, placeholderImage: nil)
-        cell.domainIcon.image = domainIcons.objectForKey(item.kindOf) as? UIImage
-        if cell.domainIcon.image != nil {
+        
+        if let domainIcon: UIImage = domainIcons[domain] {
+            cell.domainIcon.image = domainIcon
             cell.domainIcon.hidden = false
         } else {
             cell.domainIcon.hidden = true

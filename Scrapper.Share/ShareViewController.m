@@ -26,10 +26,16 @@
     if([self.contentText containsString:@"http://"]) {
         NSString *urlString = [self getUrlStringFromContentText:self.contentText];
         [self.delegate foundUrl:urlString];
+        [self dismissViewControllerAnimated:YES completion:nil];
     } else {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
+
+- (void)didSelectCancel {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 - (NSArray *)configurationItems {
     return @[];

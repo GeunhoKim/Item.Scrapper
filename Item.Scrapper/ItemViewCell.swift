@@ -16,6 +16,8 @@ class ItemViewCell: UITableViewCell {
     
     var linkUrl: String!
     
+    @IBOutlet weak var onDomainImageTouched: UIImageView!
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

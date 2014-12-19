@@ -10,6 +10,7 @@
 #import "ShareViewController.h"
 
 @interface ScrapperShareViewController ()
+<ShareViewControllerDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
@@ -29,17 +30,25 @@
         [provider loadItemForTypeIdentifier:@"public.url" options:nil completionHandler:^(NSURL *url, NSError *error) {
             NSString *urlString = url.absoluteString;
             [self requestScrapperWithUrlString:urlString];
+            [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
         }];
     }
     else if([contentText containsString:@"http://"]) {
         NSString *urlString = [self getUrlStringFromContentText:contentText];
         [self requestScrapperWithUrlString:urlString];
+        [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
     }
     else {
         ShareViewController *viewController = [[ShareViewController alloc] init];
+        viewController.delegate = self;
         [self presentViewController:viewController animated:YES completion:nil];
     }
-    
+}
+
+#pragma mark ShareViewController Delegate
+
+- (void)foundUrl:(NSString *)url {
+    [self requestScrapperWithUrlString:url];
     [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
 }
 
@@ -103,6 +112,8 @@
                                                          inManagedObjectContext:self.managedObjectContext];
         
         item.linkUrl = urlString;
+        NSString *kindOf = [json objectForKey:@"kindOf"];
+        item.kindOf = kindOf;
         NSString *itemno = [json objectForKey:@"itemno"];
         item.itemno = itemno;
         NSString *imageUrl = [json objectForKey:@"imageUrl"];
