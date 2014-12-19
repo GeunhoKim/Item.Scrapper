@@ -1,18 +1,24 @@
 from vip_item import ViewItemPage
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import HtmlXPathSelector
+from selenium import webdriver
 
 class G9ViewItemPageSpider(CrawlSpider):
   name = 'G9ItemCrawler'
 
   def __init__(self, startUrl='', itemno='', kindOf='', domain=None):
+    self.driver = webdriver.Firefox()
     self.allowed_domains = ['m.g9.co.kr']
     self.start_urls = [startUrl]
     self.itemno = itemno
     self.kindOf = kindOf
    
-  def parse(self, response):
-    hxs = HtmlXPathSelector(response)
+  def parse(self, response):    
+    self.driver.get(response.url)
+    time.sleep(2.5)    
+    
+    hxs = HtmlXPathSelector(self.driver.page_source)
+
     item = ViewItemPage()
     item['kindOf'] = self.kindOf
     item['itemno'] = self.itemno

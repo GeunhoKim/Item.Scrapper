@@ -35,7 +35,7 @@ if "gmarket.co.kr" in startUrl:
 
 if "g9.co.kr" in startUrl:
   itemno = re.search(r"[0-9]+",startUrl).group()
-  spider = G9ViewItemPageSpider(startUrl = startUrl, itemno = itemno, kindOf="g9")
+  spider = G9ViewItemPageSpider(startUrl = startUrl.encode('utf-8'), itemno = itemno, kindOf="g9")
 
 resultQueue = Queue()
 crawler = CrawlerWorker(spider, resultQueue)
