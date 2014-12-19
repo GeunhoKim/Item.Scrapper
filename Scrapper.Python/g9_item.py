@@ -16,7 +16,7 @@ class G9ViewItemPageSpider(CrawlSpider):
     item = ViewItemPage()
     item['kindOf'] = self.kindOf
     item['itemno'] = self.itemno
-    item['title'] = hxs.select("//h2[@class='goods_tit']/text()").extract()[0].encode('utf-8')
+    item['title'] = hxs.select("//div[@class='tit_bx']/h2/text()").extract()[0].encode('utf-8')
     item['imageUrl'] = hxs.select("//div[@id='list_view']/div/ul/li/img/@src").extract()[0].encode('utf-8')
     item['formatPrice'] = hxs.select("//span[@class='price']/em/text()").extract()[0].encode('utf-8')
     item['price'] = int(item['formatPrice'].replace(",", ""))
