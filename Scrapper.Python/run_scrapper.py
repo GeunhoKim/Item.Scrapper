@@ -48,10 +48,10 @@ if "ticketmonster.co.kr" in startUrl:
 
 if "amazon.com" in startUrl:
   from amazon_item import AmazonViewItemPageSpider
-  itemno = re.search(r"\/gp\/aw\/d\/[0-9,a-z,A-Z]+",startUrl).group()
-  itemno = itemno.replace("/gp/aw/d/", "")
-  amazonUrl = "http://www.amazon.com/gp/aw/d/" + itemno
-  spider = AmazonViewItemPageSpider(startUrl = amazonUrl, itemno = itemno, kindOf="amazon")  
+  #itemno = re.search(r"\/gp\/aw\/d\/[0-9,a-z,A-Z]+",startUrl).group()
+  #itemno = itemno.replace("/gp/aw/d/", "")
+  #amazonUrl = "http://www.amazon.com/gp/aw/d/" + itemno
+  spider = AmazonViewItemPageSpider(startUrl = startUrl, itemno = "none", kindOf="amazon")  
 
 resultQueue = Queue()
 crawler = CrawlerWorker(spider, resultQueue)

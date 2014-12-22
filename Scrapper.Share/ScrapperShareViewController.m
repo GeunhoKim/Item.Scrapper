@@ -33,7 +33,7 @@
             [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
         }];
     }
-    else if([contentText containsString:@"http://"]) {
+    else if([contentText containsString:@"http://"] || [contentText containsString:@"https://"]) {
         NSString *urlString = [self getUrlStringFromContentText:contentText];
         [self requestScrapperWithUrlString:urlString];
         [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
@@ -59,7 +59,16 @@
 }
 
 - (NSString *)getUrlStringFromContentText:(NSString *)contentText {
-    NSString *parsedUrl = [contentText componentsSeparatedByString:@"http://"][1];
+    
+    NSString *parsedUrl = @"";
+    if ([contentText containsString:@"http://"]) {
+        parsedUrl = [contentText componentsSeparatedByString:@"http://"][1];
+    }
+    else if ([contentText containsString:@"https://"]) {
+        parsedUrl = [contentText componentsSeparatedByString:@"https://"][1];
+    }
+    
+    
     NSString *returnUrl = [NSString stringWithFormat:@"http://%@", parsedUrl];
     
     return returnUrl;

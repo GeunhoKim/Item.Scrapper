@@ -64,6 +64,9 @@
 		3C2A49E419D7111400D58C0B /* ItemScrapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* ItemScrapper.xcdatamodeld */; };
 		3C2A49E619D7111400D58C0B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E519D7111400D58C0B /* MasterViewController.swift */; };
 		3C2A49ED19D7111400D58C0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A49EC19D7111400D58C0B /* Images.xcassets */; };
+		3C2D85E21A486B11003DA091 /* amazon-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2D85DF1A486B11003DA091 /* amazon-icon.png */; };
+		3C2D85E31A486B11003DA091 /* amazon-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2D85E01A486B11003DA091 /* amazon-icon@2x.png */; };
+		3C2D85E41A486B11003DA091 /* amazon-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2D85E11A486B11003DA091 /* amazon-icon@3x.png */; };
 		3C435C2319FB9A8D00530182 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1BEA319F40FCA00E5CACA /* ShareViewController.m */; };
 		3C435C2419FCE3A500530182 /* ItemScrapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* ItemScrapper.xcdatamodeld */; };
 		3C435C2719FCE75300530182 /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C435C2619FCE75300530182 /* ItemEntity.m */; };
@@ -193,6 +196,9 @@
 		3C2A49EF19D7111400D58C0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3C2A49FA19D7111400D58C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C2A49FB19D7111400D58C0B /* Item_ScrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item_ScrapperTests.swift; sourceTree = "<group>"; };
+		3C2D85DF1A486B11003DA091 /* amazon-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "amazon-icon.png"; sourceTree = "<group>"; };
+		3C2D85E01A486B11003DA091 /* amazon-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "amazon-icon@2x.png"; sourceTree = "<group>"; };
+		3C2D85E11A486B11003DA091 /* amazon-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "amazon-icon@3x.png"; sourceTree = "<group>"; };
 		3C435C2519FCE75300530182 /* ItemEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemEntity.h; sourceTree = "<group>"; };
 		3C435C2619FCE75300530182 /* ItemEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemEntity.m; sourceTree = "<group>"; };
 		3C59FE751A124F0F00E52887 /* EBay_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EBay_logo.png; sourceTree = "<group>"; };
@@ -407,6 +413,9 @@
 		3CA5663E1A1100AB004CCEA5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3C2D85DF1A486B11003DA091 /* amazon-icon.png */,
+				3C2D85E01A486B11003DA091 /* amazon-icon@2x.png */,
+				3C2D85E11A486B11003DA091 /* amazon-icon@3x.png */,
 				28DC9C0A1A44855900A406D4 /* tmon-icon.png */,
 				28DC9C0B1A44855900A406D4 /* tmon-icon@2x.png */,
 				28DC9C0C1A44855900A406D4 /* tmon-icon@3x.png */,
@@ -625,14 +634,17 @@
 				28DC9C021A44850200A406D4 /* 11st-icon@2x.png in Resources */,
 				28DC9C131A44891500A406D4 /* ItemFooterView.xib in Resources */,
 				28DC9BFC1A44844100A406D4 /* coupang-icon@2x.png in Resources */,
+				3C2D85E31A486B11003DA091 /* amazon-icon@2x.png in Resources */,
 				3C1EB20E1A18943800A7EEB7 /* LaunchScreen.xib in Resources */,
 				28DC9C071A44852A00A406D4 /* g9-icon.png in Resources */,
 				280165DF1A432DF200381792 /* auction-icon@2x.png in Resources */,
+				3C2D85E41A486B11003DA091 /* amazon-icon@3x.png in Resources */,
 				28DC9C0F1A44855900A406D4 /* tmon-icon@3x.png in Resources */,
 				28DC9BFB1A44844100A406D4 /* coupang-icon.png in Resources */,
 				3C06BE841A20DA7100D1CC0C /* ItemViewCell.xib in Resources */,
 				3CC7DAB41A307B8F00243057 /* MenuSummarizationCell.xib in Resources */,
 				280165DE1A432DF200381792 /* auction-icon.png in Resources */,
+				3C2D85E21A486B11003DA091 /* amazon-icon.png in Resources */,
 				28DC9BFD1A44844100A406D4 /* coupang-icon@3x.png in Resources */,
 				280165E61A432E0000381792 /* ebay-icon@3x.png in Resources */,
 				280165EA1A432E0E00381792 /* gmarket-icon.png in Resources */,

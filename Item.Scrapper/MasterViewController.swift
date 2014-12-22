@@ -65,6 +65,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         domainIcons["11st"] = UIImage(named: "11st-icon.png")
         domainIcons["coupang"] = UIImage(named: "coupang-icon.png")
         domainIcons["tmon"] = UIImage(named: "tmon-icon.png")
+        domainIcons["amazon"] = UIImage(named: "amazon-icon.png")
         
         self.menuViewController?.updateSummarization(self.fetchedResultsController.fetchedObjects)
     }
