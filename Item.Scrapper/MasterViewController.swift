@@ -25,6 +25,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     var domainIcons: [String: UIImage] = [String: UIImage]()
     
+    var isSearch: Bool = false
+    
     // MARK: - UIViewController life cyle
     
     override func awakeFromNib() {
@@ -43,7 +45,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 57/255.0, green: 57/255.0, blue: 57/255.0, alpha: 1)];
+        
         let leftButton = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "openDrawer")
         self.navigationItem.leftBarButtonItem = leftButton
         
@@ -54,8 +58,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         tableView.registerNib(nib, forCellReuseIdentifier: itemViewCellIdentifier)
         searchDisplayController?.searchResultsTableView.registerNib(nib, forCellReuseIdentifier: itemViewCellIdentifier)
         
-//        tableView.registerClass(ItemFooterView.self, forHeaderFooterViewReuseIdentifier: itemFooterViewIdentifier)
-        
         domainIcons["auction"] = UIImage(named: "auction-icon.png")
         domainIcons["gmarket"] = UIImage(named: "gmarket-icon.png")
         domainIcons["ebay"] = UIImage(named: "ebay-icon.png")
@@ -63,6 +65,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         domainIcons["11st"] = UIImage(named: "11st-icon.png")
         domainIcons["coupang"] = UIImage(named: "coupang-icon.png")
         domainIcons["tmon"] = UIImage(named: "tmon-icon.png")
+        
+        self.menuViewController?.updateSummarization(self.fetchedResultsController.fetchedObjects)
     }
     
     override func didReceiveMemoryWarning() {
@@ -82,7 +86,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         _fetchedResultsController = nil
         _fetchedResultsController = self.fetchedResultsController
         
-        self.menuViewController?.updateSummarization()
+        self.menuViewController?.updateSummarization(self.fetchedResultsController.fetchedObjects)
     }
     
     func isAppInstalled(scheme: String) -> Bool {
@@ -101,7 +105,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         if tableView == self.searchDisplayController!.searchResultsTableView {
             return filteredItems.count
         } else {
-            return SharedInstance.singleton().fetchedItems.count
+            let sectionInfo = self.fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
+            return sectionInfo.numberOfObjects
         }
     }
     
@@ -112,7 +117,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         if tableView == self.searchDisplayController!.searchResultsTableView {
             item = filteredItems[indexPath.row]
         } else {
-            item = SharedInstance.singleton().fetchedItems[indexPath.row] as ItemEntity
+            item = self.fetchedResultsController.objectAtIndexPath(indexPath) as ItemEntity
         }
         
         self.configureCell(cell, toItem: item)
@@ -148,7 +153,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         if tableView == self.searchDisplayController!.searchResultsTableView {
             item = filteredItems[indexPath.row]
         } else {
-            item = SharedInstance.singleton().fetchedItems[indexPath.row] as ItemEntity
+            item = self.fetchedResultsController.objectAtIndexPath(indexPath) as ItemEntity
         }
         
         var linkUrl = item.linkUrl
@@ -166,14 +171,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            SharedInstance.singleton().fetchedItems.removeAtIndex(indexPath.row)
             let context = self.fetchedResultsController.managedObjectContext
             context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject)
-            
-            var error: NSError? = nil
-            if !context.save(&error) {
-                println("Unresolved error \(error), \(error?.description)")
-            }
         }
     }
     
@@ -219,7 +218,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
     
     func filterContentForSearchText(searchText: String) {
-        filteredItems = (SharedInstance.singleton().fetchedItems as [ItemEntity]).filter({(item: ItemEntity) -> Bool in
+        filteredItems = (self.fetchedResultsController.fetchedObjects as [ItemEntity]).filter({(item: ItemEntity) -> Bool in
             let stringMatch = item.title.lowercaseString.rangeOfString(searchText.lowercaseString)
             return stringMatch != nil
         })
@@ -254,26 +253,25 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             println("Unresolved error \(error), \(error?.description)")
         }
         
-        SharedInstance.singleton().fetchedItems = _fetchedResultsController?.fetchedObjects as [ItemEntity]
+//        SharedInstance.singleton().fetchedItems = _fetchedResultsController?.fetchedObjects as [ItemEntity]
         
         return _fetchedResultsController!
     }
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         self.tableView.beginUpdates()
-        self.menuViewController?.updateSummarization()
     }
     
-    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
-        switch type {
-        case .Insert:
-            self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-        case .Delete:
-            self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-        default:
-            return
-        }
-    }
+//    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+//        switch type {
+//        case .Insert:
+//            self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+//        case .Delete:
+//            self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+//        default:
+//            return
+//        }
+//    }
     
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         switch type {
@@ -281,6 +279,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
         case .Delete:
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+
             // TODO: update cell title and price label
 //        case .Update:
 //            self.configureCell(tableView.cellForRowAtIndexPath(indexPath!)!, atIndexPath: indexPath!)
@@ -294,5 +293,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         self.tableView.endUpdates()
+        self.menuViewController?.updateSummarization(self.fetchedResultsController.fetchedObjects)
     }
 }

@@ -57,13 +57,11 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
     
     [self.tableView registerClass:[MenuHeaderView class] forHeaderFooterViewReuseIdentifier:MENU_VIEW_HEADER_IDENTIFIER];
     
-    [self updateSummarization];
+    [self updateSummarization:[NSArray array]];
 }
 
-- (void)updateSummarization {
+- (void)updateSummarization:(NSArray *)allItems {
 
-    NSArray *allItems = [[SharedInstance singleton] fetchedItems];
-    
     [self updateSummarizationType:MenuViewControllerSectionTypeAll items:allItems];
     [self updateSummarizationType:MenuViewControllerSectionTypeEbay items:allItems];
     [self updateSummarizationType:MenuViewControllerSectionTypeAuction items:allItems];
@@ -191,40 +189,38 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
     
     UITableViewHeaderFooterView *headerView = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:MENU_VIEW_HEADER_IDENTIFIER];
     
-    headerView.contentView.backgroundColor = [UIColor colorWithRed:(247/255.0) green:(247/255.0) blue:(247/255.0) alpha:1];
-    
     NSString *text = @"";
     switch (section) {
         case MenuViewControllerSectionTypeAll:
-            text = @"{Total : Summarization}";
+            text = @"{Total}";
             break;
             
         case MenuViewControllerSectionTypeEbay:
-            text = @"{eBay : Summarization}";
+            text = @"{eBay}";
             break;
             
         case MenuViewControllerSectionTypeAuction:
-            text = @"{Auction : Summarization}";
+            text = @"{Auction}";
             break;
             
         case MenuViewControllerSectionTypeGmarket:
-            text = @"{Gmarket : Summarization}";
+            text = @"{Gmarket}";
             break;
             
         case MenuViewControllerSectionTypeG9:
-            text = @"{G9 : Summarization}";
+            text = @"{G9}";
             break;
             
         case MenuViewControllerSectionType11st:
-            text = @"{11st : Summarization}";
+            text = @"{11st}";
             break;
             
         case MenuViewControllerSectionTypeCoupang:
-            text = @"{Coupang : Summarization}";
+            text = @"{Coupang}";
             break;
             
         case MenuViewControllerSectionTypeTmon:
-            text = @"{Tmon : Summarization}";
+            text = @"{Tmon}";
             break;
             
         default:

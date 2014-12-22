@@ -13,6 +13,6 @@
 
 @property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
-- (void)updateSummarization;
+- (void)updateSummarization:(NSArray *)allItems;
 
 @end
