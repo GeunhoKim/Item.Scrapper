@@ -24,6 +24,7 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerSectionType) {
     MenuViewControllerSectionType11st,
     MenuViewControllerSectionTypeCoupang,
     MenuViewControllerSectionTypeTmon,
+    MenuViewControllerSectionTypeAmazon,
     MenuViewControllerSectionTypeCount
 };
 
@@ -48,7 +49,7 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.domainArray = @[@"", @"ebay", @"auction", @"gmarket", @"g9", @"11st", @"coupang", @"tmon"];
+    self.domainArray = @[@"", @"ebay", @"auction", @"gmarket", @"g9", @"11st", @"coupang", @"tmon", @"amazon"];
     self.sumArray = [NSMutableArray array];
     self.averageArray = [NSMutableArray array];
     self.countArray = [NSMutableArray array];
@@ -70,6 +71,7 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
     [self updateSummarizationType:MenuViewControllerSectionType11st items:allItems];
     [self updateSummarizationType:MenuViewControllerSectionTypeCoupang items:allItems];
     [self updateSummarizationType:MenuViewControllerSectionTypeTmon items:allItems];
+    [self updateSummarizationType:MenuViewControllerSectionTypeAmazon items:allItems];
 
     [self.tableView reloadData];
 }
@@ -223,6 +225,10 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
             text = @"{Tmon}";
             break;
             
+        case MenuViewControllerSectionTypeAmazon:
+            text = @"{Amazon}";
+            break;
+            
         default:
             return nil;
     }
@@ -240,11 +246,19 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 17.0f)];
+    if(![[self.countArray objectAtIndex:section] isEqual:@0]) {
+        return [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 17.0f)];
+    } else {
+        return nil;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 17.0f;
+    if(![[self.countArray objectAtIndex:section] isEqual:@0]) {
+        return 17.0f;
+    } else {
+        return 0.0f;
+    }
 }
 
 
