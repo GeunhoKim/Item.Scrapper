@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Foundation
 
-class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
+class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UIGestureRecognizerDelegate {
     
     let itemViewCellIdentifier = "ItemViewCell"
     let itemFooterViewIdentifier = "ItemFooterView"
@@ -46,6 +46,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
+        longPressGestureRecognizer.minimumPressDuration = 1.2
+        longPressGestureRecognizer.delegate = self;
+        self.tableView.addGestureRecognizer(longPressGestureRecognizer)
+        
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 57/255.0, green: 57/255.0, blue: 57/255.0, alpha: 1)];
         
         let leftButton = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "openDrawer")
@@ -72,6 +77,34 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func handleLongPress(recognizer: UILongPressGestureRecognizer) {
+        var indexPoint = recognizer.locationInView(self.tableView)
+        
+        if recognizer.state == UIGestureRecognizerState.Began {
+            var indexPath = self.tableView.indexPathForRowAtPoint(indexPoint)
+            
+            self.selectRow(self.tableView, indexPath: indexPath!)
+        }
+    }
+    
+    func selectRow(tableView: UITableView, indexPath: NSIndexPath) {
+        
+        var item: ItemEntity
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            item = filteredItems[indexPath.row]
+        } else {
+            item = self.fetchedResultsController.objectAtIndexPath(indexPath) as ItemEntity
+        }
+        
+        var linkUrl = item.linkUrl
+        if linkUrl.hasPrefix("http://mitem") && isAppInstalled("gmarket:") {
+            linkUrl = "gmarket://item?itemid=\(item.itemno)"
+        }
+        
+        var url: NSURL = NSURL(string: linkUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
+        UIApplication.sharedApplication().openURL(url)
     }
     
     func openDrawer() {
@@ -147,24 +180,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 //    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 //        return 30
 //    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        var item: ItemEntity
-        if tableView == self.searchDisplayController!.searchResultsTableView {
-            item = filteredItems[indexPath.row]
-        } else {
-            item = self.fetchedResultsController.objectAtIndexPath(indexPath) as ItemEntity
-        }
-        
-        var linkUrl = item.linkUrl
-        if linkUrl.hasPrefix("http://mitem") && isAppInstalled("gmarket:") {
-            linkUrl = "gmarket://item?itemid=\(item.itemno)"
-        }
-        
-        var url: NSURL = NSURL(string: linkUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
-        UIApplication.sharedApplication().openURL(url)
-    }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
