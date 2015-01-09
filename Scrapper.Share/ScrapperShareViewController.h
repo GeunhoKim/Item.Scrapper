@@ -13,8 +13,8 @@
 #import "ASIHTTPRequest.h"
 #import "ItemEntity.h"
 
-//#define SCRAPPER_HOST @"http://172.30.136.38"
-#define SCRAPPER_HOST @"http://172.20.10.5"
+#define SCRAPPER_HOST @"http://172.30.136.38"
+//#define SCRAPPER_HOST @"http://172.20.10.5/www"
 
 @interface ScrapperShareViewController : UIViewController
 

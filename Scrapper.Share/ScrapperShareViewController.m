@@ -20,6 +20,10 @@
 
 @implementation ScrapperShareViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+//    self.loadView.hidden = NO;
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     NSExtensionContext *context = [self extensionContext];
     NSExtensionItem *inputItem = [context inputItems].firstObject;
@@ -30,13 +34,11 @@
         [provider loadItemForTypeIdentifier:@"public.url" options:nil completionHandler:^(NSURL *url, NSError *error) {
             NSString *urlString = url.absoluteString;
             [self requestScrapperWithUrlString:urlString];
-            [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
         }];
     }
     else if([contentText containsString:@"http://"] || [contentText containsString:@"https://"]) {
         NSString *urlString = [self getUrlStringFromContentText:contentText];
         [self requestScrapperWithUrlString:urlString];
-        [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
     }
     else {
         ShareViewController *viewController = [[ShareViewController alloc] init];
@@ -50,8 +52,9 @@
 - (void)foundUrl:(NSString *)url {
     if (url != nil && ![url isEqualToString:@""]) {
         [self requestScrapperWithUrlString:url];
+    } else {
+        [self showAlertWithMessage:@"Can not scrap the item. Please try again."];
     }
-    [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
 }
 
 - (void)viewDidLoad {
@@ -76,7 +79,7 @@
 
 - (void)requestScrapperWithUrlString:(NSString *)urlString {
     NSString *formatUrl = [urlString stringByReplacingOccurrencesOfString:@"&" withString:@""];
-    NSString *requestString = [NSString stringWithFormat:SCRAPPER_HOST@"/www/script/scrapper/run_scrapper.py?startUrl=%@", formatUrl];
+    NSString *requestString = [NSString stringWithFormat:SCRAPPER_HOST@"/script/scrapper/run_scrapper.py?startUrl=%@", formatUrl];
     requestString = [requestString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
     
@@ -89,23 +92,28 @@
         [self parseResponseDataAndInsert:data url:urlString];
     } else {
         NSLog(@"error occured: %@", error.description);
-        [self showAlert];
+        [self showAlertWithMessage:@"Can not scrap the item. Please try again."];
     }
 }
 
-- (void)showAlert {
+- (void)showAlertWithMessage:(NSString *)message {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
-                                                                   message:@"Can not scrap the item. Please try again."
+                                                                   message:message
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK"
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {
-                                                              [alert dismissViewControllerAnimated:YES completion:nil];
-                                                          }];
-    [alert addAction:defaultAction];
-    
     [self presentViewController:alert animated:YES completion:nil];
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+//        self.loadView.hidden = YES;
+        [self performSelector:@selector(dismissAlert:) withObject:alert afterDelay:2];
+    });
+}
+
+- (void)dismissAlert:(UIAlertController *)alert {
+    [alert dismissViewControllerAnimated:YES completion:^{
+        [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
+    }];
+    
 }
 
 - (void)parseResponseDataAndInsert:(NSData *)responseData url:(NSString *)urlString {
@@ -115,7 +123,7 @@
                                                            error:&error];
     if(error || [json count] == 0) {
         NSLog(@"Json serialization exception: %@", error);
-        [self showAlert];
+        [self showAlertWithMessage:@"Can not scrap the item. Please try again."];
     }
     else {
         
@@ -141,10 +149,11 @@
             NSLog(@"Item Saved");
             self.descriptionLabel.text = @"Item saved.";
             self.activityIndicator.hidden = YES;
+            [self showAlertWithMessage:@"Scrap success."];
         }
         else {
             NSLog(@"Item Not Saved.");
-            [self showAlert];
+            [self showAlertWithMessage:@"Can not scrap the item. Please try again."];
         }
     }
 }
@@ -167,7 +176,7 @@
                                                                                error:&error];
     if (error) {
         NSLog(@"error: %@", error);
-        [self showAlert];
+        [self showAlertWithMessage:@"Can not scrap the item. Please try again."];
     }
     
     self.managedObjectContext.undoManager = [[NSUndoManager alloc] init];
