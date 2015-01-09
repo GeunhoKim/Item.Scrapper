@@ -11,43 +11,25 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2014년 com.ebay.kr.gkhim. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="20" y="238" width="441" height="50"/>
+                    <rect key="frame" x="20" y="206" width="441" height="69"/>
                     <attributedString key="attributedText">
                         <fragment content="{Item Scrapper}">
                             <attributes>
                                 <color key="NSColor" red="0.36862745098039218" green="0.40392156862745099" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="36" name="AvenirNext-UltraLight"/>
+                                <font key="NSFont" size="50" name="AvenirNext-UltraLight"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
                             </attributes>
                         </fragment>
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EBay_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="juZ-mz-GYK">
-                    <rect key="frame" x="130" y="134" width="220" height="96"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="220" id="eP9-rL-5hj"/>
-                        <constraint firstAttribute="height" constant="96" id="pLc-gR-orj"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="99.5" id="5cJ-9S-tgC"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="juZ-mz-GYK" secondAttribute="bottom" constant="8" id="6pd-N7-tTZ"/>
-                <constraint firstAttribute="centerY" secondItem="juZ-mz-GYK" secondAttribute="centerY" constant="58" id="HuE-N0-fMY"/>
                 <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstAttribute="centerX" secondItem="juZ-mz-GYK" secondAttribute="centerX" id="LYy-3b-KbM"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
+                <constraint firstAttribute="centerY" secondItem="kId-c2-rCX" secondAttribute="centerY" id="NoK-BG-rwx"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -60,7 +42,4 @@
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
-    <resources>
-        <image name="EBay_logo.png" width="1100" height="480"/>
-    </resources>
 </document>
