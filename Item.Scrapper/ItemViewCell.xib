@@ -26,7 +26,7 @@
                                 <string key="content">item title
 item title</string>
                                 <attributes>
-                                    <color key="NSColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="NSColor" red="0.36862745098039218" green="0.40392156862745099" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="13" name="AvenirNext-Regular"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                 </attributes>
@@ -48,7 +48,7 @@ item title</string>
                         <attributedString key="attributedText">
                             <fragment content="item price">
                                 <attributes>
-                                    <color key="NSColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="NSColor" red="0.36862745098039218" green="0.40392156862745099" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="17" name="AvenirNext-DemiBold"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                 </attributes>
