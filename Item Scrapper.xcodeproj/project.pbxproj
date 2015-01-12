@@ -22,6 +22,7 @@
 		286ACFA41A63797300DEC20D /* MenuHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286ACFA31A63797300DEC20D /* MenuHeaderView.xib */; };
 		286ACFA61A63939700DEC20D /* MasterTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286ACFA51A63939700DEC20D /* MasterTitleView.swift */; };
 		286ACFA81A6393B100DEC20D /* MasterTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286ACFA71A6393B100DEC20D /* MasterTitleView.xib */; };
+		286ACFAA1A63DA9300DEC20D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 286ACFA91A63DA9300DEC20D /* CloudKit.framework */; };
 		28DC9BFB1A44844100A406D4 /* coupang-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9BF81A44844100A406D4 /* coupang-icon.png */; };
 		28DC9BFC1A44844100A406D4 /* coupang-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9BF91A44844100A406D4 /* coupang-icon@2x.png */; };
 		28DC9BFD1A44844100A406D4 /* coupang-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DC9BFA1A44844100A406D4 /* coupang-icon@3x.png */; };
@@ -72,7 +73,6 @@
 		3C2D85E21A486B11003DA091 /* amazon-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2D85DF1A486B11003DA091 /* amazon-icon.png */; };
 		3C2D85E31A486B11003DA091 /* amazon-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2D85E01A486B11003DA091 /* amazon-icon@2x.png */; };
 		3C2D85E41A486B11003DA091 /* amazon-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2D85E11A486B11003DA091 /* amazon-icon@3x.png */; };
-		3C435C2319FB9A8D00530182 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1BEA319F40FCA00E5CACA /* ShareViewController.m */; };
 		3C435C2419FCE3A500530182 /* ItemScrapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A49E219D7111400D58C0B /* ItemScrapper.xcdatamodeld */; };
 		3C435C2719FCE75300530182 /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C435C2619FCE75300530182 /* ItemEntity.m */; };
 		3C435C2819FCE75300530182 /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C435C2619FCE75300530182 /* ItemEntity.m */; };
@@ -142,6 +142,7 @@
 		286ACFA31A63797300DEC20D /* MenuHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuHeaderView.xib; sourceTree = "<group>"; };
 		286ACFA51A63939700DEC20D /* MasterTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTitleView.swift; sourceTree = "<group>"; };
 		286ACFA71A6393B100DEC20D /* MasterTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterTitleView.xib; sourceTree = "<group>"; };
+		286ACFA91A63DA9300DEC20D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		28DC9BF81A44844100A406D4 /* coupang-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupang-icon.png"; sourceTree = "<group>"; };
 		28DC9BF91A44844100A406D4 /* coupang-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupang-icon@2x.png"; sourceTree = "<group>"; };
 		28DC9BFA1A44844100A406D4 /* coupang-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupang-icon@3x.png"; sourceTree = "<group>"; };
@@ -224,8 +225,6 @@
 		3CC7DAB21A307B8F00243057 /* MenuSummarizationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuSummarizationCell.xib; sourceTree = "<group>"; };
 		3CF1BE9E19F40FCA00E5CACA /* Scrapper.Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Scrapper.Share.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF1BEA119F40FCA00E5CACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3CF1BEA219F40FCA00E5CACA /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
-		3CF1BEA319F40FCA00E5CACA /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		3CF1BEA519F40FCA00E5CACA /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		3CF8526C19EAB7A500096320 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3CF8526E19EAB7B400096320 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -266,6 +265,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				286ACFAA1A63DA9300DEC20D /* CloudKit.framework in Frameworks */,
 				3CF852C919EAB98E00096320 /* libz.dylib in Frameworks */,
 				3CF8527519EAB80A00096320 /* CoreGraphics.framework in Frameworks */,
 				3CF8527619EAB80A00096320 /* MobileCoreServices.framework in Frameworks */,
@@ -477,8 +477,6 @@
 			children = (
 				3C0600931A41D77600B7B492 /* ScrapperShareViewController.h */,
 				3C0600941A41D77600B7B492 /* ScrapperShareViewController.m */,
-				3CF1BEA219F40FCA00E5CACA /* ShareViewController.h */,
-				3CF1BEA319F40FCA00E5CACA /* ShareViewController.m */,
 				3CF1BEA019F40FCA00E5CACA /* Supporting Files */,
 			);
 			path = Scrapper.Share;
@@ -497,6 +495,7 @@
 		3CF8527419EAB7E100096320 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				286ACFA91A63DA9300DEC20D /* CloudKit.framework */,
 				3C06BE471A1CDB7F00D1CC0C /* SDWebImage */,
 				3CF8527919EAB81900096320 /* ASIHTTPRequest */,
 				3C06BE791A1CDBA500D1CC0C /* ImageIO.framework */,
@@ -599,7 +598,7 @@
 								enabled = 1;
 							};
 							com.apple.iCloud = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -777,7 +776,6 @@
 				3C435C2819FCE75300530182 /* ItemEntity.m in Sources */,
 				3C435C2419FCE3A500530182 /* ItemScrapper.xcdatamodeld in Sources */,
 				3C0600951A41D77600B7B492 /* ScrapperShareViewController.m in Sources */,
-				3C435C2319FB9A8D00530182 /* ShareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -908,7 +906,7 @@
 				INFOPLIST_FILE = Item.Scrapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cb94e47a-bf7a-4822-a112-a18921bd4ed2";
+				PROVISIONING_PROFILE = "89c62ca5-ea45-4822-82a9-bcbdf1bbe888";
 				SWIFT_OBJC_BRIDGING_HEADER = "Item.Scrapper/Item.Scrapper-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};

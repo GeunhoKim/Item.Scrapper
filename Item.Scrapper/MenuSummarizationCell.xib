@@ -15,11 +15,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVD-nb-Tm8">
-                        <rect key="frame" x="8" y="12" width="97" height="20"/>
+                        <rect key="frame" x="23" y="12" width="97" height="20"/>
                         <attributedString key="attributedText">
                             <fragment content="Total Amount : ">
                                 <attributes>
-                                    <color key="NSColor" red="0.36862745098039218" green="0.40392156862745099" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="NSColor" red="0.36862745099999999" green="0.4039215686" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="14" name="AvenirNext-Regular"/>
                                     <font key="NSOriginalFont" size="14" name="AvenirNext-Regular"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -29,11 +29,11 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6W-7P-GQQ">
-                        <rect key="frame" x="121" y="11" width="43" height="22"/>
+                        <rect key="frame" x="152" y="11" width="43" height="22"/>
                         <attributedString key="attributedText">
                             <fragment content="5,420">
                                 <attributes>
-                                    <color key="NSColor" red="0.36862745098039218" green="0.40392156862745099" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="NSColor" red="0.36862745099999999" green="0.4039215686" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="16" name="AvenirNext-Medium"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                 </attributes>
@@ -43,11 +43,17 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="vVD-nb-Tm8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="3Ot-Sc-Btf"/>
+                    <constraint firstItem="vVD-nb-Tm8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="3Ot-Sc-Btf"/>
                     <constraint firstAttribute="centerY" secondItem="H6W-7P-GQQ" secondAttribute="centerY" id="SgA-kh-FBp"/>
+                    <constraint firstAttribute="trailing" secondItem="H6W-7P-GQQ" secondAttribute="trailing" constant="125" id="UsS-Jq-lKa"/>
                     <constraint firstItem="H6W-7P-GQQ" firstAttribute="leading" secondItem="vVD-nb-Tm8" secondAttribute="trailing" constant="15.5" id="rjU-YL-MxC"/>
                     <constraint firstAttribute="centerY" secondItem="vVD-nb-Tm8" secondAttribute="centerY" id="xAt-Zz-npi"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="rjU-YL-MxC"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="amountLabel" destination="H6W-7P-GQQ" id="jhG-oI-Ac4"/>

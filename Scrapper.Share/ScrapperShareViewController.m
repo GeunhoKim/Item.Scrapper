@@ -7,10 +7,8 @@
 //
 
 #import "ScrapperShareViewController.h"
-#import "ShareViewController.h"
 
 @interface ScrapperShareViewController ()
-<ShareViewControllerDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
@@ -47,7 +45,7 @@
         [self requestScrapperWithUrlString:urlString];
     }
     else {
-        [self showAlertWithMessage:@"Can not find item. Please try again."];
+        [self showAlertWithMessage:@"Can not find item. Please try another one."];
     }
 }
 
@@ -127,7 +125,7 @@
                                                            error:&error];
     if(error || [json count] == 0) {
         NSLog(@"Json serialization exception: %@", error);
-        [self showAlertWithMessage:@"Can not scrap the item. Please try again."];
+        [self showAlertWithMessage:@"Json parse error. Cannot scrap the item."];
     }
     else {
         
@@ -161,6 +159,7 @@
 }
 
 - (void)setupManagedObjectContext {
+    
     NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.com.ebay.kr.gkhim.scrapper"];
     NSURL *storeURL = [directory  URLByAppendingPathComponent:@"ItemScrapper.sqlite"];
     

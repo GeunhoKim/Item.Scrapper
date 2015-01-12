@@ -29,6 +29,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     // MARK: - UIViewController life cyle
     
+    @IBAction func refresh(sender: UIRefreshControl) {
+        self.reload(true)
+        sender.endRefreshing()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -39,27 +44,27 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.refetch()
-        self.tableView.reloadData()
+        self.reload(false)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reload:", name: "DataChanged", object: UIApplication.sharedApplication().delegate)
+        
         self.navigationItem.titleView = MasterTitleView.view()
 
         var longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
-        longPressGestureRecognizer.minimumPressDuration = 1.2
+        longPressGestureRecognizer.minimumPressDuration = 0.7
         longPressGestureRecognizer.delegate = self;
         self.tableView.addGestureRecognizer(longPressGestureRecognizer)
         
+        var longPressGestureRecognizerForSearch = UILongPressGestureRecognizer(target: self, action: "handleLongPressForSearch:")
+        longPressGestureRecognizerForSearch.minimumPressDuration = 0.7
+        longPressGestureRecognizerForSearch.delegate = self;
+        self.searchDisplayController?.searchResultsTableView.addGestureRecognizer(longPressGestureRecognizerForSearch)
+        
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 57/255.0, green: 57/255.0, blue: 57/255.0, alpha: 1)];
-        
-        let leftButton = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "openDrawer")
-        self.navigationItem.leftBarButtonItem = leftButton
-        
-        let rightButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "reload:")
-        self.navigationItem.rightBarButtonItem = rightButton
         
         var nib = UINib(nibName: itemViewCellIdentifier, bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: itemViewCellIdentifier)
@@ -91,6 +96,16 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
     
+    func handleLongPressForSearch(recognizer: UILongPressGestureRecognizer) {
+        var indexPoint = recognizer.locationInView(self.searchDisplayController?.searchResultsTableView)
+        
+        if recognizer.state == UIGestureRecognizerState.Began {
+            var indexPath = self.searchDisplayController?.searchResultsTableView.indexPathForRowAtPoint(indexPoint)
+            
+            self.selectRow((self.searchDisplayController?.searchResultsTableView)!, indexPath: indexPath!)
+        }
+    }
+    
     func selectRow(tableView: UITableView, indexPath: NSIndexPath) {
         
         var item: ItemEntity
@@ -113,9 +128,13 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         self.dynamicsDrawerViewController?.setPaneState(.Open, animated: true, allowUserInterruption: true, completion: nil)
     }
     
-    func reload(sender: AnyObject) {
+    func reload(animated:Bool) {
         self.refetch()
-        self.tableView.reloadData()
+        if animated {
+            self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
+        } else {
+            self.tableView.reloadData()
+        }
     }
     
     func refetch() {
@@ -184,13 +203,19 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 //    }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+        if tableView == self.tableView {
+            return true
+        } else {
+            return false
+        }
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            let context = self.fetchedResultsController.managedObjectContext
-            context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject)
+            if tableView == self.tableView {
+                let context = self.fetchedResultsController.managedObjectContext
+                context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject)
+            }
         }
     }
     
@@ -232,14 +257,27 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
         self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+        
         return true
     }
     
     func filterContentForSearchText(searchText: String) {
+        var parsedText = searchText.componentsSeparatedByString(" ")
         filteredItems = (self.fetchedResultsController.fetchedObjects as [ItemEntity]).filter({(item: ItemEntity) -> Bool in
-            let stringMatch = item.title.lowercaseString.rangeOfString(searchText.lowercaseString)
-            return stringMatch != nil
+            return self.doesContainParsedText(parsedText, item: item)
         })
+    }
+    
+    func doesContainParsedText(parsedText: [String], item: ItemEntity) -> Bool {
+        for searchText in parsedText {
+            let stringMatch = item.title.lowercaseString.rangeOfString(searchText.lowercaseString)
+            let domainMatch = item.kindOf.lowercaseString.rangeOfString(searchText.lowercaseString)
+            
+            if stringMatch != nil || domainMatch != nil {
+                return true
+            }
+        }
+        return false
     }
     
     // MARK: - Fetched results controller
@@ -296,12 +334,13 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         case .Insert:
             tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
         case .Delete:
-            tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+            if tableView == self.searchDisplayController!.searchResultsTableView {
+                return // cannot delete row when search
+            } else {
+                tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+            }
 
-            // TODO: update cell title and price label
-//        case .Update:
-//            self.configureCell(tableView.cellForRowAtIndexPath(indexPath!)!, atIndexPath: indexPath!)
-        case .Move:
+         case .Move:
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
             tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
         default:
@@ -313,4 +352,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         self.tableView.endUpdates()
         self.menuViewController?.updateSummarization(self.fetchedResultsController.fetchedObjects)
     }
+    
+    // MARK: - NSNotification Center
+    
+    func reloadFetchedResults(note: NSNotification) {
+        self.reload(true)
+    }
+    
 }

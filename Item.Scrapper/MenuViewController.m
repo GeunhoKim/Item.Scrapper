@@ -157,17 +157,17 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
     NSInteger section = indexPath.section;
     switch (indexPath.row) {
         case MenuViewControllerCellTypeTotalAmount:
-            cell.summaryLabel.text = @"▪︎ Total Amount :";
+            cell.summaryLabel.text = @"Total Amount :";
             cell.amountLabel.text = [self formatPriceFromNumber:[self.sumArray objectAtIndex:section]];
             break;
             
         case MenuViewControllerCellTypeTotalCount:
-            cell.summaryLabel.text = @"▪︎ Total Count :";
+            cell.summaryLabel.text = @"Total Count :";
             cell.amountLabel.text = [[self.countArray objectAtIndex:section] stringValue];
             break;
             
         case MenuViewControllerCellTypeAverageAmount:
-            cell.summaryLabel.text = @"▪︎ Average Amount :";
+            cell.summaryLabel.text = @"Average Amount :";
             cell.amountLabel.text = [self formatPriceFromNumber:[self.averageArray objectAtIndex:section]];
             break;
             
@@ -200,39 +200,39 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
     NSString *text = @"";
     switch (section) {
         case MenuViewControllerSectionTypeAll:
-            text = @"{Total}";
+            text = @"Total";
             break;
             
         case MenuViewControllerSectionTypeEbay:
-            text = @"{eBay}";
+            text = @"eBay";
             break;
             
         case MenuViewControllerSectionTypeAuction:
-            text = @"{Auction}";
+            text = @"Auction";
             break;
             
         case MenuViewControllerSectionTypeGmarket:
-            text = @"{Gmarket}";
+            text = @"Gmarket";
             break;
             
         case MenuViewControllerSectionTypeG9:
-            text = @"{G9}";
+            text = @"G9";
             break;
             
         case MenuViewControllerSectionType11st:
-            text = @"{11st}";
+            text = @"11st";
             break;
             
         case MenuViewControllerSectionTypeCoupang:
-            text = @"{Coupang}";
+            text = @"Coupang";
             break;
             
         case MenuViewControllerSectionTypeTmon:
-            text = @"{Tmon}";
+            text = @"Tmon";
             break;
             
         case MenuViewControllerSectionTypeAmazon:
-            text = @"{Amazon}";
+            text = @"Amazon";
             break;
             
         default:

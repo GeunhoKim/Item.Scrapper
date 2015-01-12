@@ -72,7 +72,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MSDynamicsDrawerViewContr
         }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
-        // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
         let modelURL = NSBundle.mainBundle().URLForResource("ItemScrapper", withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
         }()
@@ -106,6 +105,81 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MSDynamicsDrawerViewContr
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
         }()
+
+//    TODO: for iCloud support. App Extension에서 iCloud 사용이 불가하여 아직은 쓸 수 없다.
+//    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
+//        
+//        var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+//        
+//        // Set up iCloud in another thread
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+//            let iCloudEnableAppId = "iCloud.com.ebay.kr.gkhim.scrapper"
+//            let dataFileName = "ItemScrapperCloud.sqlite"
+//            
+//            let iCloudDataDirectoryName = "Data.nosync"
+//            let iCloudLogsDirectoryName = "Logs"
+//            var fileManager = NSFileManager.defaultManager() as NSFileManager
+//            var localStore = self.applicationDocumentsDirectory.URLByAppendingPathComponent(dataFileName)
+//            var iCloud: NSURL = fileManager.URLForUbiquityContainerIdentifier(nil)! as NSURL
+//            
+//            var iCloudLogsPath: String = iCloud.path!.stringByAppendingPathComponent(iCloudDataDirectoryName)
+//            if fileManager.fileExistsAtPath(iCloudLogsPath) == false {
+//                var fileSystemError: NSError?
+//                
+//                fileManager.createDirectoryAtPath(iCloudLogsPath, withIntermediateDirectories: true, attributes: nil, error: &fileSystemError)
+//            }
+//            
+//            var iCloudData: String = iCloudLogsPath.stringByAppendingPathComponent(dataFileName)
+//            
+//            var options: NSMutableDictionary = NSMutableDictionary()
+//            options.setObject(NSNumber(bool: true), forKey: NSMigratePersistentStoresAutomaticallyOption)
+//            options.setObject(NSNumber(bool: true), forKey: NSInferMappingModelAutomaticallyOption)
+//            options.setObject(iCloudEnableAppId, forKey: NSPersistentStoreUbiquitousContentNameKey)
+//            options.setObject(iCloudLogsPath, forKey: NSPersistentStoreUbiquitousContentNameKey)
+//            
+//            coordinator?.lock()
+//            
+//            coordinator?.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: localStore, options: options, error: nil)
+//            
+//            coordinator?.unlock()
+//            
+//            dispatch_async(dispatch_get_main_queue(), {
+//                NSNotificationCenter.defaultCenter().postNotificationName("DataChanged", object: self, userInfo: nil)
+//            })
+//        })
+//        
+//        return coordinator
+//    }()
+//    
+//    lazy var managedObjectContext: NSManagedObjectContext? = {
+//
+//        let coordinator = self.persistentStoreCoordinator
+//        
+//        if coordinator != nil {
+//            var managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
+//            
+//            managedObjectContext.performBlockAndWait({
+//                managedObjectContext.persistentStoreCoordinator = coordinator
+//                NSNotificationCenter.defaultCenter().addObserver(self, selector: "mergeChangesFromiCloud:", name: NSPersistentStoreDidImportUbiquitousContentChangesNotification, object: coordinator)
+//            })
+//            
+//            return managedObjectContext
+//            
+//        } else {
+//            return nil
+//        }
+//    }()
+//    
+//    func mergeChangesFromiCloud(notification: NSNotification) {
+//        var managedObjectContext: NSManagedObjectContext = self.managedObjectContext!
+//        
+//        managedObjectContext.performBlock({
+//            managedObjectContext.mergeChangesFromContextDidSaveNotification(notification)
+//            var refreshNotification: NSNotification = NSNotification(name: "DataChanged", object: self, userInfo: notification.userInfo)
+//            
+//            NSNotificationCenter.defaultCenter().postNotification(refreshNotification)
+//        })
+//    }
     
     // MARK: - Core Data Saving support
     

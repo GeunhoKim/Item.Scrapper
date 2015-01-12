@@ -22,7 +22,7 @@
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="Item_Scrapper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Master" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="Item_Scrapper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,6 +42,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Scrapped Items" id="Zdf-7t-Un8"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Jea-X0-W6f">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh:" destination="7bK-jq-Zjz" eventType="valueChanged" id="TP7-Uw-odL"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="searchDisplayController" destination="UPg-hk-C90" id="Iaq-hv-mCE"/>
                     </connections>
