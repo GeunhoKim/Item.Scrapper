@@ -56,7 +56,7 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
     
     [self.tableView setBackgroundColor:[UIColor whiteColor]];
     
-    [self.tableView registerClass:[MenuHeaderView class] forHeaderFooterViewReuseIdentifier:MENU_VIEW_HEADER_IDENTIFIER];
+//    [self.tableView registerClass:[MenuHeaderView class] forHeaderFooterViewReuseIdentifier:MENU_VIEW_HEADER_IDENTIFIER];
     
     [self updateSummarization:[NSArray array]];
 }
@@ -189,7 +189,13 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
         return nil;
     }
     
-    UITableViewHeaderFooterView *headerView = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:MENU_VIEW_HEADER_IDENTIFIER];
+    MenuHeaderView *headerView = [tableView dequeueReusableCellWithIdentifier:MENU_VIEW_HEADER_IDENTIFIER];
+    
+    if(!headerView) {
+        headerView = [MenuHeaderView view];
+    }
+    
+//    UITableViewHeaderFooterView *headerView = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:MENU_VIEW_HEADER_IDENTIFIER];
     
     NSString *text = @"";
     switch (section) {
@@ -232,7 +238,7 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
         default:
             return nil;
     }
-    headerView.textLabel.text = text;
+    headerView.headerLabel.text = text;
 
     return headerView;
 }

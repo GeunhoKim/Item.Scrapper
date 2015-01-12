@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVD-nb-Tm8">
-                        <rect key="frame" x="8" y="13" width="97" height="19.5"/>
+                        <rect key="frame" x="8" y="12" width="97" height="20"/>
                         <attributedString key="attributedText">
                             <fragment content="Total Amount : ">
                                 <attributes>
@@ -29,12 +29,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6W-7P-GQQ">
-                        <rect key="frame" x="120.5" y="12" width="46.5" height="22"/>
+                        <rect key="frame" x="121" y="11" width="43" height="22"/>
                         <attributedString key="attributedText">
                             <fragment content="5,420">
                                 <attributes>
                                     <color key="NSColor" red="0.36862745098039218" green="0.40392156862745099" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <font key="NSFont" size="16" name="AvenirNext-Bold"/>
+                                    <font key="NSFont" size="16" name="AvenirNext-Medium"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                 </attributes>
                             </fragment>

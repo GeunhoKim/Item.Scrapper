@@ -10,4 +10,7 @@
 
 @interface MenuHeaderView : UITableViewHeaderFooterView
 
+@property (weak, nonatomic) IBOutlet UILabel *headerLabel;
++ (MenuHeaderView *)view;
+
 @end

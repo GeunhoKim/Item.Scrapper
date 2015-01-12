@@ -49,7 +49,7 @@ item title</string>
                             <fragment content="item price">
                                 <attributes>
                                     <color key="NSColor" red="0.36862745098039218" green="0.40392156862745099" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <font key="NSFont" size="17" name="AvenirNext-DemiBold"/>
+                                    <font key="NSFont" size="17" name="AvenirNext-Medium"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                 </attributes>
                             </fragment>

@@ -21,14 +21,15 @@
 @implementation ScrapperShareViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-//    self.loadView.hidden = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    
     NSExtensionContext *context = [self extensionContext];
     NSExtensionItem *inputItem = [context inputItems].firstObject;
     NSItemProvider *provider = inputItem.attachments.firstObject;
     NSString *contentText = [inputItem.attributedContentText string];
+    NSString *pasteBoardString = [UIPasteboard generalPasteboard].string;
     
     if([provider hasItemConformingToTypeIdentifier:@"public.url"]) {
         [provider loadItemForTypeIdentifier:@"public.url" options:nil completionHandler:^(NSURL *url, NSError *error) {
@@ -40,10 +41,13 @@
         NSString *urlString = [self getUrlStringFromContentText:contentText];
         [self requestScrapperWithUrlString:urlString];
     }
+    else if([pasteBoardString containsString:@"http://"]) {
+        [[UIPasteboard generalPasteboard] setValue:@"" forPasteboardType:UIPasteboardNameGeneral];
+        NSString *urlString = [self getUrlStringFromContentText:pasteBoardString];
+        [self requestScrapperWithUrlString:urlString];
+    }
     else {
-        ShareViewController *viewController = [[ShareViewController alloc] init];
-        viewController.delegate = self;
-        [self presentViewController:viewController animated:YES completion:nil];
+        [self showAlertWithMessage:@"Can not find item. Please try again."];
     }
 }
 
@@ -59,6 +63,10 @@
 
 - (void)viewDidLoad {
     [self setupManagedObjectContext];
+    
+    UIImage *bgImage = [UIImage imageNamed:@"popup_bg.png"];
+    self.backgroundImage.image = [bgImage stretchableImageWithLeftCapWidth:bgImage.size.width / 2
+                                                              topCapHeight:bgImage.size.height / 2];
 }
 
 - (NSString *)getUrlStringFromContentText:(NSString *)contentText {
@@ -97,23 +105,19 @@
 }
 
 - (void)showAlertWithMessage:(NSString *)message {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
-                                                                   message:message
-                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [UIView animateWithDuration:0.4 animations:^{
+        self.activityIndicator.hidden = YES;
+        self.descriptionLabel.text = message;
+        [self.view layoutIfNeeded];
+    }];
     
-    [self presentViewController:alert animated:YES completion:nil];
-
     dispatch_async(dispatch_get_main_queue(), ^{
-//        self.loadView.hidden = YES;
-        [self performSelector:@selector(dismissAlert:) withObject:alert afterDelay:2];
+        [self performSelector:@selector(dismissAlert:) withObject:self.extensionContext afterDelay:1.5];
     });
 }
 
-- (void)dismissAlert:(UIAlertController *)alert {
-    [alert dismissViewControllerAnimated:YES completion:^{
-        [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
-    }];
-    
+- (void)dismissAlert:(NSExtensionContext *)context {
+    [context completeRequestReturningItems:@[] completionHandler:nil];
 }
 
 - (void)parseResponseDataAndInsert:(NSData *)responseData url:(NSString *)urlString {
@@ -147,8 +151,6 @@
         
         if ([self.managedObjectContext save:&error]) {
             NSLog(@"Item Saved");
-            self.descriptionLabel.text = @"Item saved.";
-            self.activityIndicator.hidden = YES;
             [self showAlertWithMessage:@"Scrap success."];
         }
         else {

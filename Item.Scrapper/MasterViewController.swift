@@ -46,6 +46,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.titleView = MasterTitleView.view()
+
         var longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
         longPressGestureRecognizer.minimumPressDuration = 1.2
         longPressGestureRecognizer.delegate = self;

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ld8-dS-wiz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Share View Controller-->
@@ -35,26 +36,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgH-2O-oEe">
-                                <rect key="frame" x="200" y="280" width="200" height="40"/>
+                                <rect key="frame" x="201" y="280" width="198" height="40"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qNI-m9-s1E">
-                                        <rect key="frame" x="148" y="10" width="20" height="20"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="I4O-Tc-Ntn">
+                                        <rect key="frame" x="0.0" y="0.0" width="198" height="40"/>
+                                    </imageView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qNI-m9-s1E">
+                                        <rect key="frame" x="159" y="10" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="A2V-lY-c2e"/>
+                                            <constraint firstAttribute="width" constant="20" id="Z5l-iE-vLj"/>
+                                        </constraints>
                                     </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scrap the item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USV-Hw-HqP">
-                                        <rect key="frame" x="36" y="9" width="107" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USV-Hw-HqP">
+                                        <rect key="frame" x="50" y="9" width="99" height="21"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Scrap the item">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="15" name="AvenirNext-Regular"/>
+                                                    <font key="NSOriginalFont" size="15" name="AvenirNext-UltraLight"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="I4O-Tc-Ntn" firstAttribute="top" secondItem="tgH-2O-oEe" secondAttribute="top" id="3IA-OW-NvT"/>
+                                    <constraint firstAttribute="centerX" secondItem="USV-Hw-HqP" secondAttribute="centerX" id="M4a-s9-qbv"/>
                                     <constraint firstAttribute="height" constant="40" id="Mdt-Ls-UY5"/>
+                                    <constraint firstAttribute="centerY" secondItem="USV-Hw-HqP" secondAttribute="centerY" id="U6K-Nf-8nF"/>
+                                    <constraint firstAttribute="bottom" secondItem="I4O-Tc-Ntn" secondAttribute="bottom" id="cOb-dn-ISV"/>
+                                    <constraint firstItem="I4O-Tc-Ntn" firstAttribute="leading" secondItem="tgH-2O-oEe" secondAttribute="leading" id="fyw-hd-PFT"/>
                                     <constraint firstAttribute="width" constant="200" id="hMK-6C-9zr"/>
+                                    <constraint firstAttribute="width" secondItem="USV-Hw-HqP" secondAttribute="width" multiplier="200:100" id="i8l-9d-MVb"/>
+                                    <constraint firstAttribute="centerY" secondItem="qNI-m9-s1E" secondAttribute="centerY" id="j7t-9p-0cS"/>
+                                    <constraint firstItem="qNI-m9-s1E" firstAttribute="leading" secondItem="USV-Hw-HqP" secondAttribute="trailing" constant="10" id="l9I-Wa-eA8"/>
+                                    <constraint firstAttribute="trailing" secondItem="I4O-Tc-Ntn" secondAttribute="trailing" id="poP-p5-5A2"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="hMK-6C-9zr"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.36470588235294116" green="0.40392156862745099" blue="0.44313725490196076" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="tgH-2O-oEe" secondAttribute="centerX" id="4ZL-Ho-vWt"/>
                             <constraint firstAttribute="centerY" secondItem="tgH-2O-oEe" secondAttribute="centerY" id="8yV-0n-uSQ"/>
@@ -62,6 +92,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="qNI-m9-s1E" id="vPc-Q0-cqL"/>
+                        <outlet property="backgroundImage" destination="I4O-Tc-Ntn" id="XsX-do-kh4"/>
                         <outlet property="descriptionLabel" destination="USV-Hw-HqP" id="4cX-E9-iey"/>
                     </connections>
                 </viewController>
@@ -70,4 +101,7 @@
             <point key="canvasLocation" x="438.5" y="741"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="popup_bg.png" width="22" height="22"/>
+    </resources>
 </document>
