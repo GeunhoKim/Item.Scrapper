@@ -147,6 +147,7 @@ typedef NS_ENUM(NSUInteger, MenuViewControllerCellType) {
     NSNumberFormatter *formatter = [NSNumberFormatter new];
     formatter.numberStyle = NSNumberFormatterCurrencyStyle;
     formatter.locale = [NSLocale currentLocale];
+    [formatter setCurrencySymbol:@""];	
     
     NSString *formatPrice = [formatter stringFromNumber:number];
     

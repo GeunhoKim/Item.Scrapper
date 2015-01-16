@@ -27,13 +27,6 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5T-WO-ylY" userLabel="Line View">
-                        <rect key="frame" x="0.0" y="43" width="320" height="1"/>
-                        <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="nef-DD-NDG"/>
-                        </constraints>
-                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A02-rV-ciy" userLabel="Line View">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
                         <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,16 +34,19 @@
                             <constraint firstAttribute="height" constant="1" id="qh9-3P-Iks"/>
                         </constraints>
                     </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_shadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="r2P-Zs-ExA">
+                        <rect key="frame" x="0.0" y="40" width="320" height="4"/>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="A02-rV-ciy" secondAttribute="trailing" id="6rA-zA-9lj"/>
+                    <constraint firstAttribute="bottom" secondItem="r2P-Zs-ExA" secondAttribute="bottom" id="9v7-HA-1lV"/>
                     <constraint firstItem="A02-rV-ciy" firstAttribute="leading" secondItem="u1G-mH-N1n" secondAttribute="leading" id="Dri-HK-JCf"/>
                     <constraint firstItem="bMF-S7-rB2" firstAttribute="leading" secondItem="u1G-mH-N1n" secondAttribute="leadingMargin" constant="10" id="ZkG-gV-OXM"/>
-                    <constraint firstAttribute="bottom" secondItem="E5T-WO-ylY" secondAttribute="bottom" id="k0m-Yv-Rqa"/>
+                    <constraint firstAttribute="trailing" secondItem="r2P-Zs-ExA" secondAttribute="trailing" id="dYa-FT-24b"/>
+                    <constraint firstItem="r2P-Zs-ExA" firstAttribute="leading" secondItem="u1G-mH-N1n" secondAttribute="leading" id="iqe-so-AaK"/>
                     <constraint firstAttribute="centerY" secondItem="bMF-S7-rB2" secondAttribute="centerY" id="mYB-9o-fl3"/>
-                    <constraint firstItem="E5T-WO-ylY" firstAttribute="leading" secondItem="u1G-mH-N1n" secondAttribute="leading" id="mdE-Rd-DhJ"/>
-                    <constraint firstAttribute="trailing" secondItem="E5T-WO-ylY" secondAttribute="trailing" id="pWB-du-Ur8"/>
                     <constraint firstItem="A02-rV-ciy" firstAttribute="top" secondItem="u1G-mH-N1n" secondAttribute="top" id="y6f-qk-ANe"/>
                 </constraints>
             </tableViewCellContentView>
@@ -60,4 +56,7 @@
             <point key="canvasLocation" x="230" y="470"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="bg_shadow.png" width="4" height="4"/>
+    </resources>
 </document>

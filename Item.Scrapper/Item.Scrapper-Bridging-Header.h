@@ -7,4 +7,5 @@
 #import "MSDynamicsDrawerViewController.h"
 #import "MSDynamicsDrawerStyler.h"
 #import "MenuViewController.h"
+#import "DetailViewController.h"
 #import "SharedInstance.h"

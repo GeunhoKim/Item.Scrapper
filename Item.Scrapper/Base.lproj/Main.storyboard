@@ -81,7 +81,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzJ-Wn-RsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-38" y="79"/>
+            <point key="canvasLocation" x="-30" y="93"/>
         </scene>
         <!--Dynamics Drawer View Controller-->
         <scene sceneID="Ikm-2O-GGQ">

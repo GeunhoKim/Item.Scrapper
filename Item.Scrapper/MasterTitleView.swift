@@ -11,7 +11,7 @@ import UIKit
 class MasterTitleView: UIView {
 
     class func view() -> MasterTitleView {
-        return UINib(nibName: "MasterTitleView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as MasterTitleView
+        return UINib(nibName: "MasterTitleView", bundle: nil).instantiateWithOwner(nil, options: nil).first as MasterTitleView
     }
     
 }

@@ -17,6 +17,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     weak var dynamicsDrawerViewController: MSDynamicsDrawerViewController?
     weak var menuViewController: MenuViewController?
+    weak var detailViewController: DetailViewController?
     
     var managedObjectContext: NSManagedObjectContext? = nil
     var _fetchedResultsController: NSFetchedResultsController? = nil
@@ -125,7 +126,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
     
     func openDrawer() {
-        self.dynamicsDrawerViewController?.setPaneState(.Open, animated: true, allowUserInterruption: true, completion: nil)
+        self.dynamicsDrawerViewController?.setPaneState(.Open, inDirection: .Left, animated: true, allowUserInterruption: false, completion: nil)
+    }
+    
+    func openDetailDrawer() {
+        self.detailViewController?.request()
+        self.dynamicsDrawerViewController?.setPaneState(.Open, inDirection: .Right, animated: true, allowUserInterruption: false, completion: nil)
     }
     
     func reload(animated:Bool) {
@@ -186,6 +192,23 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         return height
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var item: ItemEntity
+        
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            item = filteredItems[indexPath.row]
+        } else {
+            item = self.fetchedResultsController.objectAtIndexPath(indexPath) as ItemEntity
+        }
+        
+        var linkUrl = item.linkUrl
+        
+        SharedInstance.singleton().detailUrl = linkUrl
+        self.detailViewController?.request()
+        
+        openDetailDrawer()
+    }
+    
 //    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 //        let footerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(itemFooterViewIdentifier) as ItemFooterView
 //        
@@ -223,6 +246,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         var formatter = NSNumberFormatter()
         formatter.numberStyle = .CurrencyStyle
         formatter.locale = NSLocale.currentLocale()
+        formatter.currencySymbol = ""
 
         var formatPrice:String = formatter.stringFromNumber(number)!
         

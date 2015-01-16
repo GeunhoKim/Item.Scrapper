@@ -15,9 +15,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVD-nb-Tm8">
-                        <rect key="frame" x="23" y="12" width="97" height="20"/>
+                        <rect key="frame" x="23" y="12" width="120" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="4Nn-6D-YJg"/>
+                        </constraints>
                         <attributedString key="attributedText">
-                            <fragment content="Total Amount : ">
+                            <fragment content="Average Amount">
+                                <attributes>
+                                    <color key="NSColor" red="0.36862745099999999" green="0.4039215686" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="14" name="AvenirNext-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content=" : ">
                                 <attributes>
                                     <color key="NSColor" red="0.36862745099999999" green="0.4039215686" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="14" name="AvenirNext-Regular"/>
@@ -29,9 +39,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6W-7P-GQQ">
-                        <rect key="frame" x="152" y="11" width="43" height="22"/>
+                        <rect key="frame" x="157" y="11" width="75" height="22"/>
                         <attributedString key="attributedText">
-                            <fragment content="5,420">
+                            <fragment content="5,420,000">
                                 <attributes>
                                     <color key="NSColor" red="0.36862745099999999" green="0.4039215686" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="16" name="AvenirNext-Medium"/>
@@ -47,11 +57,15 @@
                     <constraint firstAttribute="centerY" secondItem="H6W-7P-GQQ" secondAttribute="centerY" id="SgA-kh-FBp"/>
                     <constraint firstAttribute="trailing" secondItem="H6W-7P-GQQ" secondAttribute="trailing" constant="125" id="UsS-Jq-lKa"/>
                     <constraint firstItem="H6W-7P-GQQ" firstAttribute="leading" secondItem="vVD-nb-Tm8" secondAttribute="trailing" constant="15.5" id="rjU-YL-MxC"/>
+                    <constraint firstItem="H6W-7P-GQQ" firstAttribute="trailing" secondItem="vVD-nb-Tm8" secondAttribute="trailing" constant="70" id="tq8-YZ-mlp"/>
                     <constraint firstAttribute="centerY" secondItem="vVD-nb-Tm8" secondAttribute="centerY" id="xAt-Zz-npi"/>
+                    <constraint firstItem="H6W-7P-GQQ" firstAttribute="leading" secondItem="vVD-nb-Tm8" secondAttribute="leading" constant="134" id="xom-3e-SBD"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
+                        <exclude reference="UsS-Jq-lKa"/>
                         <exclude reference="rjU-YL-MxC"/>
+                        <exclude reference="tq8-YZ-mlp"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -59,7 +73,7 @@
                 <outlet property="amountLabel" destination="H6W-7P-GQQ" id="jhG-oI-Ac4"/>
                 <outlet property="summaryLabel" destination="vVD-nb-Tm8" id="DmA-0z-fuF"/>
             </connections>
-            <point key="canvasLocation" x="230" y="472.5"/>
+            <point key="canvasLocation" x="230" y="471.5"/>
         </tableViewCell>
     </objects>
 </document>

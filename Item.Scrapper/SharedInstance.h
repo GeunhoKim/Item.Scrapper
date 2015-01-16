@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSArray *fetchedItems;
 @property (strong, nonatomic) NSNumber *totalAmount;
 @property (strong, nonatomic) NSNumber *averageAmount;
+@property (strong, nonatomic) NSString *detailUrl;
 
 + (instancetype)singleton;
 

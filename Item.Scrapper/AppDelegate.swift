@@ -25,16 +25,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MSDynamicsDrawerViewContr
         self.drawerViewController = self.window!.rootViewController as? MSDynamicsDrawerViewController
         self.drawerViewController?.delegate = self
         self.drawerViewController?.paneDragRequiresScreenEdgePan = true;
-        self.drawerViewController?.screenEdgePanCancelsConflictingGestures = true;
+        self.drawerViewController?.screenEdgePanCancelsConflictingGestures = false;
         self.drawerViewController?.addStylersFromArray([MSDynamicsDrawerFadeStyler.styler(), MSDynamicsDrawerScaleStyler.styler(), MSDynamicsDrawerShadowStyler.styler()], forDirection: MSDynamicsDrawerDirection.Left)
+        self.drawerViewController?.addStylersFromArray([MSDynamicsDrawerFadeStyler.styler(), MSDynamicsDrawerResizeStyler.styler(), MSDynamicsDrawerShadowStyler.styler()], forDirection: MSDynamicsDrawerDirection.Right)
         self.drawerViewController?.view.backgroundColor = UIColor.whiteColor()
         
         var menuViewController: MenuViewController = self.window!.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("Menu") as MenuViewController
+        var detailViewController: DetailViewController = DetailViewController.getViewController()
+        
         menuViewController.dynamicsDrawerViewController = self.drawerViewController
+        detailViewController.dynamicsDrawerViewController = self.drawerViewController
+
         masterViewController.dynamicsDrawerViewController = self.drawerViewController
-        masterViewController.menuViewController = menuViewController;
+        masterViewController.menuViewController = menuViewController
+        masterViewController.detailViewController = detailViewController
         
         self.drawerViewController?.setDrawerViewController(menuViewController, forDirection: MSDynamicsDrawerDirection.Left)
+        self.drawerViewController?.setDrawerViewController(detailViewController, forDirection: MSDynamicsDrawerDirection.Right)
         self.drawerViewController?.setPaneViewController(navigationController, animated: false, completion: nil)
         
         return true
